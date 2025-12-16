@@ -5,8 +5,8 @@ This mechanism converts rotational motion into linear reciprocating motion.
 ## 📸 Project Gallery
 Here is the 3D Isometric view and the Assembly Tree structure:
 
-![3D Render](./render_iso.png)
-![Design Tree](./design_tree.jpg)
+![3D Render](./render_iso.png.jpg)
+![Design Tree](./design_tree.jpg.png)
 
 ## 📂 Components List
 - **Coulisse**: The sliding part.
