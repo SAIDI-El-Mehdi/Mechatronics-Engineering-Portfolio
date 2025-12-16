@@ -5,7 +5,7 @@ This project demonstrates complex **Part Design** and multi-body modeling techni
 ## 📸 Design Views
 Here are the Isometric, Top, Side, and Front views of the tractor:
 
-![Tractor Views](./tractor_views.jpg)
+![Tractor Views](./tractor_views.jpg.png)
 
 ## 🚜 Design Features
 - **Chassis & Body:** Engine block, seat, and steering system.
