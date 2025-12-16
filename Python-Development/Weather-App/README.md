@@ -4,7 +4,7 @@ A desktop application developed in Python that provides real-time weather data a
 ## 📸 App Interface
 The GUI allows users to search for cities, view current stats, and save history.
 
-![Weather App UI](./Weather.png)
+![Weather App UI](./weather.png)
 
 ## 💻 Features
 - **Real-time Data:** Fetches Temperature, Humidity, and Wind Speed via API.
