@@ -1,0 +1,42 @@
+[
+    {
+        "city": "agadir",
+        "week": [
+            {
+                "date": "2025-12-16",
+                "temperature_max": 18.0,
+                "temperature_min": 13.8
+            },
+            {
+                "date": "2025-12-17",
+                "temperature_max": 20.2,
+                "temperature_min": 10.5
+            },
+            {
+                "date": "2025-12-18",
+                "temperature_max": 17.2,
+                "temperature_min": 10.2
+            },
+            {
+                "date": "2025-12-19",
+                "temperature_max": 17.1,
+                "temperature_min": 10.1
+            },
+            {
+                "date": "2025-12-20",
+                "temperature_max": 19.5,
+                "temperature_min": 11.3
+            },
+            {
+                "date": "2025-12-21",
+                "temperature_max": 19.1,
+                "temperature_min": 10.4
+            },
+            {
+                "date": "2025-12-22",
+                "temperature_max": 19.3,
+                "temperature_min": 18.3
+            }
+        ]
+    }
+]
