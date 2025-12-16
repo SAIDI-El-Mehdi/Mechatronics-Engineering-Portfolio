@@ -5,7 +5,7 @@ Focus on external housing details and cooling system design.
 ## 📸 Motor Views
 Detailed view of the housing, cooling fins, and terminal box:
 
-![Motor Views](./motor_views.jpg)
+![Motor Views](./motor_views.jpg.png)
 
 ## ⚡ Design Highlights
 - **Cooling Fins:** Detailed modeling for thermal dissipation.
