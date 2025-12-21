@@ -1,6 +1,0 @@
-Dépôt des codes sources pour les exercices d'analyse numérique :
-
-- Newton.m : Algorithme de Newton-Raphson.
-- RK4.m : Résolution d'équation différentielle (Méthode RK4).
-- Lagrange.m : Comparaison d'interpolation (Lagrange vs Polyfit).
-- Lineaire.m : Calcul matriciel et résolution de système linéaire.
