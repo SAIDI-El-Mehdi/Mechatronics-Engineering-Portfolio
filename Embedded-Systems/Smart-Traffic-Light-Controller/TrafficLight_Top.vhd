@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity TP4 is
+entity TrafficLight_Top is
     port(
         CLOCK_50 : in std_logic;      -- Horloge 50MHz
         BUTTON   : in std_logic_vector(2 downto 0); -- Reset (BUTTON[0])
@@ -11,7 +11,7 @@ entity TP4 is
     );
 end entity;
 
-architecture Structural of TP4 is
+architecture Structural of TrafficLight_Top is
 
     -- 1. Déclaration des Composants (Li sawbna 9bel)
     component Timer
@@ -119,5 +119,6 @@ begin
             LEDG <= (others => '0');
         end if;
     end process;
+
 
 end Structural;
