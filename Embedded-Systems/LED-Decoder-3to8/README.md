@@ -13,9 +13,6 @@ This project implements a **3-to-8 binary decoder** using VHDL. The module takes
 * **Simulation:** ModelSim / QuestaSim.
 * **Hardware:** (Optional: Mention your board, e.g., DE10-Lite FPGA).
 
-## 📊 Simulation Waveform
-*(Important: Add a screenshot of your ModelSim simulation here showing the inputs changing and outputs reacting)*
-![Simulation Result](path_to_your_image.png)
 
 ## 📝 Code Snippet
 Key logic implementation:
