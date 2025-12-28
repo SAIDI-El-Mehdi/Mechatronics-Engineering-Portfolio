@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity LAB2 is
+entity Adder4Bit_Top is
     port (
         SW     : in std_logic_vector(7 downto 0);   -- Two 4-bit numbers (SW[7:4] and SW[3:0])
         KEY    : in std_logic;                      -- Reset button (active-low)
@@ -10,9 +10,9 @@ entity LAB2 is
         HEX0   : out std_logic_vector(6 downto 0);  -- Units digit (7-segment display)
         HEX1   : out std_logic_vector(6 downto 0)   -- Tens digit (7-segment display)
     );
-end LAB2;
+end Adder4Bit_Top;
 
-architecture Adder_4bits of LAB2 is
+architecture Adder_4bits of Adder4Bit_Top is
     component add_1_bit
         port (
             x    : in std_logic;
@@ -78,5 +78,6 @@ begin
     LED <= sum_total when KEY = '1' else "00000";
     HEX0 <= BCD_to_7seg(bcd_units) when KEY = '1' else BCD_to_7seg("0000");
     HEX1 <= BCD_to_7seg(bcd_tens) when KEY = '1' else BCD_to_7seg("0000");
+
 
 end Adder_4bits;
