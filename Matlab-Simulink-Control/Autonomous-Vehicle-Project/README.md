@@ -38,5 +38,5 @@ The following plot illustrates the performance of the Pure Pursuit controller. T
 
 ## 🔗 Author
       El Mehdi SAIDI
-Mechatronics Engineering Student | Autonomous Systems Enthusiast
+Mechatronics Engineering  | Autonomous Systems Enthusiast
 www.linkedin.com/in/el-mehdi-morri-45a583334
