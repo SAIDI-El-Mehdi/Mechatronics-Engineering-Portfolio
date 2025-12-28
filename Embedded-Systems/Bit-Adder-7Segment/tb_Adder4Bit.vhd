@@ -4,13 +4,13 @@ use IEEE.std_logic_unsigned.all;
 use IEEE.NUMERIC_STD.ALL;
 
 
-entity TB_LAB2 is
-end TB_LAB2;
+entity tb_Adder4Bit is
+end tb_Adder4Bit;
 
-architecture Test of TB_LAB2 is
+architecture Test of tb_Adder4Bit is
 
-    -- Déclaration de l'entité LAB2 à tester
-    component LAB2
+    -- Déclaration de l'entité tb_Adder4Bit à tester
+    component tb_Adder4Bit
         port (
             SW     : in std_logic_vector(7 downto 0);   -- Deux nombres de 4 bits (SW[7:4] et SW[3:0])
             KEY    : in STD_LOGIC;                       -- Bouton de reset
@@ -32,7 +32,7 @@ architecture Test of TB_LAB2 is
 begin
 
     -- Instanciation de l'UUT (Unité sous Test)
-    UUT: LAB2
+    UUT: tb_Adder4Bit
         port map (
             SW    => SW_TEST,
             KEY   => KEY_TEST,
@@ -62,3 +62,4 @@ begin
     end process;
 
 end Test;
+
