@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity TP4MODELSIM is
+entity TrafficLight_Sim_Model is
     port(
         CLOCK_50 : in std_logic;
         BUTTON   : in std_logic_vector(2 downto 0);
@@ -11,7 +11,7 @@ entity TP4MODELSIM is
     );
 end entity;
 
-architecture Structural of TP4MODELSIM is
+architecture Structural of TrafficLight_Sim_Model is
 
     component Timer
         generic(c_MAX : integer := 50000000);
@@ -100,5 +100,6 @@ begin
             LEDG <= (others => '0');
         end if;
     end process;
+
 
 end Structural;
