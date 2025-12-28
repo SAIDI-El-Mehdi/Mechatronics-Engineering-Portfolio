@@ -2,13 +2,13 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity tb_TP4 is
+entity tb_TrafficLight is
 end entity;
 
-architecture behavior of tb_TP4 is
+architecture behavior of tb_TrafficLight is
 
     -- Component Declaration for the Unit Under Test (UUT)
-    component TP4
+    component tb_TrafficLight
         port(
             CLOCK_50 : in std_logic;
             BUTTON   : in std_logic_vector(2 downto 0);
@@ -31,7 +31,7 @@ architecture behavior of tb_TP4 is
 begin
 
     -- Instantiate the Unit Under Test (UUT)
-    uut: TP4 port map (
+    uut: tb_TrafficLight port map (
         CLOCK_50 => clk,
         BUTTON   => btn,
         SW       => sw,
@@ -84,5 +84,6 @@ begin
 
         wait; -- Sali Test
     end process;
+
 
 end behavior;
