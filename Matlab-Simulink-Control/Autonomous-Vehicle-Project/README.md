@@ -20,7 +20,7 @@ The system generates a collision-free path in a complex environment and utilizes
 ## 📊 Results
 The simulation shows the vehicle successfully navigating an S-curve trajectory while avoiding obstacles and executing a precise stop at the target `(45, 45)`.
 
-![Final Simulation Result](results/Final_Result_Plot+Simulink_Diagram.png)
+![Final Simulation Result](results/Final_Result_Plot.png)
 *(Figure: Comparison of Planned Path (Green) vs. Actual Vehicle Path (Blue). Note the precise stop at the destination due to the safety logic implementation.)*
 
 ## 💻 How to Run
