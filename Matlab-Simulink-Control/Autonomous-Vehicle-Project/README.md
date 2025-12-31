@@ -1,42 +1,35 @@
-# Autonomous Vehicle Path Tracking & Planning Simulation
+# Autonomous Vehicle Path Tracking & Safety Logic 🚗⚡
 
- 🚗 Project Overview
-This project demonstrates the design and simulation of a lateral control system for an autonomous vehicle using **MATLAB/Simulink**. The goal is to implement a robust path-tracking algorithm that allows a vehicle model to accurately follow a generated trajectory while adhering to kinematic constraints.
+## Project Overview
+This project demonstrates a complete **Model-Based Design (MBD)** workflow for an autonomous vehicle navigation system. It integrates path planning, trajectory tracking, and safety decision logic using **MATLAB** and **Simulink**.
 
- 🎯 Objectives
-* Path Planning: Utilize the **Hybrid A*** algorithm to generate collision-free paths in a structured environment.
-* Path Tracking: Implement the **Pure Pursuit** controller to calculate the steering angle required to follow the planned path.
-* Vehicle Dynamics: Simulate the physical behavior of the car using a **3DOF (Three Degrees of Freedom)** bicycle model within Simulink.
-* Performance Analysis: Evaluate the tracking error and system stability under various curvatures.
+The system generates a collision-free path in a complex environment and utilizes a **Pure Pursuit controller** to guide a vehicle model (3DOF) along the trajectory. A custom safety logic mechanism ensures the vehicle stops precisely at the goal coordinates.
 
- 🛠️ Technologies & Tools
- **MATLAB & Simulink R202x** (Model-Based Design)
- **Automated Driving Toolbox**
- **Vehicle Dynamics Blockset**
- **Control System Design** (PID & Pure Pursuit)
+## 🚀 Key Features
+* **Path Planning:** Implemented **Hybrid A*** algorithm (via Navigation Toolbox) to generate smooth, kinematic-feasible paths avoiding static obstacles.
+* **Vehicle Dynamics:** Utilized a **3DOF Bicycle Model** (Vehicle Dynamics Blockset) to simulate realistic lateral and longitudinal behavior.
+* **Control Strategy:** Designed a **Pure Pursuit Controller** for accurate path following.
+* **Safety Logic:** Integrated a Simulink-based decision logic to monitor distance-to-goal and trigger **Autonomous Emergency Braking (AEB)** upon mission completion.
 
- 📂 Repository Structure
- `PathPlanning_Step1.m`: MATLAB initialization script for generating path coordinates and parameters.
- `AEB_Project.slx`: The main Simulink model implementing the control logic and vehicle dynamics.
- `path_tracking_result_final.png.png`: Visualization of the simulation results.
+## 🛠️ Tech Stack
+* **MATLAB R2021a+**
+* **Simulink**
+* **Automated Driving Toolbox** / **Navigation Toolbox**
+* **Vehicle Dynamics Blockset**
 
-# 📊 Simulation Results
-The following plot illustrates the performance of the Pure Pursuit controller. The blue line represents the actual vehicle trajectory, closely tracking the green dashed reference path.
+## 📊 Results
+The simulation shows the vehicle successfully navigating an S-curve trajectory while avoiding obstacles and executing a precise stop at the target `(45, 45)`.
 
-![Path Tracking Result](path_tracking_result_final.png.png)
+![Final Simulation Result](results/Final_Result_Plot+Simulink_Diagram.png)
+*(Figure: Comparison of Planned Path (Green) vs. Actual Vehicle Path (Blue). Note the precise stop at the destination due to the safety logic implementation.)*
 
-# 🚀 How to Run
-1.  Clone the repository:
-    ```bash
-    git clone [https://github.com/SAIDI-El-Mehdi/Mechatronics-Engineering-Portfolio.git](https://github.com/SAIDI-El-Mehdi/Mechatronics-Engineering-Portfolio.git)
-    ```
-2.  Navigate to the project folder `Matlab-Simulink-Control/Autonomous-Vehicle-Project`.
-3.  Open MATLAB.
-4.  Run the initialization script `PathPlanning_Step1.m` to load the workspace variables.
-5.  Open the Simulink model `AEB_Project.slx`.
-6.  Run the simulation.
+## 💻 How to Run
+1.  Clone the repository.
+2.  Open MATLAB and navigate to the project folder.
+3.  Run the script `main_autonomous_navigation.m`.
+    * This script will generate the map, plan the path, and automatically launch the Simulink simulation.
+4.  The final results comparison will be plotted automatically.
 
-## 🔗 Author
-      El Mehdi SAIDI
-Mechatronics Engineering  | Autonomous Systems Enthusiast
-www.linkedin.com/in/el-mehdi-morri-45a583334
+## 📂 Project Structure
+* `main_autonomous_navigation.m`: Main entry point (Environment setup + Planning + Execution).
+* `path_tracking_model.slx`: Simulink model containing the Vehicle Body, Controller, and Safety Logic.
