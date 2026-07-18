@@ -1,0 +1,30 @@
+Fichier de schéma de Thermoptim;schema;version=2.81		
+lang=fr	code=Univ	January 19, 2026 3:28:03 PM WET
+PanelWidth=2000	PanelHeight=1000
+Nombre_de_ Figs	6
+ProcessPoint	entree	n°=1	x=96	y=104	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	1	air	1
+outlet	source=true	multiPort=false	HXport=false	1	air	1
+Compression	compresseur	n°=2	x=304	y=120	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	1	air	1
+outlet	source=true	multiPort=false	HXport=false	2	air	1
+Combustion	chambre de combustion	n°=3	x=472	y=160	newsubst=true	nbPorts=4	flipped=false
+inlet	source=false	multiPort=false	HXport=false	2	air	1
+outlet	source=true	multiPort=false	HXport=false	3	gaz_brulés	1
+fuel	source=false	multiPort=false	HXport=false	combustible	gaz_de_Montoir	1
+hX	source=true	multiPort=false	HXport=true	hXname	red=0
+Expansion	turbine	n°=4	x=592	y=296	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	3	gaz_brulés	1
+outlet	source=true	multiPort=false	HXport=false	4	gaz_brulés	1
+ProcessPoint	sortie	n°=5	x=912	y=408	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	4	gaz_brulés	1
+outlet	source=true	multiPort=false	HXport=false	4	gaz_brulés	1
+ProcessPoint	combustible	n°=6	x=648	y=32	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	combustible	gaz_de_Montoir	1
+outlet	source=true	multiPort=false	HXport=false	combustible	gaz_de_Montoir	1
+Nombre_de_ Edges	5
+ProcessPoint	entree	outlet	Compression	compresseur	inlet
+Compression	compresseur	outlet	Combustion	chambre de combustion	inlet
+Combustion	chambre de combustion	outlet	Expansion	turbine	inlet
+Expansion	turbine	outlet	ProcessPoint	sortie	inlet
+ProcessPoint	combustible	outlet	Combustion	chambre de combustion	fuel

@@ -1,0 +1,38 @@
+Fichier de schéma de Thermoptim;schema;version=2.81		
+lang=en	code=Univ	January 25, 2026 7:24:25 AM WET
+PanelWidth=2000	PanelHeight=1000
+Nombre_de_ Figs	8
+ProcessPoint	comburant	n°=1	x=176	y=296	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	entree d'air	air	1
+outlet	source=true	multiPort=false	HXport=false	entree d'air	air	1
+Compression	compresseur	n°=2	x=368	y=288	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	entree d'air	air	1
+outlet	source=true	multiPort=false	HXport=false	2	air	1
+ProcessPoint	injection eau 	n°=4	x=400	y=112	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	injection eau	eau	0.1
+outlet	source=true	multiPort=false	HXport=false	injection eau	eau	0.1
+Mixer	melangeur	n°=6	x=528	y=296	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=true
+outlet	source=true	multiPort=false	HXport=false	null	null	1
+Combustion	combustion	n°=7	x=720	y=304	newsubst=true	nbPorts=4	flipped=false
+inlet	source=false	multiPort=false	HXport=false	2m	air	1
+outlet	source=true	multiPort=false	HXport=false	3	gaz_brulés	1
+fuel	source=false	multiPort=false	HXport=false	gaz naturel	gaz_de_Montoir	0.01
+hX	source=true	multiPort=false	HXport=true	hXname	red=0
+ProcessPoint	gas naturel	n°=8	x=648	y=128	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	gaz naturel	gaz_de_Montoir	0.01
+outlet	source=true	multiPort=false	HXport=false	gaz naturel	gaz_de_Montoir	0.01
+Expansion	detente	n°=9	x=936	y=296	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	3	gaz_brulés	1
+outlet	source=true	multiPort=false	HXport=false	4	gaz_brulés	1.1
+ProcessPoint	sortie	n°=10	x=1128	y=320	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	4	gaz_brulés	1.1
+outlet	source=true	multiPort=false	HXport=false	5	gaz_brulés	1.1
+Nombre_de_ Edges	7
+ProcessPoint	comburant	outlet	Compression	compresseur	inlet
+Compression	compresseur	outlet	Mixer	melangeur	inlet
+Mixer	melangeur	outlet	Combustion	combustion	inlet
+Combustion	combustion	outlet	Expansion	detente	inlet
+Expansion	detente	outlet	ProcessPoint	sortie	inlet
+ProcessPoint	injection eau 	outlet	Mixer	melangeur	inlet
+ProcessPoint	gas naturel	outlet	Combustion	combustion	fuel

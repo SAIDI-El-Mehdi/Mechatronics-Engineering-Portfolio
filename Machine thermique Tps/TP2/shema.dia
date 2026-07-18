@@ -1,0 +1,92 @@
+Fichier de schéma de Thermoptim;schema;version=2.81		
+lang=en	code=Univ	January 22, 2026 8:53:46 AM WET
+PanelWidth=2000	PanelHeight=1000
+Nombre_de_ Figs	19
+ProcessPoint	air ambiant 	n°=1	x=200	y=216	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	air ambient	air	0.967
+outlet	source=true	multiPort=false	HXport=false	air ambient	air	0.967
+Mixer	Admission	n°=2	x=336	y=320	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=true
+outlet	source=true	multiPort=false	HXport=false	null	null	1
+Combustion	combustion v=cte	n°=4	x=568	y=320	newsubst=true	nbPorts=4	flipped=false
+inlet	source=false	multiPort=false	HXport=false	2	admission diesel	1
+outlet	source=true	multiPort=false	HXport=false	3	prod diesel	1
+fuel	source=false	multiPort=false	HXport=false	combustile	C7,2H13,42 `carb	1
+hX	source=true	multiPort=false	HXport=true	hXname=refroidissement 1	red=255
+Compression	compression	n°=5	x=456	y=312	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	1	admission diesel	1
+outlet	source=true	multiPort=false	HXport=false	2	admission diesel	1
+Combustion	combustion p=cte	n°=6	x=720	y=320	newsubst=true	nbPorts=4	flipped=false
+inlet	source=false	multiPort=false	HXport=false	3	prod diesel	1
+outlet	source=true	multiPort=false	HXport=false	4	prod diesel 2	1
+fuel	source=false	multiPort=false	HXport=false	combustile 	C7,2H13,42 `carb	1
+hX	source=true	multiPort=false	HXport=true	hXname=refroidissement 2	red=255
+Combustion	combustion T=cte	n°=7	x=904	y=320	newsubst=true	nbPorts=4	flipped=false
+inlet	source=false	multiPort=false	HXport=false	4	prod diesel 2	1
+outlet	source=true	multiPort=false	HXport=false	5	prod diesel 3	1
+fuel	source=false	multiPort=false	HXport=false	combustile	C7,2H13,42 `carb	1
+hX	source=true	multiPort=false	HXport=true	hXname=refroidissement 3	red=255
+Expansion	detente	n°=8	x=904	y=488	newsubst=false	nbPorts=2	flipped=true
+inlet	source=false	multiPort=false	HXport=false	5	prod diesel 3	1
+outlet	source=true	multiPort=false	HXport=false	6	prod diesel 3	1
+Expansion	echapement	n°=9	x=792	y=488	newsubst=false	nbPorts=2	flipped=true
+inlet	source=false	multiPort=false	HXport=false	6	prod diesel 3	1
+outlet	source=true	multiPort=false	HXport=false	7	prod diesel 3	1
+Divider	echapement	n°=10	x=688	y=504	newsubst=false	nbPorts=2	flipped=true
+inlet	source=false	multiPort=false	HXport=false	null	null	1
+outlet	source=true	multiPort=true
+ProcessPoint	gaz  echapement 	n°=11	x=472	y=752	newsubst=false	nbPorts=2	flipped=true
+inlet	source=false	multiPort=false	HXport=false	gaz echapement 	prod diesel 3	1
+outlet	source=true	multiPort=false	HXport=false	gaz echapement 	prod diesel 3	1
+ProcessPoint	recirculation	n°=12	x=416	y=528	newsubst=false	nbPorts=2	flipped=true
+inlet	source=false	multiPort=false	HXport=false	7	prod diesel 3	1
+outlet	source=true	multiPort=false	HXport=false	7	prod diesel 3	0.033
+ProcessPoint	combustile 1	n°=13	x=632	y=176	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	combustile	C7,2H13,42 `carb	1
+outlet	source=true	multiPort=false	HXport=false	combustile	C7,2H13,42 `carb	1
+ProcessPoint	combustile 2	n°=14	x=800	y=176	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	combustile 	C7,2H13,42 `carb	1
+outlet	source=true	multiPort=false	HXport=false	combustile 	C7,2H13,42 `carb	1
+ProcessPoint	combustile 3	n°=15	x=1000	y=176	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	combustile	C7,2H13,42 `carb	1
+outlet	source=true	multiPort=false	HXport=false	combustile	C7,2H13,42 `carb	1
+ProcessPoint	entre refroidissement	n°=16	x=432	y=432	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	entre refroidissement	eau	2
+outlet	source=true	multiPort=false	HXport=false	entre refroidissement	eau	2
+Exchange	refroidissement 1	n°=17	x=592	y=432	newsubst=false	nbPorts=3	flipped=false
+inlet	source=false	multiPort=false	HXport=false	entre refroidissement	eau	2
+outlet	source=true	multiPort=false	HXport=false	refroi 1	eau	2
+hX	source=true	multiPort=false	HXport=true	hXname=refroidissement 1	red=0
+Exchange	refroidissement 2	n°=18	x=704	y=424	newsubst=false	nbPorts=3	flipped=false
+inlet	source=false	multiPort=false	HXport=false	refroi 1	eau	2
+outlet	source=true	multiPort=false	HXport=false	refroi 2	eau	2
+hX	source=true	multiPort=false	HXport=true	hXname=refroidissement 2	red=0
+Exchange	refroidissement 3	n°=19	x=832	y=424	newsubst=false	nbPorts=3	flipped=false
+inlet	source=false	multiPort=false	HXport=false	refroi 2	eau	2
+outlet	source=true	multiPort=false	HXport=false	sortie refroidissement	eau	1
+hX	source=true	multiPort=false	HXport=true	hXname=refroidissement 3	red=0
+ProcessPoint	sortie refroidissement 	n°=20	x=1016	y=432	newsubst=false	nbPorts=2	flipped=false
+inlet	source=false	multiPort=false	HXport=false	sortie refroidissement	eau	1
+outlet	source=true	multiPort=false	HXport=false	sortie refroidissement 	eau	1
+Nombre_de_ Edges	21
+ProcessPoint	air ambiant 	outlet	Mixer	Admission	inlet
+Mixer	Admission	outlet	Compression	compression	inlet
+Compression	compression	outlet	Combustion	combustion v=cte	inlet
+Combustion	combustion v=cte	outlet	Combustion	combustion p=cte	inlet
+Combustion	combustion p=cte	outlet	Combustion	combustion T=cte	inlet
+Combustion	combustion T=cte	outlet	Expansion	detente	inlet
+Expansion	detente	outlet	Expansion	echapement	inlet
+Expansion	echapement	outlet	Divider	echapement	inlet
+Divider	echapement	outlet	ProcessPoint	recirculation	inlet
+Divider	echapement	outlet	ProcessPoint	gaz  echapement 	inlet
+ProcessPoint	recirculation	outlet	Mixer	Admission	inlet
+ProcessPoint	combustile 1	outlet	Combustion	combustion v=cte	fuel
+ProcessPoint	combustile 2	outlet	Combustion	combustion p=cte	fuel
+ProcessPoint	combustile 3	outlet	Combustion	combustion T=cte	fuel
+ProcessPoint	entre refroidissement	outlet	Exchange	refroidissement 1	inlet
+Exchange	refroidissement 1	outlet	Exchange	refroidissement 2	inlet
+Exchange	refroidissement 2	outlet	Exchange	refroidissement 3	inlet
+Exchange	refroidissement 3	outlet	ProcessPoint	sortie refroidissement 	inlet
+Exchange	refroidissement 1	hX	Combustion	combustion v=cte	hX
+Exchange	refroidissement 2	hX	Combustion	combustion p=cte	hX
+Exchange	refroidissement 3	hX	Combustion	combustion T=cte	hX

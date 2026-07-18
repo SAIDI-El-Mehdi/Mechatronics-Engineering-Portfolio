@@ -1,0 +1,12 @@
+﻿# 
+# This file contains the parameter values of the Design Points successfully updated by Ansys Workbench.
+# Project name: TP1_Poutre_3D
+# Creation date: 04/30/2026 20:24:22
+# 
+# 04/30/2026 20:24:22
+# The parameters defined in the project are:
+# ,P1 - Force Z Component [N]
+# 
+# The following header line defines the name of the columns by reference to the parameters.
+Name,P1
+DP 0,-294.3

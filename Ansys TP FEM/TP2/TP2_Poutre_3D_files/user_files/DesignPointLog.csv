@@ -1,0 +1,12 @@
+﻿# 
+# This file contains the parameter values of the Design Points successfully updated by Ansys Workbench.
+# Project name: TP2_Poutre_3D
+# Creation date: 04/30/2026 20:30:37
+# 
+# 04/30/2026 20:30:37
+# The parameters defined in the project are:
+# ,P10 - Force X Component [N],P12 - Force Z Component [N],P11 - Force Y Component [N],P5 - Remote Displacement 2 X Component [m],P6 - Remote Displacement 2 Z Component [m],P7 - Remote Displacement X Component [m],P8 - Remote Displacement Y Component [m],P9 - Remote Displacement Z Component [m],P13 - SYS\Solid Assignment,P14 - SYS-1\Solid Assignment,P15 - Remote Displacement X Component [m],P16 - Remote Displacement Y Component [m],P17 - Remote Displacement Z Component [m],P18 - Remote Displacement 2 Z Component [m],P19 - Remote Displacement 2 X Component [m],P20 - Force X Component [N],P21 - Remote Displacement  Rotation Y   [degree]
+# 
+# The following header line defines the name of the columns by reference to the parameters.
+Name,P10,P12,P11,P5,P6,P7,P8,P9,P13,P14,P15,P16,P17,P18,P19,P20,P21
+DP 0,-5500,0,0,0,0,0,0,0,Acier_E210000,Acier_TP2_210000MPa,0,0,0,0,0,-5500,0
