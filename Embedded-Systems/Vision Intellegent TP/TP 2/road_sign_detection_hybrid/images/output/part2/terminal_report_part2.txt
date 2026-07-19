@@ -1,0 +1,72 @@
+TP3 PART 2 PARAMETER ANALYSIS REPORT
+====================================
+
+Input: "images/input"
+Output: "images/output/part2"
+sat=80
+area=300
+circ=0.82
+rdp=0.04
+hough=3
+
+Image: "images/input\\blue_direction.png"
+  raw contours       : 1
+  accepted by area   : 1
+  final detections   : 1
+  time               : 18.376 ms
+
+Image: "images/input\\no_entry.jpg"
+  raw contours       : 1
+  accepted by area   : 1
+  final detections   : 1
+  time               : 42.265 ms
+
+Image: "images/input\\red_prohibition.jpg"
+  raw contours       : 1
+  accepted by area   : 1
+  final detections   : 1
+  time               : 220.871 ms
+
+Image: "images/input\\road_scene_01.jpg"
+  raw contours       : 96
+  accepted by area   : 14
+  final detections   : 14
+  time               : 137.286 ms
+
+Image: "images/input\\road_scene_02.jpg"
+  raw contours       : 17
+  accepted by area   : 6
+  final detections   : 6
+  time               : 81.764 ms
+
+Image: "images/input\\speed_limit.png"
+  raw contours       : 1
+  accepted by area   : 1
+  final detections   : 1
+  time               : 18.095 ms
+
+Image: "images/input\\stop_sign.jpg"
+  raw contours       : 12
+  accepted by area   : 2
+  final detections   : 2
+  time               : 54.745 ms
+
+Image: "images/input\\warning_triangle.jpg"
+  raw contours       : 1
+  accepted by area   : 1
+  final detections   : 1
+  time               : 70.060 ms
+
+Image: "images/input\\yellow_warning.jpg"
+  raw contours       : 1
+  accepted by area   : 1
+  final detections   : 1
+  time               : 77.991 ms
+
+GLOBAL SUMMARY
+==============
+images=9
+total_raw_contours=131
+total_area_accepted=28
+total_final_detections=28
+total_time_ms=721.452

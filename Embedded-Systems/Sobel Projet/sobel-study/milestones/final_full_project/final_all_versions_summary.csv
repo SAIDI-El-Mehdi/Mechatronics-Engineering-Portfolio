@@ -1,0 +1,6 @@
+version,global_mean_ms,global_fps
+manual,1.621886,616.57
+opencv,1.996499,500.88
+manual_opt,0.582441,1716.91
+opencv_opt,0.575036,1739.02
+cuda_gpu,0.270144,3701.72

@@ -1,0 +1,56 @@
+==============================================
+TP7 - Frequency Response of a SISO System
+==============================================
+Physical parameters:
+m = 1.00 kg
+c = 2.00 N.s/m
+k = 10.00 N/m
+Matrix A:
+     0     1
+   -10    -2
+
+Matrix B:
+     0
+     1
+
+Matrix C:
+     1     0
+
+Matrix D:
+     0
+
+Transfer function G(s):
+
+G =
+ 
+        1
+  --------------
+  s^2 + 2 s + 10
+ 
+Continuous-time transfer function.
+<a href="matlab:disp(char('','       Numerator: {[0 0 1]} ','     Denominator: {[1 2.0000 10]} ','        Variable: ''s'' ','         IODelay: 0 ','      InputDelay: 0 ','     OutputDelay: 0 ','       InputName: {''''} ','       InputUnit: {''''} ','      InputGroup: [1×1 struct] ','      OutputName: {''''} ','      OutputUnit: {''''} ','     OutputGroup: [1×1 struct] ','           Notes: [0×1 string] ','        UserData: [] ','            Name: '''' ','              Ts: 0 ','        TimeUnit: ''seconds'' ','    SamplingGrid: [1×1 struct] ',' '))">Model Properties</a>
+Static gain G(0):
+    0.1000
+
+System poles:
+  -1.0000 + 3.0000i
+  -1.0000 - 3.0000i
+
+Frequency response results:
+Gain margin Gm:
+   Inf
+
+Phase margin Pm:
+   Inf
+
+Gain crossover frequency Wcg:
+   Inf
+
+Phase crossover frequency Wcp:
+   NaN
+
+Bandwidth:
+    4.5594
+
+Interpretation: The gain margin is infinite because no critical gain crossing is detected.
+Interpretation: The phase margin is not finite because the system has no 0 dB gain crossover.

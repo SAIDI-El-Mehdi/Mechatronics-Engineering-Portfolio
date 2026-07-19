@@ -1,0 +1,112 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity tb_controllerTraffic is
+end tb_controllerTraffic;
+
+architecture Behavioral of tb_controllerTraffic is
+
+    -- Component Declaration
+    component controllerTraffic is
+        Port (
+            clk     : in  STD_LOGIC;
+            reset   : in  STD_LOGIC;
+            Manual_pass_1 : in STD_LOGIC;
+            Manual_stop_1 : in STD_LOGIC;
+            Manual_fstop_1 : in STD_LOGIC;
+            Manual_pass_2 : in STD_LOGIC;
+            Manual_stop_2 : in STD_LOGIC;
+            Manual_fstop_2 : in STD_LOGIC;
+            SW_MODE : in std_logic_vector(3 downto 0);
+            LED_red_1    : out STD_LOGIC;
+            LED_yellow_1 : out STD_LOGIC;
+            LED_green_1  : out STD_LOGIC;
+            LED_red_2    : out STD_LOGIC;
+            LED_yellow_2 : out STD_LOGIC;
+            LED_green_2  : out STD_LOGIC;
+            LED_MODE     : out std_logic_vector(3 downto 0)
+        );
+    end component;
+
+    -- Signals for connection
+    signal clk     : STD_LOGIC := '0';
+    signal reset   : STD_LOGIC := '0';
+    signal Manual_pass_1, Manual_stop_1, Manual_fstop_1 : STD_LOGIC := '0';
+    signal Manual_pass_2, Manual_stop_2, Manual_fstop_2 : STD_LOGIC := '0';
+    signal SW_MODE : std_logic_vector(3 downto 0) := (others => '0');
+    signal LED_red_1, LED_yellow_1, LED_green_1 : STD_LOGIC;
+    signal LED_red_2, LED_yellow_2, LED_green_2 : STD_LOGIC;
+    signal LED_MODE : std_logic_vector(3 downto 0);
+
+    -- Clock period
+    constant clk_period : time := 10 ns;
+
+begin
+
+    -- Instantiate the Unit Under Test
+    uut: controllerTraffic
+        port map (
+            clk => clk,
+            reset => reset,
+            Manual_pass_1 => Manual_pass_1,
+            Manual_stop_1 => Manual_stop_1,
+            Manual_fstop_1 => Manual_fstop_1,
+            Manual_pass_2 => Manual_pass_2,
+            Manual_stop_2 => Manual_stop_2,
+            Manual_fstop_2 => Manual_fstop_2,
+            SW_MODE => SW_MODE,
+            LED_red_1 => LED_red_1,
+            LED_yellow_1 => LED_yellow_1,
+            LED_green_1 => LED_green_1,
+            LED_red_2 => LED_red_2,
+            LED_yellow_2 => LED_yellow_2,
+            LED_green_2 => LED_green_2,
+            LED_MODE => LED_MODE
+        );
+
+    -- Clock generation
+    clk_process :process
+    begin
+        clk <= '0';
+        wait for clk_period/2;
+        clk <= '1';
+        wait for clk_period/2;
+    end process;
+
+    -- Stimulus process
+    stim_proc: process
+    begin
+        -- Reset the system
+        reset <= '1';
+        wait for 20 ns;
+        reset <= '0';
+
+        -- Automatic Mode Test
+        SW_MODE <= "1100";  -- AUTO Mode
+        wait for 500 ns;
+
+        -- Manual Mode Test
+        SW_MODE <= "1010";  -- MANUAL Mode
+        Manual_pass_1 <= '1';
+        Manual_stop_2 <= '1';
+        wait for 100 ns;
+
+        Manual_pass_1 <= '0';
+        Manual_stop_2 <= '0';
+        Manual_fstop_1 <= '1';
+        Manual_fstop_2 <= '1';
+        wait for 100 ns;
+
+        Manual_fstop_1 <= '0';
+        Manual_fstop_2 <= '0';
+
+        -- Switch to STANDBY (no LED should light)
+        SW_MODE <= "0001";  -- STANDBY
+        wait for 200 ns;
+
+        -- End of simulation
+        wait;
+    end process;
+
+end Behavioral;

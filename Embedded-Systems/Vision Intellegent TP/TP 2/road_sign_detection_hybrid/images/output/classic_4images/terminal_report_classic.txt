@@ -1,0 +1,40 @@
+CLASSICAL OPENCV ROAD-SIGN DETECTION REPORT
+===========================================
+
+Input: "images/input_4images"
+Output: "images/output/classic_4images"
+
+Image: "images/input_4images\\image1.jpeg"
+[INFO] Classical candidates: 20
+  [ROI] bbox=(50,139,92,81) color=red pct=23% shape=rectangle category=Prohibition Sign circ=0.50 vertices=4 v_closest=4 Hough4[0=21,45=9,90=33,135=9,other=77,score=4]
+  [ROI] bbox=(51,17,133,95) color=red pct=27% shape=circle category=Red Sign (Unclassified) circ=0.90 vertices=8 v_closest=8 Hough4[0=51,45=58,90=119,135=80,other=277,score=4]
+[INFO] Hough Circles found: 37
+[INFO] Final detections: 2
+[INFO] Processing time: 112.565 ms
+
+Image: "images/input_4images\\image2.png"
+[INFO] Classical candidates: 1
+  [ROI] bbox=(12,12,200,200) color=blue pct=66% shape=triangle category=Blue Sign (Unclassified) circ=0.57 vertices=3 v_closest=3 Hough4[0=30,45=21,90=30,135=27,other=92,score=4]
+[INFO] Hough Circles found: 2
+[INFO] Final detections: 1
+[INFO] Processing time: 31.088 ms
+
+Image: "images/input_4images\\image3.jpeg"
+[INFO] Classical candidates: 21
+  [ROI] bbox=(147,226,44,32) color=blue pct=50% shape=polygon category=Blue Sign (Unclassified) circ=0.07 vertices=2 v_closest=3 Hough4[0=0,45=0,90=0,135=0,other=0,score=0]
+  [ROI] bbox=(72,153,67,52) color=yellow pct=49% shape=rectangle category=Caution Sign circ=0.01 vertices=4 v_closest=4 Hough4[0=0,45=3,90=4,135=4,other=19,score=2]
+  [ROI] bbox=(121,115,51,80) color=yellow pct=38% shape=polygon category=Yellow Sign (Unclassified) circ=0.01 vertices=2 v_closest=3 Hough4[0=16,45=4,90=0,135=13,other=53,score=3]
+  [ROI] bbox=(208,51,146,144) color=red pct=36% shape=circle category=Red Sign (Unclassified) circ=0.90 vertices=8 v_closest=8 Hough4[0=46,45=27,90=32,135=9,other=33,score=4]
+[INFO] Hough Circles found: 63
+[INFO] Final detections: 4
+[INFO] Processing time: 251.892 ms
+
+Image: "images/input_4images\\image4.jpeg"
+[INFO] Classical candidates: 29
+  [ROI] bbox=(552,762,48,27) color=yellow pct=39% shape=rectangle category=Caution Sign circ=0.01 vertices=4 v_closest=4 Hough4[0=0,45=0,90=0,135=0,other=0,score=0]
+  [ROI] bbox=(92,122,301,351) color=blue pct=71% shape=octagon category=Blue Sign (Unclassified) circ=0.31 vertices=8 v_closest=8 Hough4[0=214,45=101,90=145,135=158,other=547,score=4]
+[INFO] Hough Circles found: 172
+[INFO] Final detections: 2
+[INFO] Processing time: 671.696 ms
+
+TOTAL TIME: 1067.241 ms

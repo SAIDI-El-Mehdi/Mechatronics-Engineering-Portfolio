@@ -1,0 +1,36 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity modN_display is
+  generic(
+    N          : natural := 10;
+    ACTIVE_LOW : boolean := true
+  );
+  port(
+    clk  : in  std_logic;
+    rst  : in  std_logic;
+    SEG  : out std_logic_vector(6 downto 0)
+  );
+end modN_display;
+
+architecture rtl of modN_display is
+  signal q     : std_logic_vector(3 downto 0);
+  signal tc    : std_logic;
+begin
+  U_CNT : entity work.modN_counter
+    generic map (N => N)
+    port map (
+      clk => clk,
+      rst => rst,
+      q   => q,
+      tc  => tc
+    );
+
+  U_SEG : entity work.char7seg
+    generic map (ACTIVE_LOW => ACTIVE_LOW)
+    port map (
+      CODE => q,
+      SEG  => SEG
+    );
+end rtl;

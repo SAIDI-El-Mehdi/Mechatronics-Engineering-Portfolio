@@ -1,0 +1,46 @@
+# ============================================================
+# Test manuel 
+# ============================================================
+
+print("\n=== Test manuel : saisie des paramètres de charge ===")
+
+# --- Saisie des entrées ---
+T_bat_user = float(input("Température batterie T_bat (°C) : "))
+SOC_user   = float(input("État de charge SOC (%) : "))
+V_bat_user = float(input("Tension batterie V_bat (V) : "))
+I_chg_user = float(input("Courant de charge I_chg (A) : "))
+
+# Mise en forme
+X_user = np.array([[T_bat_user, SOC_user, V_bat_user, I_chg_user]])
+X_user_norm = scaler.transform(X_user)
+
+# ------------------------------------------------------------
+# Régression : temps restant
+# ------------------------------------------------------------
+t_knn = knn_reg.predict(X_user_norm)[0]
+t_rf  = rf_reg.predict(X_user_norm)[0]
+t_ann = ann_reg.predict(X_user_norm)[0]
+
+print("\nTemps restant estimé :")
+print(f"  KNN : {t_knn:.1f} minutes")
+print(f"  RF  : {t_rf:.1f} minutes")
+print(f"  ANN : {t_ann:.1f} minutes")
+
+# ------------------------------------------------------------
+# Classification : état du processus
+# ------------------------------------------------------------
+etat_knn = knn_clf.predict(X_user_norm)[0]
+etat_rf  = rf_clf.predict(X_user_norm)[0]
+etat_ann = ann_clf.predict(X_user_norm)[0]
+
+labels = {
+    0: "Charge terminée",
+    1: "Charge rapide",
+    2: "Charge lente",
+    3: "Défaut de charge"
+}
+
+print("\nÉtat du processus estimé :")
+print(f"  KNN : {labels[etat_knn]}")
+print(f"  RF  : {labels[etat_rf]}")
+print(f"  ANN : {labels[etat_ann]}")

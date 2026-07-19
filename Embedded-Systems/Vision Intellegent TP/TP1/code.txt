@@ -1,0 +1,67 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+// Adresse I2C typique 0x27 pour un écran LCD 16x2
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Déclaration des broches du capteur ultrason
+const int trig = 9;
+const int echo = 10;
+
+// Déclaration de la broche du bouton (compatible interruption)
+const int buttonPin = 2;
+
+// Variable partagée avec l'interruption, marquée comme volatile
+volatile bool freeze = false; 
+
+void setup() {
+  // Initialisation de l'écran LCD I2C
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0, 0);
+  lcd.print("Distance:");
+
+  // Configuration des broches du capteur
+  pinMode(trig, OUTPUT);
+  pinMode(echo, INPUT);
+
+  // Configuration du bouton avec la résistance de pull-up interne
+  pinMode(buttonPin, INPUT_PULLUP);
+  
+  // Attachement de l'interruption matérielle sur le front descendant (FALLING)
+  attachInterrupt(digitalPinToInterrupt(buttonPin), freezeDisplay, FALLING);
+}
+
+void loop() {
+  long distance = 0;
+
+  // Si l'affichage n'est pas figé par l'interruption, on effectue la mesure
+  if (!freeze) {
+    // Génération de l'impulsion de déclenchement (Trig)
+    digitalWrite(trig, LOW);
+    delayMicroseconds(2);
+    digitalWrite(trig, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trig, LOW);
+
+    // Mesure de la durée de l'impulsion de retour (Echo)
+    long duration = pulseIn(echo, HIGH);
+    
+    // Calcul de la distance en cm (Vitesse du son : 340 m/s soit 0.034 cm/µs)
+    distance = duration * 0.034 / 2;
+
+    // Mise à jour de l'affichage sur la deuxième ligne du LCD
+    lcd.setCursor(0, 1);
+    lcd.print("                "); // Efface proprement l'ancienne valeur
+    lcd.setCursor(0, 1);
+    lcd.print(distance);
+    lcd.print(" cm");
+  }
+  
+  delay(100); // Petite pause pour stabiliser l'affichage
+}
+
+// Fonction de l'interruption (ISR) : inverse l'état de la variable freeze
+void freezeDisplay() {
+  freeze = !freeze;
+}

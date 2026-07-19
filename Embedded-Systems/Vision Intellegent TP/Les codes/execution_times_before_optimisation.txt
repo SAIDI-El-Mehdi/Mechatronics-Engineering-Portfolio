@@ -1,0 +1,55 @@
+MESURE DES TEMPS D'EXECUTION DES FILTRES
+========================================
+
+Dossier d'entree : C:\image_filters_cpp\images
+Dossier de sortie : C:\image_filters_cpp\output
+
+DETAIL PAR IMAGE
+----------------
+
+Image : C:\image_filters_cpp\images\agriculture\feuille1.jpg
+  - prewitt  : temps d'execution = 3.761 ms
+  - sobel    : temps d'execution = 3.304 ms
+  - canny    : temps d'execution = 3.299 ms
+  - hough    : temps d'execution = 4.342 ms
+
+Image : C:\image_filters_cpp\images\agriculture\plante1.jpg
+  - prewitt  : temps d'execution = 3.548 ms
+  - sobel    : temps d'execution = 3.792 ms
+  - canny    : temps d'execution = 4.103 ms
+  - hough    : temps d'execution = 5.166 ms
+
+Image : C:\image_filters_cpp\images\agriculture\serre1.jpg
+  - prewitt  : temps d'execution = 3.337 ms
+  - sobel    : temps d'execution = 3.003 ms
+  - canny    : temps d'execution = 2.976 ms
+  - hough    : temps d'execution = 5.283 ms
+
+Image : C:\image_filters_cpp\images\automobile\piece1.jpg
+  - prewitt  : temps d'execution = 2.893 ms
+  - sobel    : temps d'execution = 2.559 ms
+  - canny    : temps d'execution = 2.449 ms
+  - hough    : temps d'execution = 5.473 ms
+
+Image : C:\image_filters_cpp\images\automobile\route1.jpg
+  - prewitt  : temps d'execution = 3.075 ms
+  - sobel    : temps d'execution = 3.288 ms
+  - canny    : temps d'execution = 2.866 ms
+  - hough    : temps d'execution = 4.193 ms
+
+Image : C:\image_filters_cpp\images\automobile\voiture1.jpg
+  - prewitt  : temps d'execution = 3.209 ms
+  - sobel    : temps d'execution = 3.343 ms
+  - canny    : temps d'execution = 3.465 ms
+  - hough    : temps d'execution = 5.838 ms
+
+RESUME COMPARATIF GLOBAL
+------------------------
+
+- canny    : total = 19.157 ms | moyenne = 3.193 ms | executions = 6
+- hough    : total = 30.295 ms | moyenne = 5.049 ms | executions = 6
+- prewitt  : total = 19.824 ms | moyenne = 3.304 ms | executions = 6
+- sobel    : total = 19.289 ms | moyenne = 3.215 ms | executions = 6
+
+Filtre le plus rapide : canny (moyenne = 3.193 ms)
+Filtre le plus lent   : hough (moyenne = 5.049 ms)

@@ -1,0 +1,7 @@
+Press any key to exit...
+QThreadStorage: entry 1 destroyed before end of thread 0x1bf2f5ac9c0
+QThreadStorage: entry 0 destroyed before end of thread 0x1bf2f5ac9c0
+
+real	0m4.496s
+user	0m0.031s
+sys	0m0.000s

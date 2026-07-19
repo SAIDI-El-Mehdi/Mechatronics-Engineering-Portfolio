@@ -1,0 +1,19 @@
+image,sat,area,circ,rdp,hough,color,color_pct,shape,circularity,vertices,v_closest,h0,h45,h90,h135,hother,hscore,category,x,y,w,h
+blue_direction.png,120,300,0.82,0.04,3,blue,70,unknown,0.258858,6,6,1,7,10,7,0,3,"Blue Sign (Unclassified)",38,24,164,164
+no_entry.jpg,120,300,0.82,0.04,3,red,62,rectangle,0.459636,4,4,32,67,40,116,283,4,"Prohibition Sign",33,34,345,346
+red_prohibition.jpg,120,300,0.82,0.04,3,red,35,unknown,0.656405,5,5,1500,1618,1639,1375,8018,4,"Red Sign (Unclassified)",131,109,739,740
+road_scene_01.jpg,120,300,0.82,0.04,3,blue,53,unknown,0,0,0,0,0,0,0,0,0,"Blue Sign (Unclassified)",35,410,173,70
+road_scene_01.jpg,120,300,0.82,0.04,3,blue,66,unknown,0,0,0,0,0,0,0,0,0,"Blue Sign (Unclassified)",190,387,52,14
+road_scene_01.jpg,120,300,0.82,0.04,3,blue,65,unknown,0,0,0,0,0,0,0,0,0,"Blue Sign (Unclassified)",109,386,75,21
+road_scene_01.jpg,120,300,0.82,0.04,3,blue,35,unknown,0.0085838,5,5,0,0,0,0,0,0,"Blue Sign (Unclassified)",237,132,60,62
+road_scene_01.jpg,120,300,0.82,0.04,3,blue,43,unknown,0,0,0,0,0,0,0,0,0,"Blue Sign (Unclassified)",202,120,28,51
+road_scene_01.jpg,120,300,0.82,0.04,3,blue,38,unknown,0,0,0,0,0,0,0,0,0,"Blue Sign (Unclassified)",141,117,54,92
+road_scene_02.jpg,120,300,0.82,0.04,3,yellow,51,polygon,0.016332,9,8,4,0,0,0,4,1,"Yellow Sign (Unclassified)",319,260,35,117
+road_scene_02.jpg,120,300,0.82,0.04,3,yellow,42,unknown,0.0899127,5,5,6,0,0,0,4,1,"Yellow Sign (Unclassified)",256,253,44,124
+road_scene_02.jpg,120,300,0.82,0.04,3,blue,55,unknown,0,0,0,0,0,0,0,0,0,"Blue Sign (Unclassified)",515,35,97,58
+road_scene_02.jpg,120,300,0.82,0.04,3,blue,64,rectangle,0.0205643,4,4,0,0,0,0,0,0,"Information / Direction Sign",41,0,229,28
+speed_limit.png,120,300,0.82,0.04,3,red,22,circle,0.897833,8,8,28,7,22,14,20,4,"Red Sign (Unclassified)",23,22,180,180
+stop_sign.jpg,120,300,0.82,0.04,3,yellow,35,unknown,0.00458061,6,6,0,0,0,0,0,0,"Yellow Sign (Unclassified)",276,159,53,28
+stop_sign.jpg,120,300,0.82,0.04,3,red,67,octagon,0.809938,6,6,66,14,41,56,16,4,"STOP Sign",117,38,164,163
+warning_triangle.jpg,120,300,0.82,0.04,3,red,23,triangle,0.5848,3,3,36,7,14,4,71,4,"Yield / Warning Sign",14,30,584,552
+yellow_warning.jpg,120,300,0.82,0.04,3,yellow,34,triangle,0.600931,3,3,33,34,57,38,161,4,"Warning Sign",14,21,584,512

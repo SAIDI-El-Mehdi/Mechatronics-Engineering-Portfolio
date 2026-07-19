@@ -1,0 +1,130 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity controllerTraffic is
+    Port (
+        clk     : in  STD_LOGIC;
+        reset   : in  STD_LOGIC;
+        LED_red_1    : out STD_LOGIC;
+        LED_yellow_1 : out STD_LOGIC;
+        LED_green_1  : out STD_LOGIC;
+        LED_red_2    : out STD_LOGIC;
+        LED_yellow_2 : out STD_LOGIC;
+        LED_green_2  : out STD_LOGIC
+    );
+end controllerTraffic;
+
+architecture Behavioral of controllerTraffic is
+
+    type state_type is (etape1, etape2, etape3, etape4, etape5, etape6);
+    signal state : state_type := etape1;
+
+    signal counter : integer := 0;
+    constant CLK_FREQ : integer := 50_000_000; -- 50 MHz
+    constant DELAY_3S : integer := 3 * CLK_FREQ;
+    constant DELAY_30S : integer := 30 * CLK_FREQ;
+
+begin
+
+    process(clk, reset)
+    begin
+        if reset = '1' then
+            state <= etape1;
+            counter <= 0;
+        elsif rising_edge(clk) then
+            case state is
+                when etape1 =>
+                    -- Green_1 = 1, Red_2 = 1
+                    LED_green_1  <= '1';
+                    LED_yellow_1 <= '0';
+                    LED_red_1    <= '0';
+                    LED_green_2  <= '0';
+                    LED_yellow_2 <= '0';
+                    LED_red_2    <= '1';
+                    if counter < DELAY_30S then
+                        counter <= counter + 1;
+                    else
+                        counter <= 0;
+                        state <= etape2;
+                    end if;
+
+                when etape2 =>
+                    -- Yellow_1 = 1, Red_2 = 1
+                    LED_green_1  <= '0';
+                    LED_yellow_1 <= '1';
+                    LED_red_1    <= '0';
+                    LED_green_2  <= '0';
+                    LED_yellow_2 <= '0';
+                    LED_red_2    <= '1';
+                    if counter < DELAY_3S then
+                        counter <= counter + 1;
+                    else
+                        counter <= 0;
+                        state <= etape3;
+                    end if;
+
+                when etape3 =>
+                    -- Red_1 = 1, Green_2 = 1
+                    LED_green_1  <= '0';
+                    LED_yellow_1 <= '0';
+                    LED_red_1    <= '1';
+                    LED_green_2  <= '1';
+                    LED_yellow_2 <= '0';
+                    LED_red_2    <= '0';
+                    if counter < DELAY_30S then
+                        counter <= counter + 1;
+                    else
+                        counter <= 0;
+                        state <= etape4;
+                    end if;
+
+                when etape4 =>
+                    -- Red_1 = 1, Yellow_2 = 1
+                    LED_green_1  <= '0';
+                    LED_yellow_1 <= '0';
+                    LED_red_1    <= '1';
+                    LED_green_2  <= '0';
+                    LED_yellow_2 <= '1';
+                    LED_red_2    <= '0';
+                    if counter < DELAY_3S then
+                        counter <= counter + 1;
+                    else
+                        counter <= 0;
+                        state <= etape5;
+                    end if;
+
+                when etape5 =>
+                    -- Green_1 = 1, Red_2 = 1
+                    LED_green_1  <= '1';
+                    LED_yellow_1 <= '0';
+                    LED_red_1    <= '0';
+                    LED_green_2  <= '0';
+                    LED_yellow_2 <= '0';
+                    LED_red_2    <= '1';
+                    if counter < DELAY_30S then
+                        counter <= counter + 1;
+                    else
+                        counter <= 0;
+                        state <= etape6;
+                    end if;
+
+                when etape6 =>
+                    -- Yellow_1 = 1, Red_2 = 1
+                    LED_green_1  <= '0';
+                    LED_yellow_1 <= '1';
+                    LED_red_1    <= '0';
+                    LED_green_2  <= '0';
+                    LED_yellow_2 <= '0';
+                    LED_red_2    <= '1';
+                    if counter < DELAY_3S then
+                        counter <= counter + 1;
+                    else
+                        counter <= 0;
+                        state <= etape1;
+                    end if;
+            end case;
+        end if;
+    end process;
+
+end Behavioral;

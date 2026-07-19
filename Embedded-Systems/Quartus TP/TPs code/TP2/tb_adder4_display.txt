@@ -1,0 +1,38 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity tb_adder4_display is
+end tb_adder4_display;
+
+architecture sim of tb_adder4_display is
+  signal A,B   : std_logic_vector(3 downto 0);
+  signal RST   : std_logic := '0';
+  signal LED_S : std_logic_vector(4 downto 0);
+  signal SEG3,SEG2,SEG1,SEG0 : std_logic_vector(6 downto 0);
+begin
+  UUT : entity work.adder4_display
+    generic map (ACTIVE_LOW => true)
+    port map (
+      SW_A  => A,
+      SW_B  => B,
+      RST   => RST,
+      LED_S => LED_S,
+      SEG3  => SEG3,
+      SEG2  => SEG2,
+      SEG1  => SEG1,
+      SEG0  => SEG0
+    );
+
+  stim : process
+  begin
+    for a_i in 0 to 5 loop
+      for b_i in 0 to 5 loop
+        A <= std_logic_vector(to_unsigned(a_i, 4));
+        B <= std_logic_vector(to_unsigned(b_i, 4));
+        wait for 20 ns;
+      end loop;
+    end loop;
+    wait;
+  end process;
+end sim;

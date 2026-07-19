@@ -1,0 +1,24 @@
+YOLO ROAD-SIGN DETECTION REPORT
+================================
+
+Model: python_yolo\models\best.pt
+Input: images\input
+Output: images\output\yolo
+Confidence threshold: 0.25
+
+Image: images\input\image1.jpeg
+  Inference time: 286.199 ms
+  Total detections: 0
+
+Image: images\input\image2.png
+  Inference time: 228.131 ms
+  Total detections: 0
+
+Image: images\input\image3.jpeg
+  Inference time: 182.115 ms
+  Total detections: 0
+
+Image: images\input\image4.jpeg
+  Inference time: 186.669 ms
+  Total detections: 0
+

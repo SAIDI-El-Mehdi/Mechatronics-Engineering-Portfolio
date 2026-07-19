@@ -1,0 +1,67 @@
+==============================================
+TP6 - LQR Control for a SISO System
+==============================================
+Physical parameters:
+m = 1.00 kg
+c = 2.00 N.s/m
+k = 10.00 N/m
+Matrix A:
+     0     1
+   -10    -2
+
+Matrix B:
+     0
+     1
+
+Matrix C:
+     1     0
+
+Matrix D:
+     0
+
+Open-loop poles:
+  -1.0000 + 3.0000i
+  -1.0000 - 3.0000i
+
+Controllability matrix:
+     0     1
+     1    -2
+
+Rank of controllability matrix = 2
+LQR weighting matrix Q:
+   100     0
+     0     1
+
+LQR weighting matrix R:
+     1
+
+LQR gain K_lqr:
+    4.1421    1.6448
+
+LQR closed-loop poles:
+  -1.8224 + 3.2895i
+  -1.8224 - 3.2895i
+
+LQR closed-loop matrix Acl_lqr:
+         0    1.0000
+  -14.1421   -3.6448
+
+LQR precompensation gain Nbar_lqr:
+   14.1421
+
+----------------------------------------------
+Pole placement comparison
+----------------------------------------------
+Desired pole placement poles:
+    -4    -5
+
+Pole placement gain K_pp:
+   10.0000    7.0000
+
+Pole placement closed-loop poles:
+   -4.0000
+   -5.0000
+
+Pole placement precompensation gain Nbar_pp:
+   20.0000
+

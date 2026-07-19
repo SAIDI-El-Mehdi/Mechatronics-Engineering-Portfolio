@@ -1,0 +1,42 @@
+TP3 PART 2 PARAMETER ANALYSIS REPORT
+====================================
+
+Input: "images/input_4images"
+Output: "images/output/part2_4images"
+sat=80
+area=300
+circ=0.82
+rdp=0.04
+hough=3
+
+Image: "images/input_4images\\image1.jpeg"
+  raw contours       : 18
+  accepted by area   : 2
+  final detections   : 2
+  time               : 33.446 ms
+
+Image: "images/input_4images\\image2.png"
+  raw contours       : 1
+  accepted by area   : 1
+  final detections   : 1
+  time               : 20.651 ms
+
+Image: "images/input_4images\\image3.jpeg"
+  raw contours       : 21
+  accepted by area   : 4
+  final detections   : 4
+  time               : 69.771 ms
+
+Image: "images/input_4images\\image4.jpeg"
+  raw contours       : 30
+  accepted by area   : 2
+  final detections   : 2
+  time               : 221.683 ms
+
+GLOBAL SUMMARY
+==============
+images=4
+total_raw_contours=70
+total_area_accepted=9
+total_final_detections=9
+total_time_ms=345.551

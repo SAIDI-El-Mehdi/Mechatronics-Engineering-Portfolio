@@ -1,0 +1,40 @@
+==============================================
+TP2 - Controllability and Observability of a SISO System
+==============================================
+Physical parameters:
+m = 1.00 kg
+c = 2.00 N.s/m
+k = 10.00 N/m
+Matrix A:
+     0     1
+   -10    -2
+
+Matrix B:
+     0
+     1
+
+Matrix C:
+     1     0
+
+Matrix D:
+     0
+
+Number of states = 2
+----------------------------------------------
+Controllability analysis
+----------------------------------------------
+Controllability matrix Co:
+     0     1
+     1    -2
+
+Rank of controllability matrix = 2
+The system is controllable.
+----------------------------------------------
+Observability analysis
+----------------------------------------------
+Observability matrix Ob:
+     1     0
+     0     1
+
+Rank of observability matrix = 2
+The system is observable.

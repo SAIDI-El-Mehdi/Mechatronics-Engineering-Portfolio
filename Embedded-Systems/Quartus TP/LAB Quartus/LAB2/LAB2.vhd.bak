@@ -1,0 +1,82 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+-- Entity for a 4-bit adder with 7-segment and LED display
+entity LAB2 is
+    Port (
+        SW     : in STD_LOGIC_VECTOR (7 downto 0);  -- Two 4-bit numbers (SW[7:4] and SW[3:0])
+        KEY    : in STD_LOGIC;                      -- Reset button
+        LEDR   : out STD_LOGIC_VECTOR (3 downto 0); -- Binary display of result
+        HEX0   : out STD_LOGIC_VECTOR (6 downto 0); -- Units digit (7-segment display)
+        HEX1   : out STD_LOGIC_VECTOR (6 downto 0)  -- Tens digit (7-segment display)
+    );
+end LAB2;
+
+architecture Adder_4bit of LAB2 is
+
+	 -- Internal signals
+    signal A, B : STD_LOGIC_VECTOR (3 downto 0);
+    signal SUM  : STD_LOGIC_VECTOR (4 downto 0); -- 5-bit to avoid overflow
+    signal UNITS_DIGIT, TENS_DIGIT : STD_LOGIC_VECTOR (3 downto 0);
+    
+    -- Function to convert BCD to 7-segment display encoding
+    function BCD_to_7seg(BCD : STD_LOGIC_VECTOR (3 downto 0)) return STD_LOGIC_VECTOR is
+    begin
+        case BCD is
+            when "0000" => return "1000000"; -- 0
+            when "0001" => return "1111001"; -- 1
+            when "0010" => return "0100100"; -- 2
+            when "0011" => return "0110000"; -- 3
+            when "0100" => return "0011001"; -- 4
+            when "0101" => return "0010010"; -- 5
+            when "0110" => return "0000010"; -- 6
+            when "0111" => return "1111000"; -- 7
+            when "1000" => return "0000000"; -- 8
+            when "1001" => return "0010000"; -- 9
+            when others => return "1111111"; -- Blank display
+        end case;
+    end function;
+
+begin
+    -- Assign input switches to A and B
+    A <= SW(7 downto 4);
+    B <= SW(3 downto 0);
+
+    -- Compute the sum with reset functionality
+    process(KEY)
+    begin
+        if KEY = '0' then
+            SUM <= "00000";  -- Reset
+        else
+            SUM <= ('0' & A) + ('0' & B); -- 5-bit addition
+        end if;
+    end process;
+
+    -- Convert SUM to BCD digits (tens digit and units digit)
+    process(SUM)
+    begin
+        if SUM > "11100" then                        -- Result > 29
+            TENS_DIGIT  <= "0011";                   -- Tens = 3
+            UNITS_DIGIT <= SUM(3 downto 0) - "1010"; -- Convert to BCD units digit
+        elsif SUM > "01010" then                     -- Result > 19
+            TENS_DIGIT  <= "0010";                   -- Tens = 2
+            UNITS_DIGIT <= SUM(3 downto 0) - "1010"; 
+        elsif SUM > "01001" then                        -- Result > 9
+            TENS_DIGIT  <= "0001";                   -- Tens = 1
+            UNITS_DIGIT <= SUM(3 downto 0) - "1010"; 
+        else
+            TENS_DIGIT  <= "0000";                   -- Tens = 0
+            UNITS_DIGIT <= SUM(3 downto 0);
+        end if;
+    end process;
+
+    -- Display BCD digits on 7-segment displays
+    HEX0 <= BCD_to_7seg(UNITS_DIGIT); -- Units digit
+    HEX1 <= BCD_to_7seg(TENS_DIGIT);  -- Tens digit
+
+    -- Show binary result on red LEDs
+    LEDR <= SUM(3 downto 0);
+
+end Adder_4bit;

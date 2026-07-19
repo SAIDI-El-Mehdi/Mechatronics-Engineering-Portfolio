@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "D:/S4 MTA/1- Vision intelligente & Temps reel/1- Vision intelligente/TP/TP 5/tp3_panneaux/tp3.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:/S4 MTA/1- Vision intelligente & Temps reel/1- Vision intelligente/TP/TP 2/road_sign_detection_hybrid/python_yolo/detect_yolo.py", line 19, in <module>
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+real	0m0.221s
+user	0m0.000s
+sys	0m0.030s

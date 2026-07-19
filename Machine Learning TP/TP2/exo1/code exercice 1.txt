@@ -1,0 +1,136 @@
+# =========================================================
+# TP2 - Exercice 1 : Données moteur (Random Forest)
+#   1) Régression : estimer Tmot à partir de (Irms, Tamb)
+#   2) Classification : prédire Etat (Normal/Anormal) à partir de (Irms, THD)
+# =========================================================
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
+from sklearn.metrics import mean_squared_error, r2_score, accuracy_score, confusion_matrix, ConfusionMatrixDisplay, classification_report
+
+# ----------------------------
+# 0) Paramètres
+# ----------------------------
+CSV_PATH = "moteur_data.csv"   # <-- change selon ton fichier
+TEST_SIZE = 0.25
+RANDOM_STATE_REG = 1
+RANDOM_STATE_CLF = 2
+
+# ----------------------------
+# 1) Charger les données
+# ----------------------------
+data = pd.read_csv(CSV_PATH)
+
+# >>> Mets ici les vrais noms de colonnes si besoin <<<
+# Exemple attendu : Irms, Tamb, Tmot, THD, Etat
+Irms = data["Irms"].values
+Tamb = data["Tamb"].values
+Tmot = data["Tmot"].values
+THD  = data["THD"].values
+Etat = data["Etat"].values     # 0/1 ou "Normal"/"Anormal"
+
+# Si Etat est texte, on le convertit en 0/1
+if Etat.dtype == object:
+    Etat = pd.Series(Etat).map({"Normal": 0, "Anormal": 1}).values
+
+print("Aperçu données :")
+print(data.head())
+
+# =========================================================
+# PARTIE A — Régression : Tmot = f(Irms, Tamb)
+# =========================================================
+X_reg = np.column_stack((Irms, Tamb))
+y_reg = Tmot
+
+# Normalisation
+scaler_reg = MinMaxScaler()
+X_reg_n = scaler_reg.fit_transform(X_reg)
+
+X_train_r, X_test_r, y_train_r, y_test_r = train_test_split(
+    X_reg_n, y_reg, test_size=TEST_SIZE, random_state=RANDOM_STATE_REG
+)
+
+rf_reg = RandomForestRegressor(
+    n_estimators=200,
+    random_state=RANDOM_STATE_REG
+)
+rf_reg.fit(X_train_r, y_train_r)
+y_pred_r = rf_reg.predict(X_test_r)
+
+rmse = float(np.sqrt(mean_squared_error(y_test_r, y_pred_r)))
+r2   = float(r2_score(y_test_r, y_pred_r))
+
+print("\n=== Régression (Random Forest) ===")
+print(f"RMSE = {rmse:.4f}")
+print(f"R^2  = {r2:.4f}")
+
+# Graph 1 : EDA (Irms vs Tmot)
+plt.figure()
+plt.scatter(Irms, Tmot)
+plt.xlabel("Irms (A)")
+plt.ylabel("Tmot (°C)")
+plt.title("EDA : Irms vs Tmot")
+plt.grid(True)
+plt.show()
+
+# Graph 2 : Réel vs Estimé
+plt.figure()
+plt.scatter(y_test_r, y_pred_r)
+mn = min(y_reg.min(), y_pred_r.min())
+mx = max(y_reg.max(), y_pred_r.max())
+plt.plot([mn, mx], [mn, mx], "r--")
+plt.xlabel("Tmot réelle (°C)")
+plt.ylabel("Tmot estimée (°C)")
+plt.title("Régression RF : réel vs estimé")
+plt.grid(True)
+plt.show()
+
+# =========================================================
+# PARTIE B — Classification : Etat = f(Irms, THD)
+# =========================================================
+X_clf = np.column_stack((Irms, THD))
+y_clf = Etat
+
+scaler_clf = MinMaxScaler()
+X_clf_n = scaler_clf.fit_transform(X_clf)
+
+X_train_c, X_test_c, y_train_c, y_test_c = train_test_split(
+    X_clf_n, y_clf, test_size=TEST_SIZE, random_state=RANDOM_STATE_CLF, stratify=y_clf
+)
+
+rf_clf = RandomForestClassifier(
+    n_estimators=200,
+    random_state=RANDOM_STATE_CLF
+)
+rf_clf.fit(X_train_c, y_train_c)
+y_pred_c = rf_clf.predict(X_test_c)
+
+acc = float(accuracy_score(y_test_c, y_pred_c))
+print("\n=== Classification (Random Forest) ===")
+print(f"Accuracy = {acc:.4f}")
+print("\nRapport de classification :")
+print(classification_report(y_test_c, y_pred_c, target_names=["Normal", "Anormal"]))
+
+# Graph 3 : Nuage de points (Irms vs THD) par classe
+plt.figure()
+plt.scatter(Irms[y_clf == 0], THD[y_clf == 0], label="Normal")
+plt.scatter(Irms[y_clf == 1], THD[y_clf == 1], label="Anormal")
+plt.xlabel("Irms (A)")
+plt.ylabel("THD (%)")
+plt.title("Classes : Normal vs Anormal (Irms-THD)")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# Graph 4 : Matrice de confusion
+cm = confusion_matrix(y_test_c, y_pred_c)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Normal", "Anormal"])
+disp.plot()
+plt.title("Matrice de confusion — RF (Ex1)")
+plt.grid(False)
+plt.show()

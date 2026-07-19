@@ -1,0 +1,46 @@
+YOLO ROAD-SIGN DETECTION REPORT
+================================
+
+Model: python_yolo\models\best.pt
+Input: images\input
+Output: images\output\yolo_low_conf
+Confidence threshold: 0.1
+
+Image: images\input\blue_direction.png
+  Inference time: 249.496 ms
+  Total detections: 0
+
+Image: images\input\no_entry.jpg
+  Inference time: 144.541 ms
+  Total detections: 0
+
+Image: images\input\red_prohibition.jpg
+  Inference time: 150.129 ms
+  - class=other, conf=0.151, bbox=(164,608,298,746)
+  Total detections: 1
+
+Image: images\input\road_scene_01.jpg
+  Inference time: 125.628 ms
+  Total detections: 0
+
+Image: images\input\road_scene_02.jpg
+  Inference time: 109.682 ms
+  Total detections: 0
+
+Image: images\input\speed_limit.png
+  Inference time: 146.264 ms
+  Total detections: 0
+
+Image: images\input\stop_sign.jpg
+  Inference time: 149.008 ms
+  Total detections: 0
+
+Image: images\input\warning_triangle.jpg
+  Inference time: 152.163 ms
+  - class=other, conf=0.336, bbox=(274,450,338,517)
+  Total detections: 1
+
+Image: images\input\yellow_warning.jpg
+  Inference time: 158.635 ms
+  Total detections: 0
+

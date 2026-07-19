@@ -1,0 +1,89 @@
+CLASSICAL OPENCV ROAD-SIGN DETECTION REPORT
+===========================================
+
+Input: "images/input"
+Output: "images/output/classic"
+
+Image: "images/input\\blue_direction.png"
+[INFO] Classical candidates: 1
+  [ROI] bbox=(37,23,166,166) color=blue pct=69% shape=circle category=Blue Sign (Unclassified) circ=0.91 vertices=8 v_closest=8 Hough4[0=5,45=4,90=14,135=7,other=0,score=4]
+[INFO] Hough Circles found: 1
+[INFO] Final detections: 1
+[INFO] Processing time: 26.686 ms
+
+Image: "images/input\\no_entry.jpg"
+[INFO] Classical candidates: 1
+  [ROI] bbox=(32,34,346,346) color=red pct=63% shape=circle category=Red Sign (Unclassified) circ=0.90 vertices=8 v_closest=8 Hough4[0=34,45=65,90=38,135=110,other=297,score=4]
+[INFO] Hough Circles found: 5
+[INFO] Final detections: 1
+[INFO] Processing time: 61.917 ms
+
+Image: "images/input\\red_prohibition.jpg"
+[INFO] Classical candidates: 1
+  [ROI] bbox=(130,108,740,741) color=red pct=35% shape=circle category=Red Sign (Unclassified) circ=0.90 vertices=8 v_closest=8 Hough4[0=1513,45=1640,90=1618,135=1360,other=8066,score=4]
+[INFO] Hough Circles found: 2
+[INFO] Final detections: 1
+[INFO] Processing time: 273.299 ms
+
+Image: "images/input\\road_scene_01.jpg"
+[INFO] Classical candidates: 96
+  [ROI] bbox=(187,384,396,96) color=blue pct=49% shape=polygon category=Blue Sign (Unclassified) circ=0.00 vertices=2 v_closest=3 Hough4[0=0,45=0,90=171,135=15,other=204,score=2]
+  [ROI] bbox=(31,381,277,99) color=blue pct=72% shape=polygon category=Blue Sign (Unclassified) circ=0.05 vertices=2 v_closest=3 Hough4[0=0,45=0,90=21,135=22,other=25,score=2]
+  [ROI] bbox=(589,377,51,26) color=yellow pct=66% shape=polygon category=Yellow Sign (Unclassified) circ=0.00 vertices=2 v_closest=3 Hough4[0=0,45=0,90=0,135=0,other=1,score=0]
+  [ROI] bbox=(419,325,139,61) color=yellow pct=46% shape=polygon category=Yellow Sign (Unclassified) circ=0.00 vertices=2 v_closest=3 Hough4[0=29,45=167,90=244,135=174,other=535,score=4]
+  [ROI] bbox=(141,308,273,65) color=blue pct=28% shape=polygon category=Blue Sign (Unclassified) circ=0.00 vertices=2 v_closest=3 Hough4[0=0,45=0,90=157,135=0,other=145,score=1]
+  [ROI] bbox=(425,292,36,39) color=yellow pct=34% shape=polygon category=Yellow Sign (Unclassified) circ=0.02 vertices=5 v_closest=5 Hough4[0=0,45=1,90=0,135=0,other=0,score=0]
+  [ROI] bbox=(334,187,24,29) color=blue pct=56% shape=unknown category=Blue Sign (Unclassified) circ=0.00 vertices=0 v_closest=3 Hough4[0=0,45=0,90=0,135=0,other=0,score=0]
+  [ROI] bbox=(198,180,37,33) color=yellow pct=53% shape=polygon category=Yellow Sign (Unclassified) circ=0.02 vertices=5 v_closest=5 Hough4[0=0,45=0,90=0,135=0,other=0,score=0]
+  [ROI] bbox=(237,131,60,65) color=blue pct=37% shape=polygon category=Blue Sign (Unclassified) circ=0.01 vertices=5 v_closest=5 Hough4[0=0,45=0,90=0,135=0,other=0,score=0]
+  [ROI] bbox=(199,119,31,53) color=blue pct=50% shape=unknown category=Blue Sign (Unclassified) circ=0.00 vertices=0 v_closest=3 Hough4[0=0,45=0,90=0,135=0,other=0,score=0]
+  [ROI] bbox=(141,116,54,93) color=blue pct=43% shape=unknown category=Blue Sign (Unclassified) circ=0.00 vertices=0 v_closest=3 Hough4[0=0,45=0,90=0,135=0,other=0,score=0]
+  [ROI] bbox=(539,100,101,64) color=blue pct=34% shape=octagon category=Blue Sign (Unclassified) circ=0.06 vertices=7 v_closest=6 Hough4[0=0,45=8,90=8,135=1,other=2,score=2]
+  [ROI] bbox=(503,40,73,41) color=blue pct=35% shape=polygon category=Blue Sign (Unclassified) circ=0.01 vertices=6 v_closest=6 Hough4[0=0,45=0,90=0,135=0,other=0,score=0]
+  [ROI] bbox=(318,0,164,50) color=blue pct=47% shape=polygon category=Blue Sign (Unclassified) circ=0.01 vertices=6 v_closest=6 Hough4[0=0,45=0,90=97,135=3,other=43,score=1]
+[INFO] Hough Circles found: 182
+[INFO] Final detections: 14
+[INFO] Processing time: 784.175 ms
+
+Image: "images/input\\road_scene_02.jpg"
+[INFO] Classical candidates: 17
+  [ROI] bbox=(316,233,38,144) color=yellow pct=44% shape=octagon category=Yellow Sign (Unclassified) circ=0.02 vertices=9 v_closest=8 Hough4[0=6,45=0,90=0,135=0,other=4,score=1]
+  [ROI] bbox=(256,227,49,150) color=yellow pct=35% shape=polygon category=Yellow Sign (Unclassified) circ=0.04 vertices=6 v_closest=6 Hough4[0=7,45=0,90=0,135=0,other=5,score=1]
+  [ROI] bbox=(482,175,47,15) color=blue pct=63% shape=unknown category=Blue Sign (Unclassified) circ=0.00 vertices=0 v_closest=3 Hough4[0=0,45=0,90=0,135=0,other=0,score=0]
+  [ROI] bbox=(479,30,133,105) color=blue pct=53% shape=unknown category=Blue Sign (Unclassified) circ=0.00 vertices=0 v_closest=3 Hough4[0=0,45=0,90=0,135=0,other=0,score=0]
+  [ROI] bbox=(0,2,40,34) color=blue pct=56% shape=unknown category=Blue Sign (Unclassified) circ=0.00 vertices=0 v_closest=3 Hough4[0=0,45=0,90=0,135=0,other=0,score=0]
+  [ROI] bbox=(36,0,330,52) color=blue pct=70% shape=polygon category=Blue Sign (Unclassified) circ=0.02 vertices=2 v_closest=3 Hough4[0=0,45=0,90=0,135=0,other=1,score=0]
+[INFO] Hough Circles found: 4
+[INFO] Final detections: 6
+[INFO] Processing time: 129.162 ms
+
+Image: "images/input\\speed_limit.png"
+[INFO] Classical candidates: 1
+  [ROI] bbox=(23,22,181,181) color=red pct=22% shape=circle category=Red Sign (Unclassified) circ=0.91 vertices=8 v_closest=8 Hough4[0=30,45=7,90=23,135=14,other=21,score=4]
+[INFO] Hough Circles found: 7
+[INFO] Final detections: 1
+[INFO] Processing time: 24.718 ms
+
+Image: "images/input\\stop_sign.jpg"
+[INFO] Classical candidates: 12
+  [ROI] bbox=(263,144,78,48) color=yellow pct=31% shape=octagon category=Yellow Sign (Unclassified) circ=0.11 vertices=8 v_closest=8 Hough4[0=0,45=3,90=6,135=0,other=19,score=1]
+  [ROI] bbox=(117,37,164,165) color=red pct=68% shape=octagon category=STOP Sign circ=0.81 vertices=6 v_closest=6 Hough4[0=67,45=16,90=47,135=63,other=14,score=4]
+[INFO] Hough Circles found: 81
+[INFO] Final detections: 2
+[INFO] Processing time: 240.576 ms
+
+Image: "images/input\\warning_triangle.jpg"
+[INFO] Classical candidates: 1
+  [ROI] bbox=(14,29,584,554) color=red pct=23% shape=triangle category=Yield / Warning Sign circ=0.67 vertices=3 v_closest=3 Hough4[0=38,45=8,90=27,135=6,other=68,score=4]
+[INFO] Hough Circles found: 6
+[INFO] Final detections: 1
+[INFO] Processing time: 97.965 ms
+
+Image: "images/input\\yellow_warning.jpg"
+[INFO] Classical candidates: 1
+  [ROI] bbox=(13,21,585,512) color=yellow pct=34% shape=triangle category=Warning Sign circ=0.60 vertices=3 v_closest=3 Hough4[0=33,45=35,90=56,135=33,other=157,score=4]
+[INFO] Hough Circles found: 6
+[INFO] Final detections: 1
+[INFO] Processing time: 101.183 ms
+
+TOTAL TIME: 1739.681 ms

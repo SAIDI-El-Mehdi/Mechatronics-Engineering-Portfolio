@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity adder4 is
+  port(
+    A   : in  std_logic_vector(3 downto 0);
+    B   : in  std_logic_vector(3 downto 0);
+    SUM : out std_logic_vector(4 downto 0)  -- 0..30
+  );
+end adder4;
+
+architecture rtl of adder4 is
+begin
+  SUM <= std_logic_vector(unsigned(A) + unsigned(B));
+end rtl;

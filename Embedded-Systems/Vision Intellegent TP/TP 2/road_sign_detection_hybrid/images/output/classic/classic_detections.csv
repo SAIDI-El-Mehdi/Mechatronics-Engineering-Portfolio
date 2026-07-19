@@ -1,0 +1,29 @@
+image,source,color,color_pct,shape,circularity,vertices,v_closest,category,validated,x,y,w,h,h0,h45,h90,h135,hother,hscore
+blue_direction.png,Classical,blue,69,circle,0.908,8,8,"Blue Sign (Unclassified)",true,37,23,166,166,5,4,14,7,0,4
+no_entry.jpg,Classical,red,63,circle,0.903,8,8,"Red Sign (Unclassified)",true,32,34,346,346,34,65,38,110,297,4
+red_prohibition.jpg,Classical,red,35,circle,0.901,8,8,"Red Sign (Unclassified)",false,130,108,740,741,1513,1640,1618,1360,8066,4
+road_scene_01.jpg,Classical,blue,49,polygon,0.003,2,3,"Blue Sign (Unclassified)",true,187,384,396,96,0,0,171,15,204,2
+road_scene_01.jpg,Classical,blue,72,polygon,0.051,2,3,"Blue Sign (Unclassified)",true,31,381,277,99,0,0,21,22,25,2
+road_scene_01.jpg,Classical,yellow,66,polygon,0.005,2,3,"Yellow Sign (Unclassified)",true,589,377,51,26,0,0,0,0,1,0
+road_scene_01.jpg,Classical,yellow,46,polygon,0.003,2,3,"Yellow Sign (Unclassified)",true,419,325,139,61,29,167,244,174,535,4
+road_scene_01.jpg,Classical,blue,28,polygon,0.002,2,3,"Blue Sign (Unclassified)",true,141,308,273,65,0,0,157,0,145,1
+road_scene_01.jpg,Classical,yellow,34,polygon,0.024,5,5,"Yellow Sign (Unclassified)",true,425,292,36,39,0,1,0,0,0,0
+road_scene_01.jpg,Classical,blue,56,unknown,0.000,0,3,"Blue Sign (Unclassified)",true,334,187,24,29,0,0,0,0,0,0
+road_scene_01.jpg,Classical,yellow,53,polygon,0.016,5,5,"Yellow Sign (Unclassified)",true,198,180,37,33,0,0,0,0,0,0
+road_scene_01.jpg,Classical,blue,37,polygon,0.007,5,5,"Blue Sign (Unclassified)",true,237,131,60,65,0,0,0,0,0,0
+road_scene_01.jpg,Classical,blue,50,unknown,0.000,0,3,"Blue Sign (Unclassified)",true,199,119,31,53,0,0,0,0,0,0
+road_scene_01.jpg,Classical,blue,43,unknown,0.000,0,3,"Blue Sign (Unclassified)",true,141,116,54,93,0,0,0,0,0,0
+road_scene_01.jpg,Classical,blue,34,octagon,0.057,7,6,"Blue Sign (Unclassified)",true,539,100,101,64,0,8,8,1,2,2
+road_scene_01.jpg,Classical,blue,35,polygon,0.006,6,6,"Blue Sign (Unclassified)",true,503,40,73,41,0,0,0,0,0,0
+road_scene_01.jpg,Classical,blue,47,polygon,0.008,6,6,"Blue Sign (Unclassified)",true,318,0,164,50,0,0,97,3,43,1
+road_scene_02.jpg,Classical,yellow,44,octagon,0.016,9,8,"Yellow Sign (Unclassified)",false,316,233,38,144,6,0,0,0,4,1
+road_scene_02.jpg,Classical,yellow,35,polygon,0.041,6,6,"Yellow Sign (Unclassified)",false,256,227,49,150,7,0,0,0,5,1
+road_scene_02.jpg,Classical,blue,63,unknown,0.000,0,3,"Blue Sign (Unclassified)",false,482,175,47,15,0,0,0,0,0,0
+road_scene_02.jpg,Classical,blue,53,unknown,0.000,0,3,"Blue Sign (Unclassified)",false,479,30,133,105,0,0,0,0,0,0
+road_scene_02.jpg,Classical,blue,56,unknown,0.000,0,3,"Blue Sign (Unclassified)",false,0,2,40,34,0,0,0,0,0,0
+road_scene_02.jpg,Classical,blue,70,polygon,0.016,2,3,"Blue Sign (Unclassified)",false,36,0,330,52,0,0,0,0,1,0
+speed_limit.png,Classical,red,22,circle,0.906,8,8,"Red Sign (Unclassified)",true,23,22,181,181,30,7,23,14,21,4
+stop_sign.jpg,Classical,yellow,31,octagon,0.107,8,8,"Yellow Sign (Unclassified)",true,263,144,78,48,0,3,6,0,19,1
+stop_sign.jpg,Classical,red,68,octagon,0.810,6,6,"STOP Sign",true,117,37,164,165,67,16,47,63,14,4
+warning_triangle.jpg,Classical,red,23,triangle,0.672,3,3,"Yield / Warning Sign",true,14,29,584,554,38,8,27,6,68,4
+yellow_warning.jpg,Classical,yellow,34,triangle,0.601,3,3,"Warning Sign",true,13,21,585,512,33,35,56,33,157,4

@@ -1,0 +1,20 @@
+TP3 PART 2 PARAMETER ANALYSIS
+Input : "images/input_4images"
+Output: "images/output/part2_4images"
+sat=80 area=300 circ=0.82 rdp=0.04 hough=3
+
+image1.jpeg | raw=18 | area_ok=2 | final=2 | time=33.446 ms
+image2.png | raw=1 | area_ok=1 | final=1 | time=20.651 ms
+image3.jpeg | raw=21 | area_ok=4 | final=4 | time=69.771 ms
+image4.jpeg | raw=30 | area_ok=2 | final=2 | time=221.683 ms
+
+DONE
+total_raw_contours=70
+total_area_accepted=9
+total_final_detections=9
+Report: "images/output/part2_4images\\terminal_report_part2.txt"
+CSV   : "images/output/part2_4images\\detections_part2.csv"
+
+real	0m0.587s
+user	0m0.000s
+sys	0m0.015s

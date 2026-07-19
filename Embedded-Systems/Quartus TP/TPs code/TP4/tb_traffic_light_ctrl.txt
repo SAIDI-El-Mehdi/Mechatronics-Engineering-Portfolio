@@ -1,0 +1,40 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity tb_traffic_light_ctrl is
+end tb_traffic_light_ctrl;
+
+architecture sim of tb_traffic_light_ctrl is
+  signal clk : std_logic := '0';
+  signal rst : std_logic := '1';
+  signal NS_R, NS_Y, NS_G : std_logic;
+  signal EW_R, EW_Y, EW_G : std_logic;
+begin
+  UUT : entity work.traffic_light_ctrl
+    port map (
+      clk  => clk,
+      rst  => rst,
+      NS_R => NS_R,
+      NS_Y => NS_Y,
+      NS_G => NS_G,
+      EW_R => EW_R,
+      EW_Y => EW_Y,
+      EW_G => EW_G
+    );
+
+  clk_proc : process
+  begin
+    while true loop
+      clk <= '0'; wait for 5 ns;
+      clk <= '1'; wait for 5 ns;
+    end loop;
+  end process;
+
+  stim_proc : process
+  begin
+    rst <= '1'; wait for 20 ns;
+    rst <= '0'; wait for 2000 ns;
+    wait;
+  end process;
+
+end sim;

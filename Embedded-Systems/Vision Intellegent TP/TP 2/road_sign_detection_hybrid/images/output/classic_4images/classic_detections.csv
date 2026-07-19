@@ -1,0 +1,10 @@
+image,source,color,color_pct,shape,circularity,vertices,v_closest,category,validated,x,y,w,h,h0,h45,h90,h135,hother,hscore
+image1.jpeg,Classical,red,23,rectangle,0.499,4,4,"Prohibition Sign",true,50,139,92,81,21,9,33,9,77,4
+image1.jpeg,Classical,red,27,circle,0.902,8,8,"Red Sign (Unclassified)",true,51,17,133,95,51,58,119,80,277,4
+image2.png,Classical,blue,66,triangle,0.566,3,3,"Blue Sign (Unclassified)",true,12,12,200,200,30,21,30,27,92,4
+image3.jpeg,Classical,blue,50,polygon,0.065,2,3,"Blue Sign (Unclassified)",true,147,226,44,32,0,0,0,0,0,0
+image3.jpeg,Classical,yellow,49,rectangle,0.010,4,4,"Caution Sign",true,72,153,67,52,0,3,4,4,19,2
+image3.jpeg,Classical,yellow,38,polygon,0.007,2,3,"Yellow Sign (Unclassified)",true,121,115,51,80,16,4,0,13,53,3
+image3.jpeg,Classical,red,36,circle,0.903,8,8,"Red Sign (Unclassified)",true,208,51,146,144,46,27,32,9,33,4
+image4.jpeg,Classical,yellow,39,rectangle,0.015,4,4,"Caution Sign",false,552,762,48,27,0,0,0,0,0,0
+image4.jpeg,Classical,blue,71,octagon,0.309,8,8,"Blue Sign (Unclassified)",true,92,122,301,351,214,101,145,158,547,4

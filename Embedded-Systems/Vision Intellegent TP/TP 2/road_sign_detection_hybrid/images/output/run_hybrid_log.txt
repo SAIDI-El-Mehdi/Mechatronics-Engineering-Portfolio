@@ -1,0 +1,11 @@
+[ERROR] ultralytics is not installed.
+Install it with:
+    pip install ultralytics opencv-python
+Details: No module named 'ultralytics'
+[HYBRID] YOLO model found. Using Python YOLO branch.
+[HYBRID] Command:
+C:/msys64/ucrt64/bin/python.exe python_yolo/detect_yolo.py --model python_yolo/models/best.pt --input images/input --output images/output/yolo
+
+real	0m0.850s
+user	0m0.015s
+sys	0m0.031s

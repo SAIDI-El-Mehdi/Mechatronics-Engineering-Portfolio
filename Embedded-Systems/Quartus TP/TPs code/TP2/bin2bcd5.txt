@@ -1,0 +1,41 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity bin2bcd5 is
+  port(
+    BIN  : in  std_logic_vector(4 downto 0);
+    BCD1 : out std_logic_vector(3 downto 0);  -- dizaines
+    BCD0 : out std_logic_vector(3 downto 0)   -- unités
+  );
+end bin2bcd5;
+
+architecture rtl of bin2bcd5 is
+  signal val : unsigned(4 downto 0);
+  signal d,u : unsigned(3 downto 0);
+begin
+  val <= unsigned(BIN);
+
+  process(val)
+  begin
+    d <= (others => '0');
+    u <= (others => '0');
+
+    if val < 10 then
+      d <= "0000";
+      u <= resize(val, 4);
+    elsif val < 20 then
+      d <= "0001";           -- 10
+      u <= resize(val - 10, 4);
+    elsif val < 30 then
+      d <= "0010";           -- 20
+      u <= resize(val - 20, 4);
+    else
+      d <= "0011";           -- 30
+      u <= "0000";
+    end if;
+  end process;
+
+  BCD1 <= std_logic_vector(d);
+  BCD0 <= std_logic_vector(u);
+end rtl;

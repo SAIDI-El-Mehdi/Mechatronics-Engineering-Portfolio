@@ -1,0 +1,27 @@
+[INFO] Input : "images/input"
+[INFO] Output: "images/output/classic"
+[INFO] Processing: "images/input\\blue_direction.png"
+       detections=1 time=25.747 ms saved="images/output/classic\\blue_direction_final_result.png"
+[INFO] Processing: "images/input\\no_entry.jpg"
+       detections=1 time=61.127 ms saved="images/output/classic\\no_entry_final_result.png"
+[INFO] Processing: "images/input\\red_prohibition.jpg"
+       detections=1 time=275.247 ms saved="images/output/classic\\red_prohibition_final_result.png"
+[INFO] Processing: "images/input\\road_scene_01.jpg"
+       detections=14 time=759.992 ms saved="images/output/classic\\road_scene_01_final_result.png"
+[INFO] Processing: "images/input\\road_scene_02.jpg"
+       detections=6 time=131.743 ms saved="images/output/classic\\road_scene_02_final_result.png"
+[INFO] Processing: "images/input\\speed_limit.png"
+       detections=1 time=25.457 ms saved="images/output/classic\\speed_limit_final_result.png"
+[INFO] Processing: "images/input\\stop_sign.jpg"
+       detections=2 time=231.698 ms saved="images/output/classic\\stop_sign_final_result.png"
+[INFO] Processing: "images/input\\warning_triangle.jpg"
+       detections=1 time=98.123 ms saved="images/output/classic\\warning_triangle_final_result.png"
+[INFO] Processing: "images/input\\yellow_warning.jpg"
+       detections=1 time=105.782 ms saved="images/output/classic\\yellow_warning_final_result.png"
+[DONE] Classical branch completed.
+[INFO] Report: "images/output/classic\\terminal_report_classic.txt"
+[INFO] CSV   : "images/output/classic\\classic_detections.csv"
+
+real	0m2.011s
+user	0m0.000s
+sys	0m0.015s

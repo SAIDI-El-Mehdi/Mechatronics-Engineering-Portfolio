@@ -1,0 +1,84 @@
+==============================================
+Application optimisee des 4 filtres
+Dossier d'entree  : "D:\\S4 MTA\\1- Vision intelligente & Temps reel\\1- Vision intelligente\\TP\\TP 1\\image_filters_cpp\\images"
+Dossier de sortie : "D:\\S4 MTA\\1- Vision intelligente & Temps reel\\1- Vision intelligente\\TP\\TP 1\\image_filters_cpp\\output"
+==============================================
+
+Traitement de : feuille1.jpg
+----------------------------------------------
+  chargement    : 4.849 ms
+  pretraitement : 5.491 ms
+  prewitt    : calcul = 4.742 ms | comparaison = 4.832 ms
+  sobel      : calcul = 3.641 ms | comparaison = 3.866 ms
+  canny      : calcul = 4.579 ms | comparaison = 4.280 ms
+  hough      : calcul = 22.641 ms | comparaison = 3.681 ms
+  sauvegarde    : 278.233 ms
+  total image   : 340.834 ms
+
+Traitement de : plante1.jpg
+----------------------------------------------
+  chargement    : 0.658 ms
+  pretraitement : 0.637 ms
+  prewitt    : calcul = 0.379 ms | comparaison = 1.677 ms
+  sobel      : calcul = 0.445 ms | comparaison = 1.688 ms
+  canny      : calcul = 0.989 ms | comparaison = 1.776 ms
+  hough      : calcul = 2.593 ms | comparaison = 1.758 ms
+  sauvegarde    : 149.239 ms
+  total image   : 161.840 ms
+
+Traitement de : serre1.jpg
+----------------------------------------------
+  chargement    : 8.516 ms
+  pretraitement : 1.021 ms
+  prewitt    : calcul = 1.225 ms | comparaison = 2.653 ms
+  sobel      : calcul = 0.991 ms | comparaison = 2.614 ms
+  canny      : calcul = 1.800 ms | comparaison = 2.537 ms
+  hough      : calcul = 12.600 ms | comparaison = 2.347 ms
+  sauvegarde    : 190.353 ms
+  total image   : 226.655 ms
+
+Traitement de : piece1.jpg
+----------------------------------------------
+  chargement    : 3.186 ms
+  pretraitement : 1.418 ms
+  prewitt    : calcul = 1.918 ms | comparaison = 2.409 ms
+  sobel      : calcul = 1.539 ms | comparaison = 2.759 ms
+  canny      : calcul = 1.695 ms | comparaison = 3.018 ms
+  hough      : calcul = 11.143 ms | comparaison = 2.574 ms
+  sauvegarde    : 194.100 ms
+  total image   : 225.759 ms
+
+Traitement de : route1.jpg
+----------------------------------------------
+  chargement    : 15.393 ms
+  pretraitement : 3.095 ms
+  prewitt    : calcul = 4.510 ms | comparaison = 4.133 ms
+  sobel      : calcul = 4.470 ms | comparaison = 4.342 ms
+  canny      : calcul = 3.590 ms | comparaison = 4.056 ms
+  hough      : calcul = 16.023 ms | comparaison = 3.459 ms
+  sauvegarde    : 267.123 ms
+  total image   : 330.195 ms
+
+Traitement de : voiture1.jpg
+----------------------------------------------
+  chargement    : 72.997 ms
+  pretraitement : 16.048 ms
+  prewitt    : calcul = 40.336 ms | comparaison = 8.332 ms
+  sobel      : calcul = 37.409 ms | comparaison = 7.846 ms
+  canny      : calcul = 17.686 ms | comparaison = 7.873 ms
+  hough      : calcul = 132.716 ms | comparaison = 4.895 ms
+  sauvegarde    : 1271.119 ms
+  total image   : 1617.256 ms
+
+==============================================
+Resume global
+==============================================
+Bloc le plus couteux observe dans les anciennes mesures : hough
+Nouveau rapport de temps : "D:\\S4 MTA\\1- Vision intelligente & Temps reel\\1- Vision intelligente\\TP\\TP 1\\image_filters_cpp\\output\\execution_times.txt"
+Temps total programme    : 2910.308 ms
+
+Traitement termine.
+
+real	0m3.083s
+user	0m0.015s
+sys	0m0.015s

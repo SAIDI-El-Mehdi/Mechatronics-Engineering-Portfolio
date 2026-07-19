@@ -1,0 +1,90 @@
+MESURE DES TEMPS D'EXECUTION APRES OPTIMISATION
+=============================================
+
+Dossier d'entree : C:\image_filters_cpp\images
+Dossier de sortie : C:\image_filters_cpp\output
+
+DETAIL PAR IMAGE
+----------------
+
+Image : C:\image_filters_cpp\images\agriculture\feuille1.jpg
+  - chargement      : 0.834 ms
+  - pretraitement   : 1.629 ms
+  - filtre prewitt  : calcul = 0.632 ms | comparaison = 2.025 ms
+  - filtre sobel    : calcul = 0.479 ms | comparaison = 2.232 ms
+  - filtre canny    : calcul = 1.798 ms | comparaison = 2.262 ms
+  - filtre hough    : calcul = 1.821 ms | comparaison = 2.397 ms
+  - sauvegarde      : 76.049 ms
+  - temps total     : 92.158 ms
+
+Image : C:\image_filters_cpp\images\agriculture\plante1.jpg
+  - chargement      : 0.525 ms
+  - pretraitement   : 1.071 ms
+  - filtre prewitt  : calcul = 0.615 ms | comparaison = 2.675 ms
+  - filtre sobel    : calcul = 0.292 ms | comparaison = 3.044 ms
+  - filtre canny    : calcul = 0.758 ms | comparaison = 4.449 ms
+  - filtre hough    : calcul = 1.917 ms | comparaison = 2.682 ms
+  - sauvegarde      : 108.781 ms
+  - temps total     : 126.809 ms
+
+Image : C:\image_filters_cpp\images\agriculture\serre1.jpg
+  - chargement      : 0.652 ms
+  - pretraitement   : 0.873 ms
+  - filtre prewitt  : calcul = 0.477 ms | comparaison = 2.047 ms
+  - filtre sobel    : calcul = 0.281 ms | comparaison = 1.982 ms
+  - filtre canny    : calcul = 0.886 ms | comparaison = 2.285 ms
+  - filtre hough    : calcul = 2.804 ms | comparaison = 2.119 ms
+  - sauvegarde      : 118.972 ms
+  - temps total     : 133.378 ms
+
+Image : C:\image_filters_cpp\images\automobile\piece1.jpg
+  - chargement      : 0.559 ms
+  - pretraitement   : 0.552 ms
+  - filtre prewitt  : calcul = 0.434 ms | comparaison = 1.829 ms
+  - filtre sobel    : calcul = 0.306 ms | comparaison = 1.622 ms
+  - filtre canny    : calcul = 0.520 ms | comparaison = 2.382 ms
+  - filtre hough    : calcul = 3.016 ms | comparaison = 1.757 ms
+  - sauvegarde      : 74.115 ms
+  - temps total     : 87.090 ms
+
+Image : C:\image_filters_cpp\images\automobile\route1.jpg
+  - chargement      : 0.485 ms
+  - pretraitement   : 0.665 ms
+  - filtre prewitt  : calcul = 0.432 ms | comparaison = 1.995 ms
+  - filtre sobel    : calcul = 0.382 ms | comparaison = 2.013 ms
+  - filtre canny    : calcul = 0.598 ms | comparaison = 2.018 ms
+  - filtre hough    : calcul = 1.615 ms | comparaison = 1.932 ms
+  - sauvegarde      : 97.923 ms
+  - temps total     : 110.058 ms
+
+Image : C:\image_filters_cpp\images\automobile\voiture1.jpg
+  - chargement      : 0.573 ms
+  - pretraitement   : 0.955 ms
+  - filtre prewitt  : calcul = 0.535 ms | comparaison = 2.791 ms
+  - filtre sobel    : calcul = 0.137 ms | comparaison = 2.215 ms
+  - filtre canny    : calcul = 0.777 ms | comparaison = 2.149 ms
+  - filtre hough    : calcul = 2.209 ms | comparaison = 2.539 ms
+  - sauvegarde      : 77.878 ms
+  - temps total     : 92.759 ms
+
+RESUME GLOBAL PAR BLOC
+----------------------
+
+- canny_calcul         : total = 5.338 ms | moyenne = 0.890 ms | executions = 6
+- canny_comparaison    : total = 15.544 ms | moyenne = 2.591 ms | executions = 6
+- chargement           : total = 3.628 ms | moyenne = 0.605 ms | executions = 6
+- hough_calcul         : total = 13.382 ms | moyenne = 2.230 ms | executions = 6
+- hough_comparaison    : total = 13.427 ms | moyenne = 2.238 ms | executions = 6
+- pretraitement        : total = 5.744 ms | moyenne = 0.957 ms | executions = 6
+- prewitt_calcul       : total = 3.125 ms | moyenne = 0.521 ms | executions = 6
+- prewitt_comparaison  : total = 13.362 ms | moyenne = 2.227 ms | executions = 6
+- sauvegarde           : total = 553.718 ms | moyenne = 92.286 ms | executions = 6
+- sobel_calcul         : total = 1.876 ms | moyenne = 0.313 ms | executions = 6
+- sobel_comparaison    : total = 13.107 ms | moyenne = 2.185 ms | executions = 6
+- temps_total_image    : total = 642.252 ms | moyenne = 107.042 ms | executions = 6
+
+Bloc le plus rapide : sobel_calcul (moyenne = 0.313 ms)
+Bloc le plus lent   : temps_total_image (moyenne = 107.042 ms)
+
+Temps d'ecriture du rapport : 0.390 ms
+Temps total du programme    : 666.533 ms

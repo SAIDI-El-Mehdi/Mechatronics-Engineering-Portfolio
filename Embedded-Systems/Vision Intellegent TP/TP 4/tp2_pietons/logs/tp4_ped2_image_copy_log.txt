@@ -1,0 +1,49 @@
+Reading image: Data/image_copy.png
+Image size: 2048x1365
+Loading YOLOv4-tiny model...
+Detecting pedestrians...
+
+========================================
+Found 5 pedestrian(s)
+========================================
+Person 1:
+  Confidence: 97%
+  Position: (1649, 508)
+  Size: 288x628
+  Edge verification: STRONG (confirmed)
+
+Person 2:
+  Confidence: 96%
+  Position: (850, 394)
+  Size: 222x829
+  Edge verification: STRONG (confirmed)
+
+Person 3:
+  Confidence: 92%
+  Position: (1352, 514)
+  Size: 261x672
+  Edge verification: STRONG (confirmed)
+
+Person 4:
+  Confidence: 89%
+  Position: (1244, 552)
+  Size: 164x496
+  Edge verification: STRONG (confirmed)
+
+Person 5:
+  Confidence: 88%
+  Position: (579, 480)
+  Size: 266x727
+  Edge verification: STRONG (confirmed)
+
+Output saved to: results/output_image_copy_test.jpg
+
+Displaying result. Press any key to exit...
+
+Done!
+QThreadStorage: entry 1 destroyed before end of thread 0x2a7253b08f0
+QThreadStorage: entry 0 destroyed before end of thread 0x2a7253b08f0
+
+real	0m3.284s
+user	0m0.016s
+sys	0m0.015s

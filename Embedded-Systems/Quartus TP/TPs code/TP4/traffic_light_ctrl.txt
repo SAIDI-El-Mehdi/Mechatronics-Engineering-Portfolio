@@ -1,0 +1,50 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity traffic_light_ctrl is
+  port(
+    clk   : in  std_logic;
+    rst   : in  std_logic;
+    -- NS : North-South, EW : East-West
+    NS_R, NS_Y, NS_G : out std_logic;
+    EW_R, EW_Y, EW_G : out std_logic
+  );
+end traffic_light_ctrl;
+
+architecture fsm of traffic_light_ctrl is
+  type state_type is (S_NS_GREEN, S_NS_YELLOW, S_EW_GREEN, S_EW_YELLOW);
+  signal state    : state_type := S_NS_GREEN;
+  signal counter  : unsigned(23 downto 0) := (others => '0');
+begin
+
+  process(clk, rst)
+  begin
+    if rst = '1' then
+      state   <= S_NS_GREEN;
+      counter <= (others => '0');
+    elsif rising_edge(clk) then
+      if counter = 10_000_000 then  -- durée symbolique
+        counter <= (others => '0');
+        case state is
+          when S_NS_GREEN  => state <= S_NS_YELLOW;
+          when S_NS_YELLOW => state <= S_EW_GREEN;
+          when S_EW_GREEN  => state <= S_EW_YELLOW;
+          when S_EW_YELLOW => state <= S_NS_GREEN;
+        end case;
+      else
+        counter <= counter + 1;
+      end if;
+    end if;
+  end process;
+
+  -- sorties
+  NS_G <= '1' when state = S_NS_GREEN  else '0';
+  NS_Y <= '1' when state = S_NS_YELLOW else '0';
+  NS_R <= '1' when state = S_EW_GREEN or state = S_EW_YELLOW else '0';
+
+  EW_G <= '1' when state = S_EW_GREEN  else '0';
+  EW_Y <= '1' when state = S_EW_YELLOW else '0';
+  EW_R <= '1' when state = S_NS_GREEN or state = S_NS_YELLOW else '0';
+
+end fsm;

@@ -1,0 +1,62 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity adder4_display is
+  generic(
+    ACTIVE_LOW : boolean := true
+  );
+  port(
+    SW_A  : in  std_logic_vector(3 downto 0);
+    SW_B  : in  std_logic_vector(3 downto 0);
+    RST   : in  std_logic;
+    LED_S : out std_logic_vector(4 downto 0);
+    SEG3  : out std_logic_vector(6 downto 0); -- 'S'
+    SEG2  : out std_logic_vector(6 downto 0); -- '='
+    SEG1  : out std_logic_vector(6 downto 0); -- dizaines
+    SEG0  : out std_logic_vector(6 downto 0)  -- unités
+  );
+end adder4_display;
+
+architecture rtl of adder4_display is
+  signal sum5      : std_logic_vector(4 downto 0);
+  signal bcd1,bcd0 : std_logic_vector(3 downto 0);
+begin
+  U_ADD : entity work.adder4
+    port map (
+      A   => SW_A,
+      B   => SW_B,
+      SUM => sum5
+    );
+
+  process(sum5, RST)
+  begin
+    if RST = '1' then
+      LED_S <= (others => '0');
+    else
+      LED_S <= sum5;
+    end if;
+  end process;
+
+  U_BCD : entity work.bin2bcd5
+    port map (
+      BIN  => sum5,
+      BCD1 => bcd1,
+      BCD0 => bcd0
+    );
+
+  U_SEG3 : entity work.char7seg
+    generic map (ACTIVE_LOW => ACTIVE_LOW)
+    port map (CODE => "1010", SEG => SEG3);  -- 'S'
+
+  U_SEG2 : entity work.char7seg
+    generic map (ACTIVE_LOW => ACTIVE_LOW)
+    port map (CODE => "1011", SEG => SEG2);  -- '='
+
+  U_SEG1 : entity work.char7seg
+    generic map (ACTIVE_LOW => ACTIVE_LOW)
+    port map (CODE => bcd1, SEG => SEG1);    -- dizaines
+
+  U_SEG0 : entity work.char7seg
+    generic map (ACTIVE_LOW => ACTIVE_LOW)
+    port map (CODE => bcd0, SEG => SEG0);    -- unités
+end rtl;

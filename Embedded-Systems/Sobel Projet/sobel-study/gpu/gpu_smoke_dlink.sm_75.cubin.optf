@@ -1,0 +1,1 @@
+-m64 --arch=sm_75 --register-link-binaries="gpu_smoke_dlink.reg.c"    "/LIBPATH:C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.2\bin/../lib/x64" -cpu-arch=X86_64 "gpu_smoke.obj"  cudadevrt.lib  -o "gpu_smoke_dlink.sm_75.cubin"

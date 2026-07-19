@@ -1,0 +1,47 @@
+==============================================
+TP4 - State Feedback Control of a SISO System
+==============================================
+Physical parameters:
+m = 1.00 kg
+c = 2.00 N.s/m
+k = 10.00 N/m
+Matrix A:
+     0     1
+   -10    -2
+
+Matrix B:
+     0
+     1
+
+Matrix C:
+     1     0
+
+Matrix D:
+     0
+
+Open-loop poles:
+  -1.0000 + 3.0000i
+  -1.0000 - 3.0000i
+
+Controllability matrix:
+     0     1
+     1    -2
+
+Rank of controllability matrix = 2
+Desired closed-loop poles:
+    -4    -5
+
+State feedback gain K:
+   10.0000    7.0000
+
+Closed-loop matrix Acl:
+         0    1.0000
+  -20.0000   -9.0000
+
+Closed-loop poles:
+   -4.0000
+   -5.0000
+
+Precompensation gain Nbar:
+   20.0000
+

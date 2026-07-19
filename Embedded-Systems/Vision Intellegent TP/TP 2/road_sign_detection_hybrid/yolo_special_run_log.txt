@@ -1,0 +1,21 @@
+D:\S4 MTA\1- Vision intelligente & Temps reel\1- Vision intelligente\TP\TP 2\road_sign_detection_hybrid\python_yolo\detect_yolo_special.py:3: SyntaxWarning: invalid escape sequence '\d'
+  """
+[INFO] Loading YOLO model...
+[INFO] Processing: images\input\image1.jpeg
+       detections=0, saved=images\output\yolo_special\annotated\image1_yolo_special.png
+[INFO] Processing: images\input\image2.png
+       detections=0, saved=images\output\yolo_special\annotated\image2_yolo_special.png
+[INFO] Processing: images\input\image3.jpeg
+       detections=0, saved=images\output\yolo_special\annotated\image3_yolo_special.png
+[INFO] Processing: images\input\image4.jpeg
+       detections=0, saved=images\output\yolo_special\annotated\image4_yolo_special.png
+[DONE] YOLO special branch completed.
+[INFO] Annotated images: images\output\yolo_special\annotated
+[INFO] Crops: images\output\yolo_special\crops
+[INFO] Contact sheet: images\output\yolo_special\contact_sheet_yolo_special.png
+[INFO] Report: images\output\yolo_special\terminal_report_yolo_special.txt
+[INFO] CSV: images\output\yolo_special\yolo_special_detections.csv
+
+real	0m10.236s
+user	0m0.000s
+sys	0m0.031s

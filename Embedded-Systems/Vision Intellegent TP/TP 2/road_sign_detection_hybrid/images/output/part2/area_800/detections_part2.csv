@@ -1,0 +1,22 @@
+image,sat,area,circ,rdp,hough,color,color_pct,shape,circularity,vertices,v_closest,h0,h45,h90,h135,hother,hscore,category,x,y,w,h
+blue_direction.png,80,800,0.82,0.04,3,blue,69,circle,0.908289,8,8,5,4,14,7,0,4,"Blue Sign (Unclassified)",37,23,166,166
+no_entry.jpg,80,800,0.82,0.04,3,red,63,circle,0.902661,8,8,34,65,38,110,297,4,"Red Sign (Unclassified)",32,34,346,346
+red_prohibition.jpg,80,800,0.82,0.04,3,red,35,circle,0.900766,8,8,1513,1640,1618,1360,8066,4,"Red Sign (Unclassified)",130,108,740,741
+road_scene_01.jpg,80,800,0.82,0.04,3,blue,49,unknown,0.00256761,2,3,0,0,171,15,204,2,"Blue Sign (Unclassified)",187,384,396,96
+road_scene_01.jpg,80,800,0.82,0.04,3,blue,72,unknown,0.0509127,2,3,0,0,21,22,25,2,"Blue Sign (Unclassified)",31,381,277,99
+road_scene_01.jpg,80,800,0.82,0.04,3,yellow,46,unknown,0.00335639,2,3,29,167,244,174,535,4,"Yellow Sign (Unclassified)",419,325,139,61
+road_scene_01.jpg,80,800,0.82,0.04,3,blue,28,unknown,0.00176072,2,3,0,0,157,0,145,1,"Blue Sign (Unclassified)",141,308,273,65
+road_scene_01.jpg,80,800,0.82,0.04,3,blue,37,unknown,0.00713806,5,5,0,0,0,0,0,0,"Blue Sign (Unclassified)",237,131,60,65
+road_scene_01.jpg,80,800,0.82,0.04,3,blue,43,unknown,0,0,0,0,0,0,0,0,0,"Blue Sign (Unclassified)",141,116,54,93
+road_scene_01.jpg,80,800,0.82,0.04,3,blue,34,polygon,0.0567752,7,6,0,8,8,1,2,2,"Blue Sign (Unclassified)",539,100,101,64
+road_scene_01.jpg,80,800,0.82,0.04,3,blue,35,unknown,0.00602343,6,6,0,0,0,0,0,0,"Blue Sign (Unclassified)",503,40,73,41
+road_scene_01.jpg,80,800,0.82,0.04,3,blue,47,unknown,0.00769171,6,6,0,0,97,3,43,1,"Blue Sign (Unclassified)",318,0,164,50
+road_scene_02.jpg,80,800,0.82,0.04,3,yellow,44,polygon,0.016332,9,8,6,0,0,0,4,1,"Yellow Sign (Unclassified)",316,233,38,144
+road_scene_02.jpg,80,800,0.82,0.04,3,yellow,35,unknown,0.041141,6,6,7,0,0,0,5,1,"Yellow Sign (Unclassified)",256,227,49,150
+road_scene_02.jpg,80,800,0.82,0.04,3,blue,53,unknown,0,0,0,0,0,0,0,0,0,"Blue Sign (Unclassified)",479,30,133,105
+road_scene_02.jpg,80,800,0.82,0.04,3,blue,70,unknown,0.0159594,2,3,0,0,0,0,1,0,"Blue Sign (Unclassified)",36,0,330,52
+speed_limit.png,80,800,0.82,0.04,3,red,22,circle,0.905893,8,8,30,7,23,14,21,4,"Red Sign (Unclassified)",23,22,181,181
+stop_sign.jpg,80,800,0.82,0.04,3,yellow,31,polygon,0.110253,8,8,0,2,5,0,19,1,"Yellow Sign (Unclassified)",263,144,79,48
+stop_sign.jpg,80,800,0.82,0.04,3,red,68,octagon,0.809938,6,6,67,16,47,63,14,4,"STOP Sign",117,37,164,165
+warning_triangle.jpg,80,800,0.82,0.04,3,red,23,triangle,0.672478,3,3,38,8,27,6,68,4,"Yield / Warning Sign",14,29,584,554
+yellow_warning.jpg,80,800,0.82,0.04,3,yellow,34,triangle,0.600931,3,3,33,35,56,33,157,4,"Warning Sign",13,21,585,512

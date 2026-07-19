@@ -1,0 +1,90 @@
+MESURE DES TEMPS D'EXECUTION APRES OPTIMISATION
+=============================================
+
+Dossier d'entree : D:\S4 MTA\1- Vision intelligente & Temps reel\1- Vision intelligente\TP\TP 1\image_filters_cpp\images
+Dossier de sortie : D:\S4 MTA\1- Vision intelligente & Temps reel\1- Vision intelligente\TP\TP 1\image_filters_cpp\output
+
+DETAIL PAR IMAGE
+----------------
+
+Image : D:\S4 MTA\1- Vision intelligente & Temps reel\1- Vision intelligente\TP\TP 1\image_filters_cpp\images\agriculture\feuille1.jpg
+  - chargement      : 4.849 ms
+  - pretraitement   : 5.491 ms
+  - filtre prewitt  : calcul = 4.742 ms | comparaison = 4.832 ms
+  - filtre sobel    : calcul = 3.641 ms | comparaison = 3.866 ms
+  - filtre canny    : calcul = 4.579 ms | comparaison = 4.280 ms
+  - filtre hough    : calcul = 22.641 ms | comparaison = 3.681 ms
+  - sauvegarde      : 278.233 ms
+  - temps total     : 340.834 ms
+
+Image : D:\S4 MTA\1- Vision intelligente & Temps reel\1- Vision intelligente\TP\TP 1\image_filters_cpp\images\agriculture\plante1.jpg
+  - chargement      : 0.658 ms
+  - pretraitement   : 0.637 ms
+  - filtre prewitt  : calcul = 0.379 ms | comparaison = 1.677 ms
+  - filtre sobel    : calcul = 0.445 ms | comparaison = 1.688 ms
+  - filtre canny    : calcul = 0.989 ms | comparaison = 1.776 ms
+  - filtre hough    : calcul = 2.593 ms | comparaison = 1.758 ms
+  - sauvegarde      : 149.239 ms
+  - temps total     : 161.840 ms
+
+Image : D:\S4 MTA\1- Vision intelligente & Temps reel\1- Vision intelligente\TP\TP 1\image_filters_cpp\images\agriculture\serre1.jpg
+  - chargement      : 8.516 ms
+  - pretraitement   : 1.021 ms
+  - filtre prewitt  : calcul = 1.225 ms | comparaison = 2.653 ms
+  - filtre sobel    : calcul = 0.991 ms | comparaison = 2.614 ms
+  - filtre canny    : calcul = 1.800 ms | comparaison = 2.537 ms
+  - filtre hough    : calcul = 12.600 ms | comparaison = 2.347 ms
+  - sauvegarde      : 190.353 ms
+  - temps total     : 226.655 ms
+
+Image : D:\S4 MTA\1- Vision intelligente & Temps reel\1- Vision intelligente\TP\TP 1\image_filters_cpp\images\automobile\piece1.jpg
+  - chargement      : 3.186 ms
+  - pretraitement   : 1.418 ms
+  - filtre prewitt  : calcul = 1.918 ms | comparaison = 2.409 ms
+  - filtre sobel    : calcul = 1.539 ms | comparaison = 2.759 ms
+  - filtre canny    : calcul = 1.695 ms | comparaison = 3.018 ms
+  - filtre hough    : calcul = 11.143 ms | comparaison = 2.574 ms
+  - sauvegarde      : 194.100 ms
+  - temps total     : 225.759 ms
+
+Image : D:\S4 MTA\1- Vision intelligente & Temps reel\1- Vision intelligente\TP\TP 1\image_filters_cpp\images\automobile\route1.jpg
+  - chargement      : 15.393 ms
+  - pretraitement   : 3.095 ms
+  - filtre prewitt  : calcul = 4.510 ms | comparaison = 4.133 ms
+  - filtre sobel    : calcul = 4.470 ms | comparaison = 4.342 ms
+  - filtre canny    : calcul = 3.590 ms | comparaison = 4.056 ms
+  - filtre hough    : calcul = 16.023 ms | comparaison = 3.459 ms
+  - sauvegarde      : 267.123 ms
+  - temps total     : 330.195 ms
+
+Image : D:\S4 MTA\1- Vision intelligente & Temps reel\1- Vision intelligente\TP\TP 1\image_filters_cpp\images\automobile\voiture1.jpg
+  - chargement      : 72.997 ms
+  - pretraitement   : 16.048 ms
+  - filtre prewitt  : calcul = 40.336 ms | comparaison = 8.332 ms
+  - filtre sobel    : calcul = 37.409 ms | comparaison = 7.846 ms
+  - filtre canny    : calcul = 17.686 ms | comparaison = 7.873 ms
+  - filtre hough    : calcul = 132.716 ms | comparaison = 4.895 ms
+  - sauvegarde      : 1271.119 ms
+  - temps total     : 1617.256 ms
+
+RESUME GLOBAL PAR BLOC
+----------------------
+
+- canny_calcul         : total = 30.339 ms | moyenne = 5.056 ms | executions = 6
+- canny_comparaison    : total = 23.539 ms | moyenne = 3.923 ms | executions = 6
+- chargement           : total = 105.599 ms | moyenne = 17.600 ms | executions = 6
+- hough_calcul         : total = 197.716 ms | moyenne = 32.953 ms | executions = 6
+- hough_comparaison    : total = 18.714 ms | moyenne = 3.119 ms | executions = 6
+- pretraitement        : total = 27.710 ms | moyenne = 4.618 ms | executions = 6
+- prewitt_calcul       : total = 53.109 ms | moyenne = 8.852 ms | executions = 6
+- prewitt_comparaison  : total = 24.036 ms | moyenne = 4.006 ms | executions = 6
+- sauvegarde           : total = 2350.167 ms | moyenne = 391.695 ms | executions = 6
+- sobel_calcul         : total = 48.495 ms | moyenne = 8.082 ms | executions = 6
+- sobel_comparaison    : total = 23.116 ms | moyenne = 3.853 ms | executions = 6
+- temps_total_image    : total = 2902.539 ms | moyenne = 483.757 ms | executions = 6
+
+Bloc le plus rapide : hough_comparaison (moyenne = 3.119 ms)
+Bloc le plus lent   : temps_total_image (moyenne = 483.757 ms)
+
+Temps d'ecriture du rapport : 0.358 ms
+Temps total du programme    : 2910.308 ms

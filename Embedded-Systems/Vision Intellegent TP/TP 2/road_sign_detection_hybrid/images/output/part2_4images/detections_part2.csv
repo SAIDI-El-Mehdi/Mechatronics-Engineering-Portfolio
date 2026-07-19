@@ -1,0 +1,10 @@
+image,sat,area,circ,rdp,hough,color,color_pct,shape,circularity,vertices,v_closest,h0,h45,h90,h135,hother,hscore,category,x,y,w,h
+image1.jpeg,80,300,0.82,0.04,3,red,23,rectangle,0.49927,4,4,21,9,33,9,77,4,"Prohibition Sign",50,139,92,81
+image1.jpeg,80,300,0.82,0.04,3,red,27,circle,0.902212,8,8,55,57,125,88,293,4,"Red Sign (Unclassified)",51,17,134,95
+image2.png,80,300,0.82,0.04,3,blue,66,triangle,0.565952,3,3,30,21,30,27,92,4,"Blue Sign (Unclassified)",12,12,200,200
+image3.jpeg,80,300,0.82,0.04,3,blue,50,unknown,0.0651716,2,3,0,0,0,0,0,0,"Blue Sign (Unclassified)",147,226,44,32
+image3.jpeg,80,300,0.82,0.04,3,yellow,49,rectangle,0.00972224,4,4,0,3,4,4,19,2,"Caution Sign",72,153,67,52
+image3.jpeg,80,300,0.82,0.04,3,yellow,38,unknown,0.00688504,2,3,16,4,0,13,53,3,"Yellow Sign (Unclassified)",121,115,51,80
+image3.jpeg,80,300,0.82,0.04,3,red,36,circle,0.903384,8,8,46,27,32,9,33,4,"Red Sign (Unclassified)",208,51,146,144
+image4.jpeg,80,300,0.82,0.04,3,yellow,45,rectangle,0.0148438,4,4,0,0,0,0,0,0,"Caution Sign",552,762,48,27
+image4.jpeg,80,300,0.82,0.04,3,blue,71,polygon,0.308952,8,8,214,101,145,158,547,4,"Blue Sign (Unclassified)",92,122,301,351

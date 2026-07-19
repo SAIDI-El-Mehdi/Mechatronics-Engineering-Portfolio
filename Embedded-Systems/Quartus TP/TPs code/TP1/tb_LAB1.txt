@@ -1,0 +1,26 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity tb_LAB1 is
+end tb_LAB1;
+
+architecture sim of tb_LAB1 is
+    signal SW_tb   : std_logic_vector(2 downto 0) := (others => '0');
+    signal LEDG_tb : std_logic_vector(7 downto 0);
+begin
+    UUT : entity work.LAB1
+        port map (
+            SW   => SW_tb,
+            LEDG => LEDG_tb
+        );
+
+    stim_proc : process
+    begin
+        for i in 0 to 7 loop
+            SW_tb <= std_logic_vector(to_unsigned(i, 3));
+            wait for 50 ns;
+        end loop;
+        wait;
+    end process;
+end sim;

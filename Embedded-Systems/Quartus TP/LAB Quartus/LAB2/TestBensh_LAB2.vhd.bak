@@ -1,0 +1,60 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity TB_LAB2 is
+end TB_LAB2;
+
+architecture Test2 of TB_LAB2 is
+
+    -- Déclaration du composant à tester
+    component LAB2
+        Port (
+            SW     : in STD_LOGIC_VECTOR (7 downto 0);
+            KEY    : in STD_LOGIC;
+            LEDR   : out STD_LOGIC_VECTOR (3 downto 0);
+            HEX0   : out STD_LOGIC_VECTOR (6 downto 0);
+            HEX1   : out STD_LOGIC_VECTOR (6 downto 0)
+        );
+    end component;
+
+    -- Signaux internes pour la simulation
+    signal SW     : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+    signal KEY    : STD_LOGIC := '1';  -- Actif à '0', donc initialement non appuyé
+    signal LEDR   : STD_LOGIC_VECTOR(3 downto 0);
+    signal HEX0   : STD_LOGIC_VECTOR(6 downto 0);
+    signal HEX1   : STD_LOGIC_VECTOR(6 downto 0);
+
+begin
+
+    -- Instanciation du composant
+    UUT: LAB2
+        port map (
+            SW    => SW,
+            KEY   => KEY,
+            LEDR  => LEDR,
+            HEX0  => HEX0,
+            HEX1  => HEX1
+        );
+
+    -- Stimulus : toutes les combinaisons A + B (4 bits chacun)
+    process
+        variable A, B : integer;
+    begin
+        KEY <= '0';         -- Appliquer un reset
+        wait for 50 ns;
+        KEY <= '1';         -- Relever le reset
+        wait for 50 ns;
+
+        for A in 0 to 15 loop
+            for B in 0 to 15 loop
+                SW <= std_logic_vector(to_unsigned((A * 16 + B), 8));  -- SW(7:4) = A, SW(3:0) = B
+                wait for 100 ns;
+            end loop;
+        end loop;
+
+        wait;
+    end process;
+
+end Test2;

@@ -1,0 +1,72 @@
+
+[1] Lecture de l'image: Data/image_copy.png
+    Taille: 2048x1365
+    Canaux: 3
+
+[2] Chargement du modèle YOLOv4-tiny...
+    2 couches de sortie
+
+[3] Préparation du blob d'entrée...
+    Taille blob: 416x416
+
+[4] Inférence YOLO en cours...
+    Inférence terminée
+
+[5] Extraction des détections...
+    Détections brutes: 12
+
+[6] Application NMS (Non-Maximum Suppression)...
+========================================
+RÉSULTATS:
+========================================
+Piétons détectés: 5
+
+Piéton 1:
+  └─ Confiance YOLO: 97%
+  └─ Position: (1649, 508)
+  └─ Taille: 288x628
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=24, V=40
+
+Piéton 2:
+  └─ Confiance YOLO: 96%
+  └─ Position: (850, 394)
+  └─ Taille: 222x829
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=33, V=35
+
+Piéton 3:
+  └─ Confiance YOLO: 92%
+  └─ Position: (1352, 514)
+  └─ Taille: 261x672
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=29, V=35
+
+Piéton 4:
+  └─ Confiance YOLO: 89%
+  └─ Position: (1244, 552)
+  └─ Taille: 164x496
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=43, V=44
+
+Piéton 5:
+  └─ Confiance YOLO: 88%
+  └─ Position: (579, 480)
+  └─ Taille: 266x727
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=39, V=47
+
+========================================
+Image sauvegardée: results/real_one_image_copy.jpg
+
+[7] Affichage des résultats...
+
+Appuyez sur une touche pour quitter...
+
+Traitement terminé!
+QThreadStorage: entry 1 destroyed before end of thread 0x194fce0fe60
+QThreadStorage: entry 0 destroyed before end of thread 0x194fce0fe60
+
+real	0m4.488s
+user	0m0.015s
+sys	0m0.015s

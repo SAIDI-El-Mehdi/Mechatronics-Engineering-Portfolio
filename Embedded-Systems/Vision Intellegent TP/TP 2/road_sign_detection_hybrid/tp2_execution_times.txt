@@ -1,0 +1,82 @@
+==============================
+TP2 - TEMPS D'EXECUTION
+==============================
+
+=== CLASSIC ===
+[INFO] Input : "images/input"
+[INFO] Output: "images/output/classic"
+[INFO] Processing: "images/input\\blue_direction.png"
+       detections=1 time=26.686 ms saved="images/output/classic\\blue_direction_final_result.png"
+[INFO] Processing: "images/input\\no_entry.jpg"
+       detections=1 time=61.917 ms saved="images/output/classic\\no_entry_final_result.png"
+[INFO] Processing: "images/input\\red_prohibition.jpg"
+       detections=1 time=273.299 ms saved="images/output/classic\\red_prohibition_final_result.png"
+[INFO] Processing: "images/input\\road_scene_01.jpg"
+       detections=14 time=784.175 ms saved="images/output/classic\\road_scene_01_final_result.png"
+[INFO] Processing: "images/input\\road_scene_02.jpg"
+       detections=6 time=129.162 ms saved="images/output/classic\\road_scene_02_final_result.png"
+[INFO] Processing: "images/input\\speed_limit.png"
+       detections=1 time=24.718 ms saved="images/output/classic\\speed_limit_final_result.png"
+[INFO] Processing: "images/input\\stop_sign.jpg"
+       detections=2 time=240.576 ms saved="images/output/classic\\stop_sign_final_result.png"
+[INFO] Processing: "images/input\\warning_triangle.jpg"
+       detections=1 time=97.965 ms saved="images/output/classic\\warning_triangle_final_result.png"
+[INFO] Processing: "images/input\\yellow_warning.jpg"
+       detections=1 time=101.183 ms saved="images/output/classic\\yellow_warning_final_result.png"
+[DONE] Classical branch completed.
+[INFO] Report: "images/output/classic\\terminal_report_classic.txt"
+[INFO] CSV   : "images/output/classic\\classic_detections.csv"
+
+real	0m2.016s
+user	0m0.000s
+sys	0m0.047s
+
+=== CLASSIC PART2 ===
+TP3 PART 2 PARAMETER ANALYSIS
+Input : "images/input"
+Output: "images/output/part2"
+sat=80 area=300 circ=0.82 rdp=0.04 hough=3
+
+blue_direction.png | raw=1 | area_ok=1 | final=1 | time=18.376 ms
+no_entry.jpg | raw=1 | area_ok=1 | final=1 | time=42.265 ms
+red_prohibition.jpg | raw=1 | area_ok=1 | final=1 | time=220.871 ms
+road_scene_01.jpg | raw=96 | area_ok=14 | final=14 | time=137.286 ms
+road_scene_02.jpg | raw=17 | area_ok=6 | final=6 | time=81.764 ms
+speed_limit.png | raw=1 | area_ok=1 | final=1 | time=18.095 ms
+stop_sign.jpg | raw=12 | area_ok=2 | final=2 | time=54.745 ms
+warning_triangle.jpg | raw=1 | area_ok=1 | final=1 | time=70.060 ms
+yellow_warning.jpg | raw=1 | area_ok=1 | final=1 | time=77.991 ms
+
+DONE
+total_raw_contours=131
+total_area_accepted=28
+total_final_detections=28
+Report: "images/output/part2\\terminal_report_part2.txt"
+CSV   : "images/output/part2\\detections_part2.csv"
+
+real	0m0.927s
+user	0m0.000s
+sys	0m0.000s
+
+=== YOLO ===
+Traceback (most recent call last):
+  File "D:/S4 MTA/1- Vision intelligente & Temps reel/1- Vision intelligente/TP/TP 2/road_sign_detection_hybrid/python_yolo/detect_yolo.py", line 19, in <module>
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+real	0m0.266s
+user	0m0.000s
+sys	0m0.015s
+
+=== YOLO SPECIAL ===
+D:/S4 MTA/1- Vision intelligente & Temps reel/1- Vision intelligente/TP/TP 2/road_sign_detection_hybrid/python_yolo/detect_yolo_special.py:18: SyntaxWarning: "\d" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\d"? A raw string is also an option.
+  python python_yolo\detect_yolo_special.py ^
+Traceback (most recent call last):
+  File "D:/S4 MTA/1- Vision intelligente & Temps reel/1- Vision intelligente/TP/TP 2/road_sign_detection_hybrid/python_yolo/detect_yolo_special.py", line 32, in <module>
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+real	0m0.220s
+user	0m0.031s
+sys	0m0.000s
+

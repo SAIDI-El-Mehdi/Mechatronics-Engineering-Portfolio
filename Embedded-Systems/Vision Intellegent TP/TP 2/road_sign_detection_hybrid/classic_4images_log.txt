@@ -1,0 +1,17 @@
+[INFO] Input : "images/input_4images"
+[INFO] Output: "images/output/classic_4images"
+[INFO] Processing: "images/input_4images\\image1.jpeg"
+       detections=2 time=112.565 ms saved="images/output/classic_4images\\image1_final_result.png"
+[INFO] Processing: "images/input_4images\\image2.png"
+       detections=1 time=31.088 ms saved="images/output/classic_4images\\image2_final_result.png"
+[INFO] Processing: "images/input_4images\\image3.jpeg"
+       detections=4 time=251.892 ms saved="images/output/classic_4images\\image3_final_result.png"
+[INFO] Processing: "images/input_4images\\image4.jpeg"
+       detections=2 time=671.696 ms saved="images/output/classic_4images\\image4_final_result.png"
+[DONE] Classical branch completed.
+[INFO] Report: "images/output/classic_4images\\terminal_report_classic.txt"
+[INFO] CSV   : "images/output/classic_4images\\classic_detections.csv"
+
+real	0m2.474s
+user	0m0.015s
+sys	0m0.000s

@@ -1,0 +1,16 @@
+[INFO] Loading YOLO model...
+[INFO] Processing: images\input\image1.jpeg
+       detections=0, time=286.199 ms, saved=images\output\yolo\image1_yolo_annotated.png
+[INFO] Processing: images\input\image2.png
+       detections=0, time=228.131 ms, saved=images\output\yolo\image2_yolo_annotated.png
+[INFO] Processing: images\input\image3.jpeg
+       detections=0, time=182.115 ms, saved=images\output\yolo\image3_yolo_annotated.png
+[INFO] Processing: images\input\image4.jpeg
+       detections=0, time=186.669 ms, saved=images\output\yolo\image4_yolo_annotated.png
+[DONE] YOLO branch completed.
+[INFO] Report: images\output\yolo\terminal_report_yolo.txt
+[INFO] CSV: images\output\yolo\yolo_detections.csv
+
+real	0m5.690s
+user	0m0.015s
+sys	0m0.015s

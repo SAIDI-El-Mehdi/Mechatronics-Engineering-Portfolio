@@ -1,0 +1,54 @@
+import numpy as np
+import pandas as pd
+import matplotlib .pyplot as plt
+from sklearn . neighbors import KNeighborsRegressor
+from sklearn . preprocessing import MinMaxScaler
+from sklearn . neighbors import KNeighborsClassifier
+from sklearn . model_selection import train_test_split
+data = pd. read_csv ("file:///C:/Users/Etudiant/Desktop/TP1/exo2/datatest.csv")
+Irms = data["Irms"]. values
+Tamb = data["Tamb"]. values
+Tmot = data["Tmot"]. values
+THD = data["THD"]. values
+Etat = data["Etat"]. Svalues
+
+plt.figure( figsize =(6 ,4))
+plt. scatter (Irms , Tmot)
+plt.xlabel(" Courant RMS(A)")
+plt.ylabel(" Temperature interne")
+plt.grid(True)
+plt.show ()
+
+X = np. column_stack ((Irms , Tamb))
+scaler = MinMaxScaler ()
+Xn = scaler. fit_transform (X)
+
+X_train , X_test , y_train , y_test = train_test_split (Xn , Tmot , test_size =0.25 , random_state =1)
+knn = KNeighborsRegressor ( n_neighbors =7)
+knn.fit(X_train , y_train )
+y_pred = knn. predict (X_test)
+
+plt.figure( figsize =(6 ,4))
+plt.scatter (y_test , y_pred)
+plt.plot ([Tmot.min (), Tmot.max ()],[Tmot.min (), Tmot.max ()] , "r--")
+plt.xlabel(" Temperature reel( C )")
+plt.ylabel(" Temperature estime( C )")
+plt.grid(True)
+plt.show ()
+
+Xc = np. column_stack ((Irms , THD))
+scaler = MinMaxScaler ()
+Xc_n = scaler. fit_transform (Xc)
+X_train , X_test , y_train , y_test = train_test_split (Xc_n , Etat , test_size =0.25 , random_state =2)
+knn = KNeighborsClassifier ( n_neighbors =5)    
+knn.fit(X_train , y_train )
+y_pred = knn. predict (X_test)
+
+plt.figure( figsize =(6 ,4))
+plt. scatter (Irms[Etat ==0] , THD[Etat ==0] , label="Normal")
+plt. scatter (Irms[Etat ==1] , THD[Etat ==1] , label=" Anormal ")
+plt.xlabel(" Courant RMS(A)")
+plt.ylabel("THD(%)")
+plt.legend ()
+plt.grid(True)
+plt.show ()

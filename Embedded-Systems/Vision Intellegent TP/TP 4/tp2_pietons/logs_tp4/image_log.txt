@@ -1,0 +1,75 @@
+
+[1] Lecture de l'image: Data/image.png
+    Taille: 770x513
+    Canaux: 3
+
+[2] Chargement du modèle YOLOv4-tiny...
+    2 couches de sortie
+
+[3] Préparation du blob d'entrée...
+    Taille blob: 416x416
+
+[4] Inférence YOLO en cours...
+    Inférence terminée
+
+[5] Extraction des détections...
+    Détections brutes: 9
+
+[6] Application NMS (Non-Maximum Suppression)...
+========================================
+RÉSULTATS:
+========================================
+Piétons détectés: 6
+
+Piéton 1:
+  └─ Confiance YOLO: 99%
+  └─ Position: (19, 172)
+  └─ Taille: 111x249
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=70, V=92
+
+Piéton 2:
+  └─ Confiance YOLO: 99%
+  └─ Position: (634, 172)
+  └─ Taille: 135x234
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=56, V=65
+
+Piéton 3:
+  └─ Confiance YOLO: 98%
+  └─ Position: (466, 168)
+  └─ Taille: 141x244
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=57, V=63
+
+Piéton 4:
+  └─ Confiance YOLO: 90%
+  └─ Position: (228, 143)
+  └─ Taille: 121x278
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=57, V=60
+
+Piéton 5:
+  └─ Confiance YOLO: 78%
+  └─ Position: (156, 181)
+  └─ Taille: 24x56
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=115, V=81
+
+Piéton 6:
+  └─ Confiance YOLO: 37%
+  └─ Position: (137, 180)
+  └─ Taille: 18x55
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=108, V=125
+
+========================================
+Image sauvegardée: outputs_tp4/image_pietons.jpg
+
+[7] Affichage des résultats...
+
+Appuyez sur une touche pour quitter...
+
+Traitement terminé!
+QThreadStorage: entry 1 destroyed before end of thread 0x178424ff920
+QThreadStorage: entry 0 destroyed before end of thread 0x178424ff920

@@ -1,0 +1,53 @@
+==============================================
+TP5 - Observer Design for a SISO System
+==============================================
+Physical parameters:
+m = 1.00 kg
+c = 2.00 N.s/m
+k = 10.00 N/m
+Matrix A:
+     0     1
+   -10    -2
+
+Matrix B:
+     0
+     1
+
+Matrix C:
+     1     0
+
+Matrix D:
+     0
+
+Observability matrix:
+     1     0
+     0     1
+
+Rank of observability matrix = 2
+Open-loop poles:
+  -1.0000 + 3.0000i
+  -1.0000 - 3.0000i
+
+Desired observer poles:
+    -8    -9
+
+Observer gain L:
+   15.0000
+   32.0000
+
+Observer error dynamics matrix A - L*C:
+  -15.0000    1.0000
+  -42.0000   -2.0000
+
+Observer error poles:
+   -9.0000
+   -8.0000
+
+Initial real state:
+     1
+     0
+
+Initial estimated state:
+     0
+     0
+

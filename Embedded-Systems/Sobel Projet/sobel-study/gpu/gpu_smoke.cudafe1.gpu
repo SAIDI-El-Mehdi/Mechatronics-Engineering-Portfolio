@@ -1,0 +1,74 @@
+typedef char __nv_bool;
+#line 617 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt.h"
+struct __crt_locale_pointers;
+#line 3189 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\include\\driver_types.h"
+struct CUstream_st;
+#line 28 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wstdio.h"
+struct _iobuf;
+#line 192 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\vadefs.h"
+struct _Z39__vcrt_assert_va_start_is_not_referenceIKPKcE;
+#line 188 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\vcruntime.h"
+typedef unsigned long long size_t;
+#include "crt/device_runtime.h"
+#line 72 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\vadefs.h"
+typedef char *va_list;
+#line 623 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt.h"
+typedef struct __crt_locale_pointers *_locale_t;
+#line 31 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wstdio.h"
+typedef struct _iobuf FILE;
+#pragma pack(8)
+#line 192 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\vadefs.h"
+struct _Z39__vcrt_assert_va_start_is_not_referenceIKPKcE {char __nv_no_debug_dummy_end_padding_0;};
+#pragma pack()
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#line 250 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\include\\cuda_device_runtime_api.h"
+___device__(extern  __no_sc__) const char *__cudaCDP2GetErrorString(enum cudaError);
+#line 529 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\include\\cuda_device_runtime_api.h"
+___device__(static  __no_sc__) __inline__ const char *_ZN43_INTERNAL_df9c1d6c_12_gpu_smoke_cu_1f60bb1e18cudaGetErrorStringE9cudaError(enum cudaError);
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#line 950 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\ucrt\\stdio.h"
+ __device_builtin__ ___device__(extern  __no_sc__) int printf(const char *const, ...);
+#endif
+#line 2932 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\include\\crt/device_functions.h"
+___device__(extern  __no_sc__) unsigned __cudaPushCallConfiguration(struct dim3, struct dim3, size_t, struct CUstream_st *);
+#line 4 "gpu_smoke.cu"
+__global__ __var_used__ extern void _Z5smokev(void);
+#include "common_functions.h"
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#line 529 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\include\\cuda_device_runtime_api.h"
+___device__(static  __no_sc__) __inline__ const char *_ZN43_INTERNAL_df9c1d6c_12_gpu_smoke_cu_1f60bb1e18cudaGetErrorStringE9cudaError(
+#line 529 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\include\\cuda_device_runtime_api.h"
+enum cudaError error){
+#line 530 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\include\\cuda_device_runtime_api.h"
+{
+#line 531 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\include\\cuda_device_runtime_api.h"
+return __cudaCDP2GetErrorString(error);
+#line 532 "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.2\\include\\cuda_device_runtime_api.h"
+}}
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#if !defined(__CUDABE__)
+#endif
+#line 4 "gpu_smoke.cu"
+__global__ __var_used__ void _Z5smokev(void){
+#line 4 "gpu_smoke.cu"
+{
+#line 4 "gpu_smoke.cu"
+#line 4 "gpu_smoke.cu"
+}}

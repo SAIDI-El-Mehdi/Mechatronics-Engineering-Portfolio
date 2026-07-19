@@ -1,0 +1,67 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.neighbors import KNeighborsRegressor, KNeighborsClassifier
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, confusion_matrix, mean_squared_error
+
+data = pd.read_csv("datatest.csv")
+
+Temp = data["Temperature"].values
+Hum = data["Humidity"].values
+Light = data["Light"].values
+CO2 = data["CO2"].values
+Occupancy = data["Occupancy"].values
+
+Xc = data[['Temperature', 'Humidity', 'Light', 'CO2']].values
+y_c = Occupancy
+
+scaler_class = MinMaxScaler()
+Xc_n = scaler_class.fit_transform(Xc)
+
+X_train_c, X_test_c, y_train_c, y_test_c = train_test_split(Xc_n, y_c, test_size=0.25, random_state=2)
+
+knn_class = KNeighborsClassifier(n_neighbors=5)
+knn_class.fit(X_train_c, y_train_c)
+
+y_pred_class = knn_class.predict(X_test_c)
+
+acc = accuracy_score(y_test_c, y_pred_class)
+cm = confusion_matrix(y_test_c, y_pred_class)
+
+print(acc)
+print(cm)
+
+plt.figure(figsize=(6, 4))
+plt.scatter(data[data['Occupancy'] == 0]['Light'], data[data['Occupancy'] == 0]['CO2'], label="Non Occupe", color='blue')
+plt.scatter(data[data['Occupancy'] == 1]['Light'], data[data['Occupancy'] == 1]['CO2'], label="Occupe", color='red')
+plt.xlabel("Lumiere")
+plt.ylabel("CO2")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+Xr = data[['Humidity', 'Light', 'CO2', 'Occupancy']].values
+y_r = Temp
+
+scaler_reg = MinMaxScaler()
+Xr_n = scaler_reg.fit_transform(Xr)
+
+X_train_r, X_test_r, y_train_r, y_test_r = train_test_split(Xr_n, y_r, test_size=0.25, random_state=1)
+
+knn_reg = KNeighborsRegressor(n_neighbors=5)
+knn_reg.fit(X_train_r, y_train_r)
+
+y_pred_reg = knn_reg.predict(X_test_r)
+
+rmse = np.sqrt(mean_squared_error(y_test_r, y_pred_reg))
+print(rmse)
+
+plt.figure(figsize=(6, 4))
+plt.scatter(y_test_r, y_pred_reg)
+plt.plot([Temp.min(), Temp.max()], [Temp.min(), Temp.max()], "r--")
+plt.xlabel("Temperature reelle")
+plt.ylabel("Temperature estimee")
+plt.grid(True)
+plt.show()

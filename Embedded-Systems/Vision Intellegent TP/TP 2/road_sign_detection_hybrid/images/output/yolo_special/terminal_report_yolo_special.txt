@@ -1,0 +1,54 @@
+YOLO SPECIAL DETECTION REPORT
+=============================
+
+Model: python_yolo\models\best.pt
+Input: images\input
+Output: images\output\yolo_special
+Confidence threshold: 0.1
+Image sizes tested: [640, 960, 1280]
+NMS IoU threshold: 0.45
+
+Image: images\input\image1.jpeg
+  imgsz=640: raw_detections=0, time=311.630 ms
+  imgsz=960: raw_detections=0, time=378.763 ms
+  imgsz=1280: raw_detections=0, time=719.502 ms
+  -> No detection after multi-scale YOLO.
+  Final detections after NMS: 0
+  Fastest inference: imgsz=640, time=311.630 ms
+
+Image: images\input\image2.png
+  imgsz=640: raw_detections=0, time=246.106 ms
+  imgsz=960: raw_detections=0, time=489.711 ms
+  imgsz=1280: raw_detections=0, time=897.214 ms
+  -> No detection after multi-scale YOLO.
+  Final detections after NMS: 0
+  Fastest inference: imgsz=640, time=246.106 ms
+
+Image: images\input\image3.jpeg
+  imgsz=640: raw_detections=0, time=192.588 ms
+  imgsz=960: raw_detections=0, time=384.558 ms
+  imgsz=1280: raw_detections=0, time=647.672 ms
+  -> No detection after multi-scale YOLO.
+  Final detections after NMS: 0
+  Fastest inference: imgsz=640, time=192.588 ms
+
+Image: images\input\image4.jpeg
+  imgsz=640: raw_detections=0, time=188.201 ms
+  imgsz=960: raw_detections=0, time=353.257 ms
+  imgsz=1280: raw_detections=0, time=615.402 ms
+  -> No detection after multi-scale YOLO.
+  Final detections after NMS: 0
+  Fastest inference: imgsz=640, time=188.201 ms
+
+
+GLOBAL SUMMARY
+==============
+Total images: 4
+Total detections: 0
+Images with zero detection: 4
+
+Zero-detection images:
+  - images\input\image1.jpeg
+  - images\input\image2.png
+  - images\input\image3.jpeg
+  - images\input\image4.jpeg

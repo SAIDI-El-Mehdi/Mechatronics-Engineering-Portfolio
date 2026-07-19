@@ -1,0 +1,4 @@
+C:/sobel-study/build/CMakeFiles/sobel_baseline.dir
+C:/sobel-study/build/CMakeFiles/sobel_optimized.dir
+C:/sobel-study/build/CMakeFiles/edit_cache.dir
+C:/sobel-study/build/CMakeFiles/rebuild_cache.dir

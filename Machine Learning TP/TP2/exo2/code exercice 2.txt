@@ -1,0 +1,97 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+from sklearn.metrics import (
+    accuracy_score, confusion_matrix, ConfusionMatrixDisplay,
+    mean_squared_error, r2_score, classification_report
+)
+
+CSV_PATH = "datatest.csv"
+TEST_SIZE = 0.25
+RANDOM_STATE_CLF = 2
+RANDOM_STATE_REG = 1
+
+data = pd.read_csv(CSV_PATH)
+data.columns = data.columns.str.strip()
+
+Temp  = data["Temperature"].values
+Hum   = data["Humidity"].values
+Light = data["Light"].values
+CO2   = data["CO2"].values
+Occ   = data["Occupancy"].values
+
+print("Aperçu données :")
+print(data.head())
+
+X_clf = data[["Temperature", "Humidity", "Light", "CO2"]].values
+y_clf = Occ
+
+scaler_c = MinMaxScaler()
+X_clf_n = scaler_c.fit_transform(X_clf)
+
+X_train_c, X_test_c, y_train_c, y_test_c = train_test_split(
+    X_clf_n, y_clf, test_size=TEST_SIZE, random_state=RANDOM_STATE_CLF, stratify=y_clf
+)
+
+rf_clf = RandomForestClassifier(n_estimators=300, random_state=RANDOM_STATE_CLF)
+rf_clf.fit(X_train_c, y_train_c)
+y_pred_c = rf_clf.predict(X_test_c)
+
+acc = float(accuracy_score(y_test_c, y_pred_c))
+print("\n=== Ex2 — Classification (Occupation) ===")
+print(f"Accuracy = {acc:.4f}")
+print("\nRapport de classification :")
+print(classification_report(y_test_c, y_pred_c, target_names=["Non occupé", "Occupé"]))
+
+plt.figure()
+plt.scatter(Light[Occ == 0], CO2[Occ == 0], label="Non occupé")
+plt.scatter(Light[Occ == 1], CO2[Occ == 1], label="Occupé")
+plt.xlabel("Light")
+plt.ylabel("CO2")
+plt.title("Nuage : Light vs CO2 (par Occupancy)")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+cm = confusion_matrix(y_test_c, y_pred_c)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Non occupé", "Occupé"])
+disp.plot()
+plt.title("Matrice de confusion — Occupancy (RF)")
+plt.grid(False)
+plt.show()
+
+X_reg = data[["Humidity", "Light", "CO2", "Occupancy"]].values
+y_reg = data["Temperature"].values
+
+scaler_r = MinMaxScaler()
+X_reg_n = scaler_r.fit_transform(X_reg)
+
+X_train_r, X_test_r, y_train_r, y_test_r = train_test_split(
+    X_reg_n, y_reg, test_size=TEST_SIZE, random_state=RANDOM_STATE_REG
+)
+
+rf_reg = RandomForestRegressor(n_estimators=300, random_state=RANDOM_STATE_REG)
+rf_reg.fit(X_train_r, y_train_r)
+y_pred_r = rf_reg.predict(X_test_r)
+
+rmse = float(np.sqrt(mean_squared_error(y_test_r, y_pred_r)))
+r2 = float(r2_score(y_test_r, y_pred_r))
+
+print("\n=== Ex2 — Régression (Température) ===")
+print(f"RMSE = {rmse:.4f}")
+print(f"R^2  = {r2:.4f}")
+
+plt.figure()
+plt.scatter(y_test_r, y_pred_r)
+mn = min(y_reg.min(), y_pred_r.min())
+mx = max(y_reg.max(), y_pred_r.max())
+plt.plot([mn, mx], [mn, mx], "r--")
+plt.xlabel("Température réelle")
+plt.ylabel("Température estimée")
+plt.title("Régression RF : Temp réelle vs estimée")
+plt.grid(True)
+plt.show()

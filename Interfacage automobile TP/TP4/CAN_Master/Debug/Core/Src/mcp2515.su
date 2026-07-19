@@ -1,0 +1,8 @@
+../Core/Src/mcp2515.c:9:13:mcp_write_reg	24	static
+../Core/Src/mcp2515.c:17:16:mcp_read_reg	24	static
+../Core/Src/mcp2515.c:28:13:mcp_bit_modify	24	static
+../Core/Src/mcp2515.c:37:6:MCP2515_Reset	16	static
+../Core/Src/mcp2515.c:47:6:MCP2515_Init	8	static
+../Core/Src/mcp2515.c:72:9:MCP2515_SendFrame	24	static
+../Core/Src/mcp2515.c:96:9:MCP2515_CheckReceive	16	static
+../Core/Src/mcp2515.c:103:9:MCP2515_ReadFrame	32	static

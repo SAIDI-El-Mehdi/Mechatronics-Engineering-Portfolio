@@ -1,0 +1,63 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+data = pd.read_csv("file:///C:/Users/Etudiant/Desktop/TP0/exo 2/signal_mesure_ex2.csv")
+data_raw = data.copy()
+t = data_raw["time"].values
+Signal = data_raw["Signal"].values
+
+subset = 800
+
+t_sub = t[: subset]
+Signal_sub = Signal[: subset]
+
+plt.figure( figsize =(10 ,4))
+plt.plot(t_sub , Signal_sub , color="blue", linewidth =1.4 , label="Signal_brut")
+plt.title("Signal mesure brut( fenetre partielle )")
+plt.xlabel("Temps (s)")
+plt.ylabel(" Amplitude ")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+nan_idx = np.where(np.isnan( Signal_sub ))[0]
+
+Signal_tmp = pd.Series( Signal_sub ).interpolate (method="linear").values
+plt.figure(figsize =(10 ,4))
+plt.plot(t_sub , Signal_tmp , color="blue", linewidth =1.4 , label="Signal mesure ")
+plt.scatter(t_sub[ nan_idx ], Signal_tmp [ nan_idx ], marker="x", color="black", s=70, linewidths =2,label=" Valeurs manquantes ")
+plt.title(" Localisation des valeurs manquantes ")
+plt.xlabel("Temps(s)")
+plt.ylabel(" Amplitude ")
+plt.legend ()
+plt.grid(True)
+plt.show ()
+
+data_clean = data_raw.copy ()
+
+data_clean["Signal"] = data_clean["Signal"].interpolate(method="linear")
+Signal_clean = data_clean["Signal"].values
+
+
+
+plt.figure( figsize =(10 ,4))
+plt.plot(t_sub , Signal_clean [: subset], color="green", linewidth =1.4 , label="Signal interpol ")
+
+plt.title("Signal apres interpolation ")
+plt. xlabel("Temps(s)")
+plt. ylabel(" Amplitude ")
+plt. legend ()
+plt.grid(True)
+plt.show ()
+
+Signal_norm = (Signal_clean - Signal_clean.min ()) / (Signal_clean.max () - Signal_clean.min () )
+
+plt.figure(figsize =(10 ,4))
+plt.plot(t_sub , Signal_norm [: subset], color="red",linewidth =1.4 , label="Signal normalise ")
+plt.title("Signal normalise(0 1 )")
+plt.xlabel("Temps(s)")
+plt.ylabel(" Amplitude normalise ")
+plt.legend()
+plt.grid(True)
+plt.show ()
+

@@ -1,0 +1,35 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity modN_counter is
+  generic(
+    N : natural := 10  -- modulo
+  );
+  port(
+    clk   : in  std_logic;
+    rst   : in  std_logic;
+    q     : out std_logic_vector(3 downto 0);
+    tc    : out std_logic              -- terminal count
+  );
+end modN_counter;
+
+architecture rtl of modN_counter is
+  signal cnt : unsigned(3 downto 0) := (others => '0');
+begin
+  process(clk, rst)
+  begin
+    if rst = '1' then
+      cnt <= (others => '0');
+    elsif rising_edge(clk) then
+      if cnt = N-1 then
+        cnt <= (others => '0');
+      else
+        cnt <= cnt + 1;
+      end if;
+    end if;
+  end process;
+
+  q  <= std_logic_vector(cnt);
+  tc <= '1' when cnt = N-1 else '0';
+end rtl;

@@ -1,0 +1,698 @@
+==============================
+TP3 - RAPPORT DE VALIDATION
+==============================
+
+=== DOSSIER COURANT ===
+/d/S4 MTA/1- Vision intelligente & Temps reel/1- Vision intelligente/TP
+
+=== STRUCTURE TP3 ===
+./TP 3
+./TP 3/Things
+./TP 3/tp1_voies
+./TP 3/tp1_voies/Data
+./TP 3/tp1_voies/Data/test_images
+
+=== TOUS LES FICHIERS TP3 ===
+./TP 3/Things/1. Original Image_screenshot_27.04.2026.png
+./TP 3/Things/2. Color Mask_screenshot_27.04.2026.png
+./TP 3/Things/3. Edges + Color Mask_screenshot_27.04.2026.png
+./TP 3/Things/4. Bird's Eye View_screenshot_27.04.2026.png
+./TP 3/Things/5. Detected Lanes (Bird's Eye)_screenshot_27.04.2026.png
+./TP 3/Things/6. Final Result_screenshot_27.04.2026.png
+./TP 3/tp1_voies/4cbb717e-f8fe-4f88-afde-7044d9e95762.png
+./TP 3/tp1_voies/6.png
+./TP 3/tp1_voies/Data/test_images/example0.jpg
+./TP 3/tp1_voies/Data/test_images/example1.jpg
+./TP 3/tp1_voies/Data/test_images/example10.png
+./TP 3/tp1_voies/Data/test_images/example100.png
+./TP 3/tp1_voies/Data/test_images/example101.png
+./TP 3/tp1_voies/Data/test_images/example102.png
+./TP 3/tp1_voies/Data/test_images/example103.png
+./TP 3/tp1_voies/Data/test_images/example104.png
+./TP 3/tp1_voies/Data/test_images/example105.png
+./TP 3/tp1_voies/Data/test_images/example106.png
+./TP 3/tp1_voies/Data/test_images/example107.png
+./TP 3/tp1_voies/Data/test_images/example108.png
+./TP 3/tp1_voies/Data/test_images/example109.png
+./TP 3/tp1_voies/Data/test_images/example11.png
+./TP 3/tp1_voies/Data/test_images/example110.png
+./TP 3/tp1_voies/Data/test_images/example111.png
+./TP 3/tp1_voies/Data/test_images/example112.png
+./TP 3/tp1_voies/Data/test_images/example113.png
+./TP 3/tp1_voies/Data/test_images/example114.png
+./TP 3/tp1_voies/Data/test_images/example115.png
+./TP 3/tp1_voies/Data/test_images/example116.png
+./TP 3/tp1_voies/Data/test_images/example117.png
+./TP 3/tp1_voies/Data/test_images/example118.png
+./TP 3/tp1_voies/Data/test_images/example119.png
+./TP 3/tp1_voies/Data/test_images/example12.png
+./TP 3/tp1_voies/Data/test_images/example120.png
+./TP 3/tp1_voies/Data/test_images/example121.png
+./TP 3/tp1_voies/Data/test_images/example122.png
+./TP 3/tp1_voies/Data/test_images/example123.png
+./TP 3/tp1_voies/Data/test_images/example124.png
+./TP 3/tp1_voies/Data/test_images/example125.png
+./TP 3/tp1_voies/Data/test_images/example126.png
+./TP 3/tp1_voies/Data/test_images/example127.png
+./TP 3/tp1_voies/Data/test_images/example128.png
+./TP 3/tp1_voies/Data/test_images/example129.png
+./TP 3/tp1_voies/Data/test_images/example13.png
+./TP 3/tp1_voies/Data/test_images/example130.png
+./TP 3/tp1_voies/Data/test_images/example131.png
+./TP 3/tp1_voies/Data/test_images/example132.png
+./TP 3/tp1_voies/Data/test_images/example133.png
+./TP 3/tp1_voies/Data/test_images/example134.png
+./TP 3/tp1_voies/Data/test_images/example135.png
+./TP 3/tp1_voies/Data/test_images/example136.png
+./TP 3/tp1_voies/Data/test_images/example137.png
+./TP 3/tp1_voies/Data/test_images/example138.png
+./TP 3/tp1_voies/Data/test_images/example139.png
+./TP 3/tp1_voies/Data/test_images/example14.png
+./TP 3/tp1_voies/Data/test_images/example140.png
+./TP 3/tp1_voies/Data/test_images/example141.png
+./TP 3/tp1_voies/Data/test_images/example142.png
+./TP 3/tp1_voies/Data/test_images/example143.png
+./TP 3/tp1_voies/Data/test_images/example144.png
+./TP 3/tp1_voies/Data/test_images/example145.png
+./TP 3/tp1_voies/Data/test_images/example146.png
+./TP 3/tp1_voies/Data/test_images/example147.png
+./TP 3/tp1_voies/Data/test_images/example148.png
+./TP 3/tp1_voies/Data/test_images/example149.png
+./TP 3/tp1_voies/Data/test_images/example15.png
+./TP 3/tp1_voies/Data/test_images/example150.png
+./TP 3/tp1_voies/Data/test_images/example151.png
+./TP 3/tp1_voies/Data/test_images/example152.png
+./TP 3/tp1_voies/Data/test_images/example153.png
+./TP 3/tp1_voies/Data/test_images/example154.png
+./TP 3/tp1_voies/Data/test_images/example155.png
+./TP 3/tp1_voies/Data/test_images/example156.png
+./TP 3/tp1_voies/Data/test_images/example157.png
+./TP 3/tp1_voies/Data/test_images/example158.png
+./TP 3/tp1_voies/Data/test_images/example159.png
+./TP 3/tp1_voies/Data/test_images/example16.png
+./TP 3/tp1_voies/Data/test_images/example160.png
+./TP 3/tp1_voies/Data/test_images/example161.png
+./TP 3/tp1_voies/Data/test_images/example162.png
+./TP 3/tp1_voies/Data/test_images/example163.png
+./TP 3/tp1_voies/Data/test_images/example164.png
+./TP 3/tp1_voies/Data/test_images/example165.png
+./TP 3/tp1_voies/Data/test_images/example166.png
+./TP 3/tp1_voies/Data/test_images/example167.png
+./TP 3/tp1_voies/Data/test_images/example168.png
+./TP 3/tp1_voies/Data/test_images/example169.png
+./TP 3/tp1_voies/Data/test_images/example17.png
+./TP 3/tp1_voies/Data/test_images/example170.png
+./TP 3/tp1_voies/Data/test_images/example171.png
+./TP 3/tp1_voies/Data/test_images/example172.png
+./TP 3/tp1_voies/Data/test_images/example173.png
+./TP 3/tp1_voies/Data/test_images/example174.png
+./TP 3/tp1_voies/Data/test_images/example175.png
+./TP 3/tp1_voies/Data/test_images/example176.png
+./TP 3/tp1_voies/Data/test_images/example177.png
+./TP 3/tp1_voies/Data/test_images/example178.png
+./TP 3/tp1_voies/Data/test_images/example179.png
+./TP 3/tp1_voies/Data/test_images/example18.png
+./TP 3/tp1_voies/Data/test_images/example180.png
+./TP 3/tp1_voies/Data/test_images/example181.png
+./TP 3/tp1_voies/Data/test_images/example182.png
+./TP 3/tp1_voies/Data/test_images/example183.png
+./TP 3/tp1_voies/Data/test_images/example184.png
+./TP 3/tp1_voies/Data/test_images/example185.png
+./TP 3/tp1_voies/Data/test_images/example186.png
+./TP 3/tp1_voies/Data/test_images/example187.png
+./TP 3/tp1_voies/Data/test_images/example188.png
+./TP 3/tp1_voies/Data/test_images/example189.png
+./TP 3/tp1_voies/Data/test_images/example19.png
+./TP 3/tp1_voies/Data/test_images/example190.png
+./TP 3/tp1_voies/Data/test_images/example191.png
+./TP 3/tp1_voies/Data/test_images/example192.png
+./TP 3/tp1_voies/Data/test_images/example193.png
+./TP 3/tp1_voies/Data/test_images/example194.png
+./TP 3/tp1_voies/Data/test_images/example195.png
+./TP 3/tp1_voies/Data/test_images/example196.png
+./TP 3/tp1_voies/Data/test_images/example197.png
+./TP 3/tp1_voies/Data/test_images/example198.png
+./TP 3/tp1_voies/Data/test_images/example199.png
+./TP 3/tp1_voies/Data/test_images/example2.jpg
+./TP 3/tp1_voies/Data/test_images/example20.png
+./TP 3/tp1_voies/Data/test_images/example200.png
+./TP 3/tp1_voies/Data/test_images/example201.png
+./TP 3/tp1_voies/Data/test_images/example202.png
+./TP 3/tp1_voies/Data/test_images/example203.png
+./TP 3/tp1_voies/Data/test_images/example204.png
+./TP 3/tp1_voies/Data/test_images/example205.png
+./TP 3/tp1_voies/Data/test_images/example206.png
+./TP 3/tp1_voies/Data/test_images/example207.png
+./TP 3/tp1_voies/Data/test_images/example208.png
+./TP 3/tp1_voies/Data/test_images/example209.png
+./TP 3/tp1_voies/Data/test_images/example21.png
+./TP 3/tp1_voies/Data/test_images/example210.png
+./TP 3/tp1_voies/Data/test_images/example211.png
+./TP 3/tp1_voies/Data/test_images/example212.png
+./TP 3/tp1_voies/Data/test_images/example213.png
+./TP 3/tp1_voies/Data/test_images/example214.png
+./TP 3/tp1_voies/Data/test_images/example215.png
+./TP 3/tp1_voies/Data/test_images/example216.png
+./TP 3/tp1_voies/Data/test_images/example217.png
+./TP 3/tp1_voies/Data/test_images/example218.png
+./TP 3/tp1_voies/Data/test_images/example219.png
+./TP 3/tp1_voies/Data/test_images/example22.png
+./TP 3/tp1_voies/Data/test_images/example220.png
+./TP 3/tp1_voies/Data/test_images/example221.png
+./TP 3/tp1_voies/Data/test_images/example222.png
+./TP 3/tp1_voies/Data/test_images/example223.png
+./TP 3/tp1_voies/Data/test_images/example224.png
+./TP 3/tp1_voies/Data/test_images/example225.png
+./TP 3/tp1_voies/Data/test_images/example226.png
+./TP 3/tp1_voies/Data/test_images/example227.png
+./TP 3/tp1_voies/Data/test_images/example228.png
+./TP 3/tp1_voies/Data/test_images/example229.png
+./TP 3/tp1_voies/Data/test_images/example23.png
+./TP 3/tp1_voies/Data/test_images/example230.png
+./TP 3/tp1_voies/Data/test_images/example231.png
+./TP 3/tp1_voies/Data/test_images/example232.png
+./TP 3/tp1_voies/Data/test_images/example233.png
+./TP 3/tp1_voies/Data/test_images/example234.png
+./TP 3/tp1_voies/Data/test_images/example235.png
+./TP 3/tp1_voies/Data/test_images/example236.png
+./TP 3/tp1_voies/Data/test_images/example237.png
+./TP 3/tp1_voies/Data/test_images/example238.png
+./TP 3/tp1_voies/Data/test_images/example239.png
+./TP 3/tp1_voies/Data/test_images/example24.png
+./TP 3/tp1_voies/Data/test_images/example240.png
+./TP 3/tp1_voies/Data/test_images/example241.png
+./TP 3/tp1_voies/Data/test_images/example242.png
+./TP 3/tp1_voies/Data/test_images/example243.png
+./TP 3/tp1_voies/Data/test_images/example244.png
+./TP 3/tp1_voies/Data/test_images/example245.png
+./TP 3/tp1_voies/Data/test_images/example246.png
+./TP 3/tp1_voies/Data/test_images/example247.png
+./TP 3/tp1_voies/Data/test_images/example248.png
+./TP 3/tp1_voies/Data/test_images/example249.png
+./TP 3/tp1_voies/Data/test_images/example25.png
+./TP 3/tp1_voies/Data/test_images/example250.png
+./TP 3/tp1_voies/Data/test_images/example251.png
+./TP 3/tp1_voies/Data/test_images/example252.png
+./TP 3/tp1_voies/Data/test_images/example253.png
+./TP 3/tp1_voies/Data/test_images/example254.png
+./TP 3/tp1_voies/Data/test_images/example255.png
+./TP 3/tp1_voies/Data/test_images/example256.png
+./TP 3/tp1_voies/Data/test_images/example257.png
+./TP 3/tp1_voies/Data/test_images/example258.png
+./TP 3/tp1_voies/Data/test_images/example259.png
+./TP 3/tp1_voies/Data/test_images/example26.png
+./TP 3/tp1_voies/Data/test_images/example260.png
+./TP 3/tp1_voies/Data/test_images/example261.png
+./TP 3/tp1_voies/Data/test_images/example262.png
+./TP 3/tp1_voies/Data/test_images/example263.png
+./TP 3/tp1_voies/Data/test_images/example264.png
+./TP 3/tp1_voies/Data/test_images/example265.png
+./TP 3/tp1_voies/Data/test_images/example266.png
+./TP 3/tp1_voies/Data/test_images/example267.png
+./TP 3/tp1_voies/Data/test_images/example268.png
+./TP 3/tp1_voies/Data/test_images/example269.png
+./TP 3/tp1_voies/Data/test_images/example27.png
+./TP 3/tp1_voies/Data/test_images/example270.png
+./TP 3/tp1_voies/Data/test_images/example271.png
+./TP 3/tp1_voies/Data/test_images/example272.png
+./TP 3/tp1_voies/Data/test_images/example273.png
+./TP 3/tp1_voies/Data/test_images/example274.png
+./TP 3/tp1_voies/Data/test_images/example275.png
+./TP 3/tp1_voies/Data/test_images/example276.png
+./TP 3/tp1_voies/Data/test_images/example277.png
+./TP 3/tp1_voies/Data/test_images/example278.png
+./TP 3/tp1_voies/Data/test_images/example279.png
+./TP 3/tp1_voies/Data/test_images/example28.png
+./TP 3/tp1_voies/Data/test_images/example280.png
+./TP 3/tp1_voies/Data/test_images/example281.png
+./TP 3/tp1_voies/Data/test_images/example282.png
+./TP 3/tp1_voies/Data/test_images/example283.png
+./TP 3/tp1_voies/Data/test_images/example284.png
+./TP 3/tp1_voies/Data/test_images/example285.png
+./TP 3/tp1_voies/Data/test_images/example286.png
+./TP 3/tp1_voies/Data/test_images/example287.png
+./TP 3/tp1_voies/Data/test_images/example288.png
+./TP 3/tp1_voies/Data/test_images/example289.png
+./TP 3/tp1_voies/Data/test_images/example29.png
+./TP 3/tp1_voies/Data/test_images/example290.png
+./TP 3/tp1_voies/Data/test_images/example291.png
+./TP 3/tp1_voies/Data/test_images/example292.png
+./TP 3/tp1_voies/Data/test_images/example293.png
+./TP 3/tp1_voies/Data/test_images/example294.png
+./TP 3/tp1_voies/Data/test_images/example295.png
+./TP 3/tp1_voies/Data/test_images/example3.jpg
+./TP 3/tp1_voies/Data/test_images/example30.png
+./TP 3/tp1_voies/Data/test_images/example31.png
+./TP 3/tp1_voies/Data/test_images/example32.png
+./TP 3/tp1_voies/Data/test_images/example33.png
+./TP 3/tp1_voies/Data/test_images/example34.png
+./TP 3/tp1_voies/Data/test_images/example35.png
+./TP 3/tp1_voies/Data/test_images/example36.png
+./TP 3/tp1_voies/Data/test_images/example37.png
+./TP 3/tp1_voies/Data/test_images/example38.png
+./TP 3/tp1_voies/Data/test_images/example39.png
+./TP 3/tp1_voies/Data/test_images/example4.jpg
+./TP 3/tp1_voies/Data/test_images/example40.png
+./TP 3/tp1_voies/Data/test_images/example41.png
+./TP 3/tp1_voies/Data/test_images/example42.png
+./TP 3/tp1_voies/Data/test_images/example43.png
+./TP 3/tp1_voies/Data/test_images/example44.png
+./TP 3/tp1_voies/Data/test_images/example45.png
+./TP 3/tp1_voies/Data/test_images/example46.png
+./TP 3/tp1_voies/Data/test_images/example47.png
+./TP 3/tp1_voies/Data/test_images/example48.png
+./TP 3/tp1_voies/Data/test_images/example49.png
+./TP 3/tp1_voies/Data/test_images/example5.jpg
+./TP 3/tp1_voies/Data/test_images/example50.png
+./TP 3/tp1_voies/Data/test_images/example51.png
+./TP 3/tp1_voies/Data/test_images/example52.png
+./TP 3/tp1_voies/Data/test_images/example53.png
+./TP 3/tp1_voies/Data/test_images/example54.png
+./TP 3/tp1_voies/Data/test_images/example55.png
+./TP 3/tp1_voies/Data/test_images/example56.png
+./TP 3/tp1_voies/Data/test_images/example57.png
+./TP 3/tp1_voies/Data/test_images/example58.png
+./TP 3/tp1_voies/Data/test_images/example59.png
+./TP 3/tp1_voies/Data/test_images/example6.jpg
+./TP 3/tp1_voies/Data/test_images/example60.png
+./TP 3/tp1_voies/Data/test_images/example61.png
+./TP 3/tp1_voies/Data/test_images/example62.png
+./TP 3/tp1_voies/Data/test_images/example63.png
+./TP 3/tp1_voies/Data/test_images/example64.png
+./TP 3/tp1_voies/Data/test_images/example65.png
+./TP 3/tp1_voies/Data/test_images/example66.png
+./TP 3/tp1_voies/Data/test_images/example67.png
+./TP 3/tp1_voies/Data/test_images/example68.png
+./TP 3/tp1_voies/Data/test_images/example69.png
+./TP 3/tp1_voies/Data/test_images/example7.png
+./TP 3/tp1_voies/Data/test_images/example70.png
+./TP 3/tp1_voies/Data/test_images/example71.png
+./TP 3/tp1_voies/Data/test_images/example72.png
+./TP 3/tp1_voies/Data/test_images/example73.png
+./TP 3/tp1_voies/Data/test_images/example74.png
+./TP 3/tp1_voies/Data/test_images/example75.png
+./TP 3/tp1_voies/Data/test_images/example76.png
+./TP 3/tp1_voies/Data/test_images/example77.png
+./TP 3/tp1_voies/Data/test_images/example78.png
+./TP 3/tp1_voies/Data/test_images/example79.png
+./TP 3/tp1_voies/Data/test_images/example8.png
+./TP 3/tp1_voies/Data/test_images/example80.png
+./TP 3/tp1_voies/Data/test_images/example81.png
+./TP 3/tp1_voies/Data/test_images/example82.png
+./TP 3/tp1_voies/Data/test_images/example83.png
+./TP 3/tp1_voies/Data/test_images/example84.png
+./TP 3/tp1_voies/Data/test_images/example85.png
+./TP 3/tp1_voies/Data/test_images/example86.png
+./TP 3/tp1_voies/Data/test_images/example87.png
+./TP 3/tp1_voies/Data/test_images/example88.png
+./TP 3/tp1_voies/Data/test_images/example89.png
+./TP 3/tp1_voies/Data/test_images/example9.png
+./TP 3/tp1_voies/Data/test_images/example90.png
+./TP 3/tp1_voies/Data/test_images/example91.png
+./TP 3/tp1_voies/Data/test_images/example92.png
+./TP 3/tp1_voies/Data/test_images/example93.png
+./TP 3/tp1_voies/Data/test_images/example94.png
+./TP 3/tp1_voies/Data/test_images/example95.png
+./TP 3/tp1_voies/Data/test_images/example96.png
+./TP 3/tp1_voies/Data/test_images/example97.png
+./TP 3/tp1_voies/Data/test_images/example98.png
+./TP 3/tp1_voies/Data/test_images/example99.png
+./TP 3/tp1_voies/Repartition du code.pdf
+./TP 3/tp1_voies/TPS_PHD_2EME_ANNEE_CYCLE_RLD_2-1.pdf
+./TP 3/tp1_voies/coco.names
+./TP 3/tp1_voies/p1_complet.py
+./TP 3/tp1_voies/tp1.cpp
+./TP 3/tp1_voies/tp1.exe
+./TP 3/tp1_voies/tp1_canny_test.cpp
+./TP 3/tp1_voies/tp1_canny_test.exe
+./TP 3/tp1_voies/tp1_hsv_test.cpp
+./TP 3/tp1_voies/tp1_hsv_test.exe
+./TP 3/tp1_voies/tp1_original.cpp
+./TP 3/tp1_voies/tp_detection_voies.pdf
+./TP 3/tp1_voies/yolov4-tiny.cfg
+./TP 3/tp1_voies/yolov4-tiny.weights
+
+=== CODE SOURCE ===
+./TP 3/tp1_voies/p1_complet.py
+./TP 3/tp1_voies/tp1.cpp
+./TP 3/tp1_voies/tp1_canny_test.cpp
+./TP 3/tp1_voies/tp1_hsv_test.cpp
+./TP 3/tp1_voies/tp1_original.cpp
+
+=== IMAGES ===
+./TP 3/Things/1. Original Image_screenshot_27.04.2026.png
+./TP 3/Things/2. Color Mask_screenshot_27.04.2026.png
+./TP 3/Things/3. Edges + Color Mask_screenshot_27.04.2026.png
+./TP 3/Things/4. Bird's Eye View_screenshot_27.04.2026.png
+./TP 3/Things/5. Detected Lanes (Bird's Eye)_screenshot_27.04.2026.png
+./TP 3/Things/6. Final Result_screenshot_27.04.2026.png
+./TP 3/tp1_voies/4cbb717e-f8fe-4f88-afde-7044d9e95762.png
+./TP 3/tp1_voies/6.png
+./TP 3/tp1_voies/Data/test_images/example0.jpg
+./TP 3/tp1_voies/Data/test_images/example1.jpg
+./TP 3/tp1_voies/Data/test_images/example10.png
+./TP 3/tp1_voies/Data/test_images/example100.png
+./TP 3/tp1_voies/Data/test_images/example101.png
+./TP 3/tp1_voies/Data/test_images/example102.png
+./TP 3/tp1_voies/Data/test_images/example103.png
+./TP 3/tp1_voies/Data/test_images/example104.png
+./TP 3/tp1_voies/Data/test_images/example105.png
+./TP 3/tp1_voies/Data/test_images/example106.png
+./TP 3/tp1_voies/Data/test_images/example107.png
+./TP 3/tp1_voies/Data/test_images/example108.png
+./TP 3/tp1_voies/Data/test_images/example109.png
+./TP 3/tp1_voies/Data/test_images/example11.png
+./TP 3/tp1_voies/Data/test_images/example110.png
+./TP 3/tp1_voies/Data/test_images/example111.png
+./TP 3/tp1_voies/Data/test_images/example112.png
+./TP 3/tp1_voies/Data/test_images/example113.png
+./TP 3/tp1_voies/Data/test_images/example114.png
+./TP 3/tp1_voies/Data/test_images/example115.png
+./TP 3/tp1_voies/Data/test_images/example116.png
+./TP 3/tp1_voies/Data/test_images/example117.png
+./TP 3/tp1_voies/Data/test_images/example118.png
+./TP 3/tp1_voies/Data/test_images/example119.png
+./TP 3/tp1_voies/Data/test_images/example12.png
+./TP 3/tp1_voies/Data/test_images/example120.png
+./TP 3/tp1_voies/Data/test_images/example121.png
+./TP 3/tp1_voies/Data/test_images/example122.png
+./TP 3/tp1_voies/Data/test_images/example123.png
+./TP 3/tp1_voies/Data/test_images/example124.png
+./TP 3/tp1_voies/Data/test_images/example125.png
+./TP 3/tp1_voies/Data/test_images/example126.png
+./TP 3/tp1_voies/Data/test_images/example127.png
+./TP 3/tp1_voies/Data/test_images/example128.png
+./TP 3/tp1_voies/Data/test_images/example129.png
+./TP 3/tp1_voies/Data/test_images/example13.png
+./TP 3/tp1_voies/Data/test_images/example130.png
+./TP 3/tp1_voies/Data/test_images/example131.png
+./TP 3/tp1_voies/Data/test_images/example132.png
+./TP 3/tp1_voies/Data/test_images/example133.png
+./TP 3/tp1_voies/Data/test_images/example134.png
+./TP 3/tp1_voies/Data/test_images/example135.png
+./TP 3/tp1_voies/Data/test_images/example136.png
+./TP 3/tp1_voies/Data/test_images/example137.png
+./TP 3/tp1_voies/Data/test_images/example138.png
+./TP 3/tp1_voies/Data/test_images/example139.png
+./TP 3/tp1_voies/Data/test_images/example14.png
+./TP 3/tp1_voies/Data/test_images/example140.png
+./TP 3/tp1_voies/Data/test_images/example141.png
+./TP 3/tp1_voies/Data/test_images/example142.png
+./TP 3/tp1_voies/Data/test_images/example143.png
+./TP 3/tp1_voies/Data/test_images/example144.png
+./TP 3/tp1_voies/Data/test_images/example145.png
+./TP 3/tp1_voies/Data/test_images/example146.png
+./TP 3/tp1_voies/Data/test_images/example147.png
+./TP 3/tp1_voies/Data/test_images/example148.png
+./TP 3/tp1_voies/Data/test_images/example149.png
+./TP 3/tp1_voies/Data/test_images/example15.png
+./TP 3/tp1_voies/Data/test_images/example150.png
+./TP 3/tp1_voies/Data/test_images/example151.png
+./TP 3/tp1_voies/Data/test_images/example152.png
+./TP 3/tp1_voies/Data/test_images/example153.png
+./TP 3/tp1_voies/Data/test_images/example154.png
+./TP 3/tp1_voies/Data/test_images/example155.png
+./TP 3/tp1_voies/Data/test_images/example156.png
+./TP 3/tp1_voies/Data/test_images/example157.png
+./TP 3/tp1_voies/Data/test_images/example158.png
+./TP 3/tp1_voies/Data/test_images/example159.png
+./TP 3/tp1_voies/Data/test_images/example16.png
+./TP 3/tp1_voies/Data/test_images/example160.png
+./TP 3/tp1_voies/Data/test_images/example161.png
+./TP 3/tp1_voies/Data/test_images/example162.png
+./TP 3/tp1_voies/Data/test_images/example163.png
+./TP 3/tp1_voies/Data/test_images/example164.png
+./TP 3/tp1_voies/Data/test_images/example165.png
+./TP 3/tp1_voies/Data/test_images/example166.png
+./TP 3/tp1_voies/Data/test_images/example167.png
+./TP 3/tp1_voies/Data/test_images/example168.png
+./TP 3/tp1_voies/Data/test_images/example169.png
+./TP 3/tp1_voies/Data/test_images/example17.png
+./TP 3/tp1_voies/Data/test_images/example170.png
+./TP 3/tp1_voies/Data/test_images/example171.png
+./TP 3/tp1_voies/Data/test_images/example172.png
+./TP 3/tp1_voies/Data/test_images/example173.png
+./TP 3/tp1_voies/Data/test_images/example174.png
+./TP 3/tp1_voies/Data/test_images/example175.png
+./TP 3/tp1_voies/Data/test_images/example176.png
+./TP 3/tp1_voies/Data/test_images/example177.png
+./TP 3/tp1_voies/Data/test_images/example178.png
+./TP 3/tp1_voies/Data/test_images/example179.png
+./TP 3/tp1_voies/Data/test_images/example18.png
+./TP 3/tp1_voies/Data/test_images/example180.png
+./TP 3/tp1_voies/Data/test_images/example181.png
+./TP 3/tp1_voies/Data/test_images/example182.png
+./TP 3/tp1_voies/Data/test_images/example183.png
+./TP 3/tp1_voies/Data/test_images/example184.png
+./TP 3/tp1_voies/Data/test_images/example185.png
+./TP 3/tp1_voies/Data/test_images/example186.png
+./TP 3/tp1_voies/Data/test_images/example187.png
+./TP 3/tp1_voies/Data/test_images/example188.png
+./TP 3/tp1_voies/Data/test_images/example189.png
+./TP 3/tp1_voies/Data/test_images/example19.png
+./TP 3/tp1_voies/Data/test_images/example190.png
+./TP 3/tp1_voies/Data/test_images/example191.png
+./TP 3/tp1_voies/Data/test_images/example192.png
+./TP 3/tp1_voies/Data/test_images/example193.png
+./TP 3/tp1_voies/Data/test_images/example194.png
+./TP 3/tp1_voies/Data/test_images/example195.png
+./TP 3/tp1_voies/Data/test_images/example196.png
+./TP 3/tp1_voies/Data/test_images/example197.png
+./TP 3/tp1_voies/Data/test_images/example198.png
+./TP 3/tp1_voies/Data/test_images/example199.png
+./TP 3/tp1_voies/Data/test_images/example2.jpg
+./TP 3/tp1_voies/Data/test_images/example20.png
+./TP 3/tp1_voies/Data/test_images/example200.png
+./TP 3/tp1_voies/Data/test_images/example201.png
+./TP 3/tp1_voies/Data/test_images/example202.png
+./TP 3/tp1_voies/Data/test_images/example203.png
+./TP 3/tp1_voies/Data/test_images/example204.png
+./TP 3/tp1_voies/Data/test_images/example205.png
+./TP 3/tp1_voies/Data/test_images/example206.png
+./TP 3/tp1_voies/Data/test_images/example207.png
+./TP 3/tp1_voies/Data/test_images/example208.png
+./TP 3/tp1_voies/Data/test_images/example209.png
+./TP 3/tp1_voies/Data/test_images/example21.png
+./TP 3/tp1_voies/Data/test_images/example210.png
+./TP 3/tp1_voies/Data/test_images/example211.png
+./TP 3/tp1_voies/Data/test_images/example212.png
+./TP 3/tp1_voies/Data/test_images/example213.png
+./TP 3/tp1_voies/Data/test_images/example214.png
+./TP 3/tp1_voies/Data/test_images/example215.png
+./TP 3/tp1_voies/Data/test_images/example216.png
+./TP 3/tp1_voies/Data/test_images/example217.png
+./TP 3/tp1_voies/Data/test_images/example218.png
+./TP 3/tp1_voies/Data/test_images/example219.png
+./TP 3/tp1_voies/Data/test_images/example22.png
+./TP 3/tp1_voies/Data/test_images/example220.png
+./TP 3/tp1_voies/Data/test_images/example221.png
+./TP 3/tp1_voies/Data/test_images/example222.png
+./TP 3/tp1_voies/Data/test_images/example223.png
+./TP 3/tp1_voies/Data/test_images/example224.png
+./TP 3/tp1_voies/Data/test_images/example225.png
+./TP 3/tp1_voies/Data/test_images/example226.png
+./TP 3/tp1_voies/Data/test_images/example227.png
+./TP 3/tp1_voies/Data/test_images/example228.png
+./TP 3/tp1_voies/Data/test_images/example229.png
+./TP 3/tp1_voies/Data/test_images/example23.png
+./TP 3/tp1_voies/Data/test_images/example230.png
+./TP 3/tp1_voies/Data/test_images/example231.png
+./TP 3/tp1_voies/Data/test_images/example232.png
+./TP 3/tp1_voies/Data/test_images/example233.png
+./TP 3/tp1_voies/Data/test_images/example234.png
+./TP 3/tp1_voies/Data/test_images/example235.png
+./TP 3/tp1_voies/Data/test_images/example236.png
+./TP 3/tp1_voies/Data/test_images/example237.png
+./TP 3/tp1_voies/Data/test_images/example238.png
+./TP 3/tp1_voies/Data/test_images/example239.png
+./TP 3/tp1_voies/Data/test_images/example24.png
+./TP 3/tp1_voies/Data/test_images/example240.png
+./TP 3/tp1_voies/Data/test_images/example241.png
+./TP 3/tp1_voies/Data/test_images/example242.png
+./TP 3/tp1_voies/Data/test_images/example243.png
+./TP 3/tp1_voies/Data/test_images/example244.png
+./TP 3/tp1_voies/Data/test_images/example245.png
+./TP 3/tp1_voies/Data/test_images/example246.png
+./TP 3/tp1_voies/Data/test_images/example247.png
+./TP 3/tp1_voies/Data/test_images/example248.png
+./TP 3/tp1_voies/Data/test_images/example249.png
+./TP 3/tp1_voies/Data/test_images/example25.png
+./TP 3/tp1_voies/Data/test_images/example250.png
+./TP 3/tp1_voies/Data/test_images/example251.png
+./TP 3/tp1_voies/Data/test_images/example252.png
+./TP 3/tp1_voies/Data/test_images/example253.png
+./TP 3/tp1_voies/Data/test_images/example254.png
+./TP 3/tp1_voies/Data/test_images/example255.png
+./TP 3/tp1_voies/Data/test_images/example256.png
+./TP 3/tp1_voies/Data/test_images/example257.png
+./TP 3/tp1_voies/Data/test_images/example258.png
+./TP 3/tp1_voies/Data/test_images/example259.png
+./TP 3/tp1_voies/Data/test_images/example26.png
+./TP 3/tp1_voies/Data/test_images/example260.png
+./TP 3/tp1_voies/Data/test_images/example261.png
+./TP 3/tp1_voies/Data/test_images/example262.png
+./TP 3/tp1_voies/Data/test_images/example263.png
+./TP 3/tp1_voies/Data/test_images/example264.png
+./TP 3/tp1_voies/Data/test_images/example265.png
+./TP 3/tp1_voies/Data/test_images/example266.png
+./TP 3/tp1_voies/Data/test_images/example267.png
+./TP 3/tp1_voies/Data/test_images/example268.png
+./TP 3/tp1_voies/Data/test_images/example269.png
+./TP 3/tp1_voies/Data/test_images/example27.png
+./TP 3/tp1_voies/Data/test_images/example270.png
+./TP 3/tp1_voies/Data/test_images/example271.png
+./TP 3/tp1_voies/Data/test_images/example272.png
+./TP 3/tp1_voies/Data/test_images/example273.png
+./TP 3/tp1_voies/Data/test_images/example274.png
+./TP 3/tp1_voies/Data/test_images/example275.png
+./TP 3/tp1_voies/Data/test_images/example276.png
+./TP 3/tp1_voies/Data/test_images/example277.png
+./TP 3/tp1_voies/Data/test_images/example278.png
+./TP 3/tp1_voies/Data/test_images/example279.png
+./TP 3/tp1_voies/Data/test_images/example28.png
+./TP 3/tp1_voies/Data/test_images/example280.png
+./TP 3/tp1_voies/Data/test_images/example281.png
+./TP 3/tp1_voies/Data/test_images/example282.png
+./TP 3/tp1_voies/Data/test_images/example283.png
+./TP 3/tp1_voies/Data/test_images/example284.png
+./TP 3/tp1_voies/Data/test_images/example285.png
+./TP 3/tp1_voies/Data/test_images/example286.png
+./TP 3/tp1_voies/Data/test_images/example287.png
+./TP 3/tp1_voies/Data/test_images/example288.png
+./TP 3/tp1_voies/Data/test_images/example289.png
+./TP 3/tp1_voies/Data/test_images/example29.png
+./TP 3/tp1_voies/Data/test_images/example290.png
+./TP 3/tp1_voies/Data/test_images/example291.png
+./TP 3/tp1_voies/Data/test_images/example292.png
+./TP 3/tp1_voies/Data/test_images/example293.png
+./TP 3/tp1_voies/Data/test_images/example294.png
+./TP 3/tp1_voies/Data/test_images/example295.png
+./TP 3/tp1_voies/Data/test_images/example3.jpg
+./TP 3/tp1_voies/Data/test_images/example30.png
+./TP 3/tp1_voies/Data/test_images/example31.png
+./TP 3/tp1_voies/Data/test_images/example32.png
+./TP 3/tp1_voies/Data/test_images/example33.png
+./TP 3/tp1_voies/Data/test_images/example34.png
+./TP 3/tp1_voies/Data/test_images/example35.png
+./TP 3/tp1_voies/Data/test_images/example36.png
+./TP 3/tp1_voies/Data/test_images/example37.png
+./TP 3/tp1_voies/Data/test_images/example38.png
+./TP 3/tp1_voies/Data/test_images/example39.png
+./TP 3/tp1_voies/Data/test_images/example4.jpg
+./TP 3/tp1_voies/Data/test_images/example40.png
+./TP 3/tp1_voies/Data/test_images/example41.png
+./TP 3/tp1_voies/Data/test_images/example42.png
+./TP 3/tp1_voies/Data/test_images/example43.png
+./TP 3/tp1_voies/Data/test_images/example44.png
+./TP 3/tp1_voies/Data/test_images/example45.png
+./TP 3/tp1_voies/Data/test_images/example46.png
+./TP 3/tp1_voies/Data/test_images/example47.png
+./TP 3/tp1_voies/Data/test_images/example48.png
+./TP 3/tp1_voies/Data/test_images/example49.png
+./TP 3/tp1_voies/Data/test_images/example5.jpg
+./TP 3/tp1_voies/Data/test_images/example50.png
+./TP 3/tp1_voies/Data/test_images/example51.png
+./TP 3/tp1_voies/Data/test_images/example52.png
+./TP 3/tp1_voies/Data/test_images/example53.png
+./TP 3/tp1_voies/Data/test_images/example54.png
+./TP 3/tp1_voies/Data/test_images/example55.png
+./TP 3/tp1_voies/Data/test_images/example56.png
+./TP 3/tp1_voies/Data/test_images/example57.png
+./TP 3/tp1_voies/Data/test_images/example58.png
+./TP 3/tp1_voies/Data/test_images/example59.png
+./TP 3/tp1_voies/Data/test_images/example6.jpg
+./TP 3/tp1_voies/Data/test_images/example60.png
+./TP 3/tp1_voies/Data/test_images/example61.png
+./TP 3/tp1_voies/Data/test_images/example62.png
+./TP 3/tp1_voies/Data/test_images/example63.png
+./TP 3/tp1_voies/Data/test_images/example64.png
+./TP 3/tp1_voies/Data/test_images/example65.png
+./TP 3/tp1_voies/Data/test_images/example66.png
+./TP 3/tp1_voies/Data/test_images/example67.png
+./TP 3/tp1_voies/Data/test_images/example68.png
+./TP 3/tp1_voies/Data/test_images/example69.png
+./TP 3/tp1_voies/Data/test_images/example7.png
+./TP 3/tp1_voies/Data/test_images/example70.png
+./TP 3/tp1_voies/Data/test_images/example71.png
+./TP 3/tp1_voies/Data/test_images/example72.png
+./TP 3/tp1_voies/Data/test_images/example73.png
+./TP 3/tp1_voies/Data/test_images/example74.png
+./TP 3/tp1_voies/Data/test_images/example75.png
+./TP 3/tp1_voies/Data/test_images/example76.png
+./TP 3/tp1_voies/Data/test_images/example77.png
+./TP 3/tp1_voies/Data/test_images/example78.png
+./TP 3/tp1_voies/Data/test_images/example79.png
+./TP 3/tp1_voies/Data/test_images/example8.png
+./TP 3/tp1_voies/Data/test_images/example80.png
+./TP 3/tp1_voies/Data/test_images/example81.png
+./TP 3/tp1_voies/Data/test_images/example82.png
+./TP 3/tp1_voies/Data/test_images/example83.png
+./TP 3/tp1_voies/Data/test_images/example84.png
+./TP 3/tp1_voies/Data/test_images/example85.png
+./TP 3/tp1_voies/Data/test_images/example86.png
+./TP 3/tp1_voies/Data/test_images/example87.png
+./TP 3/tp1_voies/Data/test_images/example88.png
+./TP 3/tp1_voies/Data/test_images/example89.png
+./TP 3/tp1_voies/Data/test_images/example9.png
+./TP 3/tp1_voies/Data/test_images/example90.png
+./TP 3/tp1_voies/Data/test_images/example91.png
+./TP 3/tp1_voies/Data/test_images/example92.png
+./TP 3/tp1_voies/Data/test_images/example93.png
+./TP 3/tp1_voies/Data/test_images/example94.png
+./TP 3/tp1_voies/Data/test_images/example95.png
+./TP 3/tp1_voies/Data/test_images/example96.png
+./TP 3/tp1_voies/Data/test_images/example97.png
+./TP 3/tp1_voies/Data/test_images/example98.png
+./TP 3/tp1_voies/Data/test_images/example99.png
+
+=== VIDEOS ===
+
+=== EXECUTABLES ===
+./TP 3/tp1_voies/tp1.exe
+./TP 3/tp1_voies/tp1_canny_test.exe
+./TP 3/tp1_voies/tp1_hsv_test.exe
+
+=== RESULTATS / LOGS / CSV ===
+
+=== README / DOCUMENTATION ===
+
+=== RECHERCHE METRIQUES ===
+./TP 3/tp1_voies/p1_complet.py:60:# Avantage : élimine beaucoup de faux positifs (ombres, textures de la route, etc.)
+./TP 3/tp1_voies/p1_complet.py:266:plt.imshow(color_mask, cmap="gray")
+./TP 3/tp1_voies/p1_complet.py:271:plt.imshow(combined, cmap="gray")
+./TP 3/tp1_voies/p1_complet.py:276:plt.imshow(warped, cmap="gray")
+./TP 3/tp1_voies/tp1.cpp:9:// Structure to hold lane detection results
+./TP 3/tp1_voies/tp1.cpp:10:struct LaneDetectionResult {
+./TP 3/tp1_voies/tp1.cpp:19:LaneDetectionResult detectLanes(const Mat& binary_warped) {
+./TP 3/tp1_voies/tp1.cpp:20:    LaneDetectionResult result;
+./TP 3/tp1_voies/tp1.cpp:197:    // 3. Edge detection
+./TP 3/tp1_voies/tp1.cpp:232:    // 5. Lane detection with sliding windows
+./TP 3/tp1_voies/tp1.cpp:234:    LaneDetectionResult lanes = detectLanes(warped);
+./TP 3/tp1_voies/tp1_canny_test.cpp:9:// Structure to hold lane detection results
+./TP 3/tp1_voies/tp1_canny_test.cpp:10:struct LaneDetectionResult {
+./TP 3/tp1_voies/tp1_canny_test.cpp:19:LaneDetectionResult detectLanes(const Mat& binary_warped) {
+./TP 3/tp1_voies/tp1_canny_test.cpp:20:    LaneDetectionResult result;
+./TP 3/tp1_voies/tp1_canny_test.cpp:197:    // 3. Edge detection
+./TP 3/tp1_voies/tp1_canny_test.cpp:232:    // 5. Lane detection with sliding windows
+./TP 3/tp1_voies/tp1_canny_test.cpp:234:    LaneDetectionResult lanes = detectLanes(warped);
+./TP 3/tp1_voies/tp1_hsv_test.cpp:9:// Structure to hold lane detection results
+./TP 3/tp1_voies/tp1_hsv_test.cpp:10:struct LaneDetectionResult {
+./TP 3/tp1_voies/tp1_hsv_test.cpp:19:LaneDetectionResult detectLanes(const Mat& binary_warped) {
+./TP 3/tp1_voies/tp1_hsv_test.cpp:20:    LaneDetectionResult result;
+./TP 3/tp1_voies/tp1_hsv_test.cpp:197:    // 3. Edge detection
+./TP 3/tp1_voies/tp1_hsv_test.cpp:232:    // 5. Lane detection with sliding windows
+./TP 3/tp1_voies/tp1_hsv_test.cpp:234:    LaneDetectionResult lanes = detectLanes(warped);
+./TP 3/tp1_voies/tp1_original.cpp:9:// Structure to hold lane detection results
+./TP 3/tp1_voies/tp1_original.cpp:10:struct LaneDetectionResult {
+./TP 3/tp1_voies/tp1_original.cpp:19:LaneDetectionResult detectLanes(const Mat& binary_warped) {
+./TP 3/tp1_voies/tp1_original.cpp:20:    LaneDetectionResult result;
+./TP 3/tp1_voies/tp1_original.cpp:197:    // 3. Edge detection
+./TP 3/tp1_voies/tp1_original.cpp:232:    // 5. Lane detection with sliding windows
+./TP 3/tp1_voies/tp1_original.cpp:234:    LaneDetectionResult lanes = detectLanes(warped);
+./TP 3/tp1_voies/yolov4-tiny.cfg:234:iou_normalizer=0.07
+./TP 3/tp1_voies/yolov4-tiny.cfg:235:iou_loss=ciou
+./TP 3/tp1_voies/yolov4-tiny.cfg:285:iou_normalizer=0.07
+./TP 3/tp1_voies/yolov4-tiny.cfg:286:iou_loss=ciou
+
+=== RECHERCHE GROUND TRUTH / ANNOTATIONS ===
+

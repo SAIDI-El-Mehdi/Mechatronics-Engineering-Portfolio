@@ -1,0 +1,163 @@
+==============================
+TP4 - RAPPORT DE VALIDATION
+==============================
+
+=== DOSSIER COURANT ===
+/d/S4 MTA/1- Vision intelligente & Temps reel/1- Vision intelligente/TP/TP 4/tp2_pietons
+
+=== STRUCTURE ===
+.
+./Data
+
+=== TOUS LES FICHIERS ===
+./Data/coco.names
+./Data/cop.jpg
+./Data/image.png
+./Data/image_copy.png
+./Data/yolov4-tiny.cfg
+./Data/yolov4-tiny.weights
+./TPS_PHD_2EME_ANNEE_CYCLE_Pedestrians.pdf
+./TPS_PHD_2EME_ANNEE_CYCLE_Pedestrians_VERSION2.pdf
+./coco.names
+./output_cop.jpg
+./output_image.jpg
+./output_image_copy.jpg
+./ped2.cpp
+./ped2.exe
+./real_one.cpp
+./tp4_validation_report.txt
+./tp_detection_pietons-1.pdf
+./yolov4-tiny.cfg
+./yolov4-tiny.weights
+
+=== CODE SOURCE ===
+./ped2.cpp
+./real_one.cpp
+./tp4_validation_report.txt
+
+=== IMAGES ===
+./Data/cop.jpg
+./Data/image.png
+./Data/image_copy.png
+./output_cop.jpg
+./output_image.jpg
+./output_image_copy.jpg
+
+=== VIDEOS ===
+
+=== EXECUTABLES ===
+./ped2.exe
+
+=== MODELES / CONFIGURATION ===
+./Data/coco.names
+./Data/yolov4-tiny.cfg
+./Data/yolov4-tiny.weights
+./coco.names
+./yolov4-tiny.cfg
+./yolov4-tiny.weights
+
+=== RESULTATS / LOGS / CSV / JSON ===
+./tp4_validation_report.txt
+
+=== README / DOCUMENTATION ===
+
+=== RECHERCHE COMMANDES / MAIN ===
+./coco.names:1:person
+./Data/coco.names:1:person
+./ped2.cpp:1:#include <opencv2/opencv.hpp>
+./ped2.cpp:2:#include <opencv2/dnn.hpp>
+./ped2.cpp:20:const int INPUT_WIDTH  = 416;
+./ped2.cpp:21:const int INPUT_HEIGHT = 416;
+./ped2.cpp:55:int main(int argc, char** argv) {
+./ped2.cpp:57:        cout << "\nUsage:\n";
+./ped2.cpp:58:        cout << "  " << argv[0] << " <input_image.jpg> [output_image.jpg]\n\n";
+./ped2.cpp:60:        cout << "  " << argv[0] << " input.jpg\n";
+./ped2.cpp:61:        cout << "  " << argv[0] << " input.jpg output.jpg\n\n";
+./ped2.cpp:68:    string inputPath = argv[1];
+./ped2.cpp:69:    string outputPath = (argc >= 3) ? argv[2] : "output_detected.jpg";
+./ped2.cpp:71:    // ─── Load input image ────────────────────────────────
+./ped2.cpp:72:    cout << "Reading image: " << inputPath << "\n";
+./ped2.cpp:73:    Mat img = imread(inputPath);
+./ped2.cpp:76:        cerr << "ERROR: Cannot read image: " << inputPath << endl;
+./ped2.cpp:85:    net.setPreferableBackend(DNN_BACKEND_OPENCV);
+./ped2.cpp:91:    cout << "Detecting pedestrians...\n";
+./ped2.cpp:92:    Mat blob = blobFromImage(img, 1/255.0, Size(INPUT_WIDTH, INPUT_HEIGHT),
+./ped2.cpp:94:    net.setInput(blob);
+./ped2.cpp:97:    vector<Mat> outputs;
+./ped2.cpp:98:    net.forward(outputs, outNames);
+./ped2.cpp:105:    for (size_t i = 0; i < outputs.size(); ++i) {
+./ped2.cpp:106:        float* data = (float*)outputs[i].data;
+./ped2.cpp:107:        for (int row = 0; row < outputs[i].rows; ++row, data += outputs[i].cols) {
+./ped2.cpp:108:            Mat scores = outputs[i].row(row).colRange(5, outputs[i].cols);
+./ped2.cpp:113:            if (conf > CONF_THRESHOLD && classIdPoint.x == 0) { // person = class 0
+./ped2.cpp:134:    cout << "Found " << indices.size() << " pedestrian(s)\n";
+./ped2.cpp:151:        // Crop person region and check classical edges
+./ped2.cpp:160:        string label = "Person " + to_string(i + 1) + "  " + 
+./ped2.cpp:175:        // Console output
+./ped2.cpp:176:        cout << "Person " << (i+1) << ":\n";
+./ped2.cpp:183:    // ─── Save output image ────────────────────────────────
+./ped2.cpp:184:    imwrite(outputPath, result);
+./ped2.cpp:185:    cout << "Output saved to: " << outputPath << "\n";
+./ped2.cpp:189:    imshow("Pedestrian Detection Result", result);
+./real_one.cpp:1:#include <opencv2/opencv.hpp>
+./real_one.cpp:2:#include <opencv2/dnn.hpp>
+./real_one.cpp:21:const int INPUT_WIDTH  = 416;
+./real_one.cpp:22:const int INPUT_HEIGHT = 416;
+./real_one.cpp:98:                // Mais pour un piéton, on s'intéresse aux contours verticaux des jambes/buste
+./real_one.cpp:141:    // Un piéton a généralement plus de contours verticaux
+./real_one.cpp:146:    // Les piétons ont un mélange de contours horizontaux et verticaux
+./real_one.cpp:170:    // Une région avec un piéton a une certaine régularité dans les gradients verticaux
+./real_one.cpp:227:int main(int argc, char** argv) {
+./real_one.cpp:230:        cout << "║     DÉTECTION DE PIÉTONS AVEC VALIDATION SOBEL ║\n";
+./real_one.cpp:232:        cout << "Usage:\n";
+./real_one.cpp:233:        cout << "  " << argv[0] << " <input_image.jpg> [output_image.jpg]\n\n";
+./real_one.cpp:235:        cout << "  " << argv[0] << " input.jpg\n";
+./real_one.cpp:236:        cout << "  " << argv[0] << " input.jpg output.jpg\n\n";
+./real_one.cpp:243:    string inputPath = argv[1];
+./real_one.cpp:244:    string outputPath = (argc >= 3) ? argv[2] : "output_detected.jpg";
+./real_one.cpp:246:    // ─── Load input image ────────────────────────────────
+./real_one.cpp:247:    cout << "\n[1] Lecture de l'image: " << inputPath << "\n";
+./real_one.cpp:248:    Mat img = imread(inputPath);
+./real_one.cpp:251:        cerr << "ERREUR: Impossible de lire l'image: " << inputPath << endl;
+./real_one.cpp:270:    net.setPreferableBackend(DNN_BACKEND_OPENCV);
+./real_one.cpp:278:    Mat blob = blobFromImage(img, 1/255.0, Size(INPUT_WIDTH, INPUT_HEIGHT),
+./real_one.cpp:280:    net.setInput(blob);
+./real_one.cpp:281:    cout << "    Taille blob: " << INPUT_WIDTH << "x" << INPUT_HEIGHT << "\n";
+./real_one.cpp:285:    vector<Mat> outputs;
+./real_one.cpp:286:    net.forward(outputs, outNames);
+./real_one.cpp:295:    for (size_t i = 0; i < outputs.size(); ++i) {
+./real_one.cpp:296:        float* data = (float*)outputs[i].data;
+./real_one.cpp:297:        for (int row = 0; row < outputs[i].rows; ++row, data += outputs[i].cols) {
+./real_one.cpp:298:            Mat scores = outputs[i].row(row).colRange(5, outputs[i].cols);
+./real_one.cpp:303:            if (conf > CONF_THRESHOLD && classIdPoint.x == 0) { // person = class 0
+./real_one.cpp:333:    cout << "Piétons détectés: " << indices.size() << "\n";
+./real_one.cpp:362:        string label = "Personne " + to_string(i + 1) + " " + 
+./real_one.cpp:382:        cout << "\nPiéton " << (i+1) << ":\n";
+./real_one.cpp:402:    imwrite(outputPath, result);
+./real_one.cpp:403:    cout << "Image sauvegardée: " << outputPath << "\n";
+./real_one.cpp:409:    namedWindow("Détection Piétons + Validation Sobel", WINDOW_NORMAL);
+./real_one.cpp:410:    imshow("Détection Piétons + Validation Sobel", result);
+./real_one.cpp:415:        imshow("Visualisation Sobel (Rouge=Vertical, Bleu=Horizontal)", debug_sobel);
+./real_one.cpp:420:    imshow("Image originale", img);
+
+=== RECHERCHE METRIQUES ===
+./Data/yolov4-tiny.cfg:234:iou_normalizer=0.07
+./Data/yolov4-tiny.cfg:235:iou_loss=ciou
+./Data/yolov4-tiny.cfg:285:iou_normalizer=0.07
+./Data/yolov4-tiny.cfg:286:iou_loss=ciou
+./ped2.cpp:189:    imshow("Pedestrian Detection Result", result);
+./real_one.cpp:74:    // Calcul des gradients avec Sobel (en flottant pour précision)
+./real_one.cpp:230:        cout << "║     DÉTECTION DE PIÉTONS AVEC VALIDATION SOBEL ║\n";
+./real_one.cpp:251:        cerr << "ERREUR: Impossible de lire l'image: " << inputPath << endl;
+./real_one.cpp:263:        cerr << "ERREUR: Impossible de charger le modèle YOLO\n";
+./real_one.cpp:290:    cout << "\n[5] Extraction des détections...\n";
+./real_one.cpp:323:    cout << "    Détections brutes: " << boxes.size() << "\n";
+./real_one.cpp:409:    namedWindow("Détection Piétons + Validation Sobel", WINDOW_NORMAL);
+./real_one.cpp:410:    imshow("Détection Piétons + Validation Sobel", result);
+./yolov4-tiny.cfg:234:iou_normalizer=0.07
+./yolov4-tiny.cfg:235:iou_loss=ciou
+./yolov4-tiny.cfg:285:iou_normalizer=0.07
+./yolov4-tiny.cfg:286:iou_loss=ciou
+
+=== RECHERCHE GROUND TRUTH / ANNOTATIONS ===
+

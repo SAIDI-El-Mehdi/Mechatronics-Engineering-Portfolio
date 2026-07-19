@@ -1,0 +1,175 @@
+import time
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import mean_squared_error
+
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.optimizers import Adam
+
+CSV_PATH = "datatest.csv"
+TEST_SIZE = 0.2
+RANDOM_STATE = 42
+
+np.random.seed(RANDOM_STATE)
+
+df = pd.read_csv(CSV_PATH)
+df.columns = df.columns.str.strip()
+
+print(df.head())
+print("\nColumns:", df.columns.tolist())
+
+X = df[["Temperature", "Humidity", "Light"]].values
+y = df["CO2"].values
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE
+)
+
+scaler = StandardScaler()
+X_train_s = scaler.fit_transform(X_train)
+X_test_s = scaler.transform(X_test)
+
+corr_cols = ["Temperature", "Humidity", "Light", "CO2"]
+corr = df[corr_cols].corr().values
+
+plt.figure(figsize=(7, 6))
+plt.imshow(corr, interpolation="nearest")
+plt.xticks(range(len(corr_cols)), corr_cols, rotation=45, ha="right")
+plt.yticks(range(len(corr_cols)), corr_cols)
+plt.colorbar()
+plt.title("Correlation Matrix (CO2)")
+plt.tight_layout()
+plt.show()
+
+def run_ann(n_hidden=2, n_units=16, activation="relu", epochs=30, lr=0.001):
+    model = Sequential()
+    model.add(Dense(n_units, activation=activation, input_shape=(X_train_s.shape[1],)))
+    for _ in range(n_hidden - 1):
+        model.add(Dense(n_units, activation=activation))
+    model.add(Dense(1))
+
+    model.compile(optimizer=Adam(lr), loss="mse")
+
+    t0 = time.time()
+    model.fit(
+        X_train_s, y_train,
+        validation_split=0.2,
+        epochs=epochs,
+        batch_size=32,
+        verbose=0
+    )
+    train_time = time.time() - t0
+
+    y_pred = model.predict(X_test_s).flatten()
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+
+    return float(rmse), float(train_time), model
+
+layers_list = [1, 2, 3, 4, 5]
+res_layers = []
+
+for L in layers_list:
+    rmse, t, _ = run_ann(n_hidden=L, n_units=16, activation="relu", epochs=30)
+    res_layers.append([L, rmse, t])
+    print(f"[Layers={L}] RMSE={rmse:.2f} | time={t:.2f}s")
+
+res_layers_df = pd.DataFrame(res_layers, columns=["HiddenLayers", "RMSE_Test", "TrainTime_s"])
+best_layers = int(res_layers_df.loc[res_layers_df["RMSE_Test"].idxmin(), "HiddenLayers"])
+print("\nBest layers =", best_layers)
+print(res_layers_df)
+
+plt.figure()
+plt.plot(res_layers_df["HiddenLayers"], res_layers_df["RMSE_Test"], marker="o")
+plt.xlabel("Number of hidden layers")
+plt.ylabel("RMSE (test)")
+plt.title("Hyperparam study: Hidden layers")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+units_list = [16, 32, 64, 128]
+res_units = []
+
+for U in units_list:
+    rmse, t, _ = run_ann(n_hidden=best_layers, n_units=U, activation="relu", epochs=30)
+    res_units.append([U, rmse, t])
+    print(f"[Units={U}] RMSE={rmse:.2f} | time={t:.2f}s")
+
+res_units_df = pd.DataFrame(res_units, columns=["UnitsPerLayer", "RMSE_Test", "TrainTime_s"])
+best_units = int(res_units_df.loc[res_units_df["RMSE_Test"].idxmin(), "UnitsPerLayer"])
+print("\nBest units =", best_units)
+print(res_units_df)
+
+plt.figure()
+plt.plot(res_units_df["UnitsPerLayer"], res_units_df["RMSE_Test"], marker="o")
+plt.xlabel("Neurons per hidden layer")
+plt.ylabel("RMSE (test)")
+plt.title("Hyperparam study: Neurons per layer")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+activations = ["relu", "sigmoid", "tanh"]
+res_act = []
+
+for act in activations:
+    rmse, t, _ = run_ann(n_hidden=best_layers, n_units=best_units, activation=act, epochs=30)
+    res_act.append([act, rmse, t])
+    print(f"[Act={act}] RMSE={rmse:.2f} | time={t:.2f}s")
+
+res_act_df = pd.DataFrame(res_act, columns=["Activation", "RMSE_Test", "TrainTime_s"])
+best_act = str(res_act_df.loc[res_act_df["RMSE_Test"].idxmin(), "Activation"])
+print("\nBest activation =", best_act)
+print(res_act_df)
+
+plt.figure()
+plt.plot(res_act_df["Activation"], res_act_df["RMSE_Test"], marker="o")
+plt.xlabel("Activation")
+plt.ylabel("RMSE (test)")
+plt.title("Hyperparam study: Activation function")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+print("\n=== BEST CONFIG ===")
+print("HiddenLayers =", best_layers)
+print("UnitsPerLayer =", best_units)
+print("Activation =", best_act)
+
+rmse_50, t_50, best_model = run_ann(
+    n_hidden=best_layers,
+    n_units=best_units,
+    activation=best_act,
+    epochs=50
+)
+
+y_pred_final = best_model.predict(X_test_s).flatten()
+rmse_final = np.sqrt(mean_squared_error(y_test, y_pred_final))
+print(f"Final RMSE (50 epochs) = {rmse_final:.2f} ppm | train time={t_50:.2f}s")
+
+plt.figure(figsize=(12, 5))
+plt.plot(y_test, label="CO2_real (ppm)")
+plt.plot(y_pred_final, "k--", label="CO2_predicted (ppm)")
+plt.xlabel("Index (test)")
+plt.ylabel("CO2 (ppm)")
+plt.title("CO2 real vs predicted - Best ANN (50 epochs)")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+plt.figure(figsize=(12, 5))
+plt.plot(y_test[:100], label="CO2_real (ppm)")
+plt.plot(y_pred_final[:100], "k--", label="CO2_predicted (ppm)")
+plt.xlabel("Index (test)")
+plt.ylabel("CO2 (ppm)")
+plt.title("Zoom (100 points) - CO2 real vs predicted")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()

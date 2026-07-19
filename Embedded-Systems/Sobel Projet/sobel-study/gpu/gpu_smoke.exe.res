@@ -1,0 +1,1 @@
+-D__CUDA_ARCH_LIST__=750 -nologo "gpu_smoke_dlink.obj" "gpu_smoke.obj" -link -INCREMENTAL:NO   "/LIBPATH:C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.2\bin/../lib/x64"  cudadevrt.lib  cudart.lib

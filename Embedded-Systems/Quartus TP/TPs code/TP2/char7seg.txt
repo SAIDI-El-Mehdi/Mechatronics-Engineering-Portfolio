@@ -1,0 +1,59 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity char7seg is
+  generic(
+    ACTIVE_LOW : boolean := true
+  );
+  port(
+    CODE : in  std_logic_vector(3 downto 0);
+    SEG  : out std_logic_vector(6 downto 0)  -- a..g
+  );
+end char7seg;
+
+architecture rtl of char7seg is
+
+  function drive(bitval : std_logic; active_low : boolean)
+    return std_logic is
+  begin
+    if active_low then
+      return not bitval;
+    else
+      return bitval;
+    end if;
+  end function;
+
+  function seg_pattern(c : std_logic_vector(3 downto 0))
+    return std_logic_vector is
+    variable p : std_logic_vector(6 downto 0);
+  begin
+    case c is
+      when "0000" => p := "1111110"; -- 0
+      when "0001" => p := "0110000"; -- 1
+      when "0010" => p := "1101101"; -- 2
+      when "0011" => p := "1111001"; -- 3
+      when "0100" => p := "0110011"; -- 4
+      when "0101" => p := "1011011"; -- 5
+      when "0110" => p := "1011111"; -- 6
+      when "0111" => p := "1110000"; -- 7
+      when "1000" => p := "1111111"; -- 8
+      when "1001" => p := "1111011"; -- 9
+      when "1010" => p := "0110111"; -- S
+      when "1011" => p := "0001001"; -- =
+      when others => p := (others => '0');
+    end case;
+    return p;
+  end function;
+
+begin
+  process(CODE)
+    variable raw  : std_logic_vector(6 downto 0);
+    variable outv : std_logic_vector(6 downto 0);
+  begin
+    raw := seg_pattern(CODE);
+    for i in 0 to 6 loop
+      outv(i) := drive(raw(i), ACTIVE_LOW);
+    end loop;
+    SEG <= outv;
+  end process;
+end rtl;

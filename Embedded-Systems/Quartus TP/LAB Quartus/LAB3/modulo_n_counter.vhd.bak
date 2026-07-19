@@ -1,0 +1,61 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity modulo_n_counter is
+    generic (
+        N : integer := 16  -- Default value of 10, can be overridden during instantiation
+    );
+    port (
+        clk     : in  std_logic;  -- Clock input
+        reset   : in  std_logic;  -- Synchronous reset
+        enable  : in  std_logic;  -- Enable counting
+		  HEX0, HEX1 : out std_logic_vector(6 downto 0) -- DE0 FPGA 7-segment outputs
+    );
+
+end modulo_n_counter;
+
+architecture Behavioral of modulo_n_counter is
+    signal counter_reg : unsigned(4 downto 0) := (others => '0');
+	 signal count   : std_logic_vector(4 downto 0);  -- Output count
+	 signal Tens, Ones : std_logic_vector(3 downto 0);
+	 
+	 
+	 component BinToBCD is
+        Port (	Bin        : in std_logic_vector(4 downto 0); 
+					Tens, Ones : out std_logic_vector(3 downto 0));
+    end component;
+	 component BCD_to_7Segment is
+        Port (	BCD      : in std_logic_vector(3 downto 0); 
+					Segments : out std_logic_vector(6 downto 0));
+    end component;
+	 
+
+begin
+	 Converter  : BinToBCD 				port map(Bin =>count, Tens => Tens, Ones => Ones);
+    DisplayTens: BCD_to_7Segment 	port map(BCD => Tens, Segments => HEX1);
+    DisplayOnes: BCD_to_7Segment 	port map(BCD => Ones, Segments => HEX0);
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if reset = '1' then
+                counter_reg <= (others => '0');  -- Reset to 0
+            elsif enable = '1' then
+                if counter_reg = (N-1) then
+                    counter_reg <= (others => '0');  -- Wrap around to 0
+                else
+                    counter_reg <= counter_reg + 1;  -- Increment
+                end if;
+            end if;
+        end if;
+    end process;
+
+    -- Connect internal signal to output port
+    count <= std_logic_vector(counter_reg);
+
+end Behavioral;
+
+
+
+
+

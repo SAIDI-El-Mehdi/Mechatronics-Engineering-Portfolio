@@ -1,0 +1,25 @@
+TP3 PART 2 PARAMETER ANALYSIS
+Input : "images/input"
+Output: "images/output/part2"
+sat=80 area=300 circ=0.82 rdp=0.04 hough=3
+
+blue_direction.png | raw=1 | area_ok=1 | final=1 | time=18.880 ms
+no_entry.jpg | raw=1 | area_ok=1 | final=1 | time=41.138 ms
+red_prohibition.jpg | raw=1 | area_ok=1 | final=1 | time=213.565 ms
+road_scene_01.jpg | raw=96 | area_ok=14 | final=14 | time=145.168 ms
+road_scene_02.jpg | raw=17 | area_ok=6 | final=6 | time=88.417 ms
+speed_limit.png | raw=1 | area_ok=1 | final=1 | time=17.914 ms
+stop_sign.jpg | raw=12 | area_ok=2 | final=2 | time=55.021 ms
+warning_triangle.jpg | raw=1 | area_ok=1 | final=1 | time=70.746 ms
+yellow_warning.jpg | raw=1 | area_ok=1 | final=1 | time=75.393 ms
+
+DONE
+total_raw_contours=131
+total_area_accepted=28
+total_final_detections=28
+Report: "images/output/part2\\terminal_report_part2.txt"
+CSV   : "images/output/part2\\detections_part2.csv"
+
+real	0m0.923s
+user	0m0.000s
+sys	0m0.000s

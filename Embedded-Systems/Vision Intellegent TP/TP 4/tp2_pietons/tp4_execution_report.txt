@@ -1,0 +1,474 @@
+==============================
+TP4 - EXECUTION REPORT
+==============================
+
+=== DOSSIER ===
+/d/S4 MTA/1- Vision intelligente & Temps reel/1- Vision intelligente/TP/TP 4/tp2_pietons
+
+=== LOGS ===
+./logs/tp4_ped2_cop_log.txt
+./logs/tp4_ped2_image_copy_log.txt
+./logs/tp4_ped2_image_log.txt
+./logs/tp4_real_one_cop_log.txt
+./logs/tp4_real_one_image_copy_log.txt
+./logs/tp4_real_one_image_log.txt
+
+=== RESULTATS GENERES ===
+./results/output_cop_test.jpg
+./results/output_image_copy_test.jpg
+./results/output_image_test.jpg
+./results/real_one_cop.jpg
+./results/real_one_image.jpg
+./results/real_one_image_copy.jpg
+
+=== IMAGES DE SORTIE EXISTANTES ===
+./output_cop.jpg
+./output_image.jpg
+./output_image_copy.jpg
+./results/output_cop_test.jpg
+./results/output_image_copy_test.jpg
+./results/output_image_test.jpg
+
+=== CONTENU DES LOGS ===
+--- logs/tp4_ped2_cop_log.txt ---
+Reading image: Data/cop.jpg
+Image size: 5760x3840
+Loading YOLOv4-tiny model...
+Detecting pedestrians...
+
+========================================
+Found 9 pedestrian(s)
+========================================
+Person 1:
+  Confidence: 98%
+  Position: (3552, 1168)
+  Size: 702x2093
+  Edge verification: STRONG (confirmed)
+
+Person 2:
+  Confidence: 97%
+  Position: (456, 1204)
+  Size: 781x1969
+  Edge verification: STRONG (confirmed)
+
+Person 3:
+  Confidence: 97%
+  Position: (4221, 1372)
+  Size: 598x1766
+  Edge verification: STRONG (confirmed)
+
+Person 4:
+  Confidence: 95%
+  Position: (3195, 1318)
+  Size: 441x1642
+  Edge verification: STRONG (confirmed)
+
+Person 5:
+  Confidence: 92%
+  Position: (1454, 1216)
+  Size: 793x1780
+  Edge verification: STRONG (confirmed)
+
+Person 6:
+  Confidence: 86%
+  Position: (2758, 1260)
+  Size: 457x1691
+  Edge verification: STRONG (confirmed)
+
+Person 7:
+  Confidence: 86%
+  Position: (2284, 1161)
+  Size: 581x1879
+  Edge verification: STRONG (confirmed)
+
+Person 8:
+  Confidence: 78%
+  Position: (4865, 1368)
+  Size: 574x1651
+  Edge verification: STRONG (confirmed)
+
+Person 9:
+  Confidence: 74%
+  Position: (5395, 1119)
+  Size: 364x2022
+  Edge verification: WEAK
+
+Output saved to: results/output_cop_test.jpg
+
+Displaying result. Press any key to exit...
+
+Done!
+QThreadStorage: entry 1 destroyed before end of thread 0x1fb18938f70
+QThreadStorage: entry 0 destroyed before end of thread 0x1fb18938f70
+
+real	0m7.854s
+user	0m0.015s
+sys	0m0.015s
+
+--- logs/tp4_ped2_image_copy_log.txt ---
+Reading image: Data/image_copy.png
+Image size: 2048x1365
+Loading YOLOv4-tiny model...
+Detecting pedestrians...
+
+========================================
+Found 5 pedestrian(s)
+========================================
+Person 1:
+  Confidence: 97%
+  Position: (1649, 508)
+  Size: 288x628
+  Edge verification: STRONG (confirmed)
+
+Person 2:
+  Confidence: 96%
+  Position: (850, 394)
+  Size: 222x829
+  Edge verification: STRONG (confirmed)
+
+Person 3:
+  Confidence: 92%
+  Position: (1352, 514)
+  Size: 261x672
+  Edge verification: STRONG (confirmed)
+
+Person 4:
+  Confidence: 89%
+  Position: (1244, 552)
+  Size: 164x496
+  Edge verification: STRONG (confirmed)
+
+Person 5:
+  Confidence: 88%
+  Position: (579, 480)
+  Size: 266x727
+  Edge verification: STRONG (confirmed)
+
+Output saved to: results/output_image_copy_test.jpg
+
+Displaying result. Press any key to exit...
+
+Done!
+QThreadStorage: entry 1 destroyed before end of thread 0x2a7253b08f0
+QThreadStorage: entry 0 destroyed before end of thread 0x2a7253b08f0
+
+real	0m3.284s
+user	0m0.016s
+sys	0m0.015s
+
+--- logs/tp4_ped2_image_log.txt ---
+Reading image: Data/image.png
+Image size: 770x513
+Loading YOLOv4-tiny model...
+Detecting pedestrians...
+
+========================================
+Found 6 pedestrian(s)
+========================================
+Person 1:
+  Confidence: 99%
+  Position: (19, 172)
+  Size: 111x249
+  Edge verification: STRONG (confirmed)
+
+Person 2:
+  Confidence: 99%
+  Position: (634, 172)
+  Size: 135x234
+  Edge verification: STRONG (confirmed)
+
+Person 3:
+  Confidence: 98%
+  Position: (466, 168)
+  Size: 141x244
+  Edge verification: WEAK
+
+Person 4:
+  Confidence: 90%
+  Position: (228, 143)
+  Size: 121x278
+  Edge verification: STRONG (confirmed)
+
+Person 5:
+  Confidence: 78%
+  Position: (156, 181)
+  Size: 24x56
+  Edge verification: WEAK
+
+Person 6:
+  Confidence: 37%
+  Position: (137, 180)
+  Size: 18x55
+  Edge verification: WEAK
+
+Output saved to: results/output_image_test.jpg
+
+Displaying result. Press any key to exit...
+
+Done!
+QThreadStorage: entry 1 destroyed before end of thread 0x29aa013b170
+QThreadStorage: entry 0 destroyed before end of thread 0x29aa013b170
+
+real	0m3.415s
+user	0m0.015s
+sys	0m0.015s
+
+--- logs/tp4_real_one_cop_log.txt ---
+
+[1] Lecture de l'image: Data/cop.jpg
+    Taille: 5760x3840
+    Canaux: 3
+
+[2] Chargement du modèle YOLOv4-tiny...
+    2 couches de sortie
+
+[3] Préparation du blob d'entrée...
+    Taille blob: 416x416
+
+[4] Inférence YOLO en cours...
+    Inférence terminée
+
+[5] Extraction des détections...
+    Détections brutes: 24
+
+[6] Application NMS (Non-Maximum Suppression)...
+========================================
+RÉSULTATS:
+========================================
+Piétons détectés: 9
+
+Piéton 1:
+  └─ Confiance YOLO: 98%
+  └─ Position: (3552, 1168)
+  └─ Taille: 702x2093
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=12, V=12
+
+Piéton 2:
+  └─ Confiance YOLO: 97%
+  └─ Position: (456, 1204)
+  └─ Taille: 781x1969
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=9, V=10
+
+Piéton 3:
+  └─ Confiance YOLO: 97%
+  └─ Position: (4221, 1372)
+  └─ Taille: 598x1766
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=16, V=16
+
+Piéton 4:
+  └─ Confiance YOLO: 95%
+  └─ Position: (3195, 1318)
+  └─ Taille: 441x1642
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=17, V=16
+
+Piéton 5:
+  └─ Confiance YOLO: 92%
+  └─ Position: (1454, 1216)
+  └─ Taille: 793x1780
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=19, V=14
+
+Piéton 6:
+  └─ Confiance YOLO: 86%
+  └─ Position: (2758, 1260)
+  └─ Taille: 457x1691
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=14, V=15
+
+Piéton 7:
+  └─ Confiance YOLO: 86%
+  └─ Position: (2284, 1161)
+  └─ Taille: 581x1879
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=15, V=16
+
+Piéton 8:
+  └─ Confiance YOLO: 78%
+  └─ Position: (4865, 1368)
+  └─ Taille: 574x1651
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=12, V=13
+
+Piéton 9:
+  └─ Confiance YOLO: 74%
+  └─ Position: (5395, 1119)
+  └─ Taille: 364x2022
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=10, V=14
+
+========================================
+Image sauvegardée: results/real_one_cop.jpg
+
+[7] Affichage des résultats...
+
+Appuyez sur une touche pour quitter...
+
+Traitement terminé!
+QThreadStorage: entry 1 destroyed before end of thread 0x1b6ef2e0340
+QThreadStorage: entry 0 destroyed before end of thread 0x1b6ef2e0340
+
+real	0m5.753s
+user	0m0.000s
+sys	0m0.031s
+
+--- logs/tp4_real_one_image_copy_log.txt ---
+
+[1] Lecture de l'image: Data/image_copy.png
+    Taille: 2048x1365
+    Canaux: 3
+
+[2] Chargement du modèle YOLOv4-tiny...
+    2 couches de sortie
+
+[3] Préparation du blob d'entrée...
+    Taille blob: 416x416
+
+[4] Inférence YOLO en cours...
+    Inférence terminée
+
+[5] Extraction des détections...
+    Détections brutes: 12
+
+[6] Application NMS (Non-Maximum Suppression)...
+========================================
+RÉSULTATS:
+========================================
+Piétons détectés: 5
+
+Piéton 1:
+  └─ Confiance YOLO: 97%
+  └─ Position: (1649, 508)
+  └─ Taille: 288x628
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=24, V=40
+
+Piéton 2:
+  └─ Confiance YOLO: 96%
+  └─ Position: (850, 394)
+  └─ Taille: 222x829
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=33, V=35
+
+Piéton 3:
+  └─ Confiance YOLO: 92%
+  └─ Position: (1352, 514)
+  └─ Taille: 261x672
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=29, V=35
+
+Piéton 4:
+  └─ Confiance YOLO: 89%
+  └─ Position: (1244, 552)
+  └─ Taille: 164x496
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=43, V=44
+
+Piéton 5:
+  └─ Confiance YOLO: 88%
+  └─ Position: (579, 480)
+  └─ Taille: 266x727
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=39, V=47
+
+========================================
+Image sauvegardée: results/real_one_image_copy.jpg
+
+[7] Affichage des résultats...
+
+Appuyez sur une touche pour quitter...
+
+Traitement terminé!
+QThreadStorage: entry 1 destroyed before end of thread 0x194fce0fe60
+QThreadStorage: entry 0 destroyed before end of thread 0x194fce0fe60
+
+real	0m4.488s
+user	0m0.015s
+sys	0m0.015s
+
+--- logs/tp4_real_one_image_log.txt ---
+
+[1] Lecture de l'image: Data/image.png
+    Taille: 770x513
+    Canaux: 3
+
+[2] Chargement du modèle YOLOv4-tiny...
+    2 couches de sortie
+
+[3] Préparation du blob d'entrée...
+    Taille blob: 416x416
+
+[4] Inférence YOLO en cours...
+    Inférence terminée
+
+[5] Extraction des détections...
+    Détections brutes: 9
+
+[6] Application NMS (Non-Maximum Suppression)...
+========================================
+RÉSULTATS:
+========================================
+Piétons détectés: 6
+
+Piéton 1:
+  └─ Confiance YOLO: 99%
+  └─ Position: (19, 172)
+  └─ Taille: 111x249
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=70, V=92
+
+Piéton 2:
+  └─ Confiance YOLO: 99%
+  └─ Position: (634, 172)
+  └─ Taille: 135x234
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=56, V=65
+
+Piéton 3:
+  └─ Confiance YOLO: 98%
+  └─ Position: (466, 168)
+  └─ Taille: 141x244
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=57, V=63
+
+Piéton 4:
+  └─ Confiance YOLO: 90%
+  └─ Position: (228, 143)
+  └─ Taille: 121x278
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=57, V=60
+
+Piéton 5:
+  └─ Confiance YOLO: 78%
+  └─ Position: (156, 181)
+  └─ Taille: 24x56
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=115, V=81
+
+Piéton 6:
+  └─ Confiance YOLO: 37%
+  └─ Position: (137, 180)
+  └─ Taille: 18x55
+  └─ Validation Sobel: ✓ PASSÉE
+  └─ Gradients (moyenne): H=108, V=125
+
+========================================
+Image sauvegardée: results/real_one_image.jpg
+
+[7] Affichage des résultats...
+
+Appuyez sur une touche pour quitter...
+
+Traitement terminé!
+QThreadStorage: entry 1 destroyed before end of thread 0x2224b1f1b20
+QThreadStorage: entry 0 destroyed before end of thread 0x2224b1f1b20
+
+real	0m4.083s
+user	0m0.015s
+sys	0m0.015s
+
+--- logs/*.log ---
+

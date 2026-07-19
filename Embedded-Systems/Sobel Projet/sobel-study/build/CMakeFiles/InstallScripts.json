@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/sobel-study/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

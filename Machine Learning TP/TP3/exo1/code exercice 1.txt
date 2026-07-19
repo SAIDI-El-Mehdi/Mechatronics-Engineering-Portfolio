@@ -1,0 +1,162 @@
+# =========================================================
+# TP3 - Exercice 1 : ANN (PV)
+#   A) Regression : predict Power from (Irradiance, WindSpeed, AmbientTemp)
+#   B) Classification : predict Failure from (Irradiance, WindSpeed, AmbientTemp, Power)
+# =========================================================
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import mean_squared_error, accuracy_score, confusion_matrix, ConfusionMatrixDisplay
+
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.optimizers import Adam
+
+# ----------------------------
+# 0) Settings
+# ----------------------------
+CSV_PATH = "synthetic_solar.csv"
+TEST_SIZE = 0.2
+RANDOM_STATE = 42
+
+np.random.seed(RANDOM_STATE)
+
+# ----------------------------
+# 1) Load data
+# ----------------------------
+df = pd.read_csv(CSV_PATH)
+print(df.head())
+print("\nColumns:", df.columns.tolist())
+
+# =========================================================
+# PART A) ANN Regression: Power
+# =========================================================
+X_reg = df[["Irradiance", "WindSpeed", "AmbientTemp"]].values
+y_reg = df["Power"].values
+
+# Split
+Xr_train, Xr_test, yr_train, yr_test = train_test_split(
+    X_reg, y_reg, test_size=TEST_SIZE, random_state=RANDOM_STATE
+)
+
+# Standardization
+scaler_reg = StandardScaler()
+Xr_train_s = scaler_reg.fit_transform(Xr_train)
+Xr_test_s  = scaler_reg.transform(Xr_test)
+
+# Model
+reg_model = Sequential([
+    Dense(32, activation="relu", input_shape=(Xr_train_s.shape[1],)),
+    Dense(32, activation="relu"),
+    Dense(1)  # linear output for regression
+])
+
+reg_model.compile(optimizer=Adam(0.001), loss="mse")
+
+# Train
+history_reg = reg_model.fit(
+    Xr_train_s, yr_train,
+    validation_split=0.2,
+    epochs=100,
+    batch_size=32,
+    verbose=1
+)
+
+# Predict + RMSE
+yr_pred = reg_model.predict(Xr_test_s).flatten()
+rmse_reg = np.sqrt(mean_squared_error(yr_test, yr_pred))
+print(f"\n[Regression] RMSE = {rmse_reg:.2f} W")
+
+# Plot: measured vs predicted (all test)
+plt.figure(figsize=(12, 5))
+plt.plot(yr_test, label="Power_measured (W)")
+plt.plot(yr_pred, "k--", label="Power_predicted (W)")
+plt.xlabel("Index (test)")
+plt.ylabel("Power (W)")
+plt.title("ANN Regression - Power: measured vs predicted")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+# Plot: zoom first 100 test points
+plt.figure(figsize=(12, 5))
+plt.plot(yr_test[:100], label="Power_measured (W)")
+plt.plot(yr_pred[:100], "k--", label="Power_predicted (W)")
+plt.xlabel("Index (test)")
+plt.ylabel("Power (W)")
+plt.title("ANN Regression - Power (Zoom 100 points)")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+# =========================================================
+# PART B) ANN Classification: Failure (0/1)
+# =========================================================
+X_clf = df[["Irradiance", "WindSpeed", "AmbientTemp", "Power"]].values
+y_clf = df["Failure"].values
+
+# Split (stratify to keep class proportions)
+Xc_train, Xc_test, yc_train, yc_test = train_test_split(
+    X_clf, y_clf, test_size=TEST_SIZE, random_state=RANDOM_STATE, stratify=y_clf
+)
+
+# Standardization
+scaler_clf = StandardScaler()
+Xc_train_s = scaler_clf.fit_transform(Xc_train)
+Xc_test_s  = scaler_clf.transform(Xc_test)
+
+# Model
+clf_model = Sequential([
+    Dense(32, activation="relu", input_shape=(Xc_train_s.shape[1],)),
+    Dense(32, activation="relu"),
+    Dense(1, activation="sigmoid")  # sigmoid output for binary classification
+])
+
+clf_model.compile(
+    optimizer=Adam(0.001),
+    loss="binary_crossentropy",
+    metrics=["accuracy"]
+)
+
+# Train
+history_clf = clf_model.fit(
+    Xc_train_s, yc_train,
+    validation_split=0.2,
+    epochs=100,
+    batch_size=32,
+    verbose=1
+)
+
+# Predict + accuracy + confusion matrix
+yc_proba = clf_model.predict(Xc_test_s).flatten()
+yc_pred  = (yc_proba > 0.5).astype(int)
+
+acc = accuracy_score(yc_test, yc_pred)
+print(f"\n[Classification] Accuracy = {acc*100:.2f}%")
+
+cm = confusion_matrix(yc_test, yc_pred)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Normal", "Failure"])
+disp.plot(cmap="Blues")
+plt.title("ANN Classification - Confusion Matrix")
+plt.tight_layout()
+plt.show()
+
+# Plot: visualize classes (Irradiance vs Power)
+plt.figure(figsize=(7, 5))
+plt.scatter(df[df["Failure"] == 0]["Irradiance"], df[df["Failure"] == 0]["Power"],
+            alpha=0.5, label="Normal")
+plt.scatter(df[df["Failure"] == 1]["Irradiance"], df[df["Failure"] == 1]["Power"],
+            alpha=0.5, label="Failure")
+plt.xlabel("Irradiance (W/m^2)")
+plt.ylabel("Power (W)")
+plt.title("Class visualization: Normal vs Failure")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()

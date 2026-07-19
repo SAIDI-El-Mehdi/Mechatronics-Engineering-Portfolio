@@ -1,0 +1,14 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity LAB0 is
+    port (
+        SW   : in  std_logic;   -- SW0
+        LEDG : out std_logic    -- LEDG0
+    );
+end LAB0;
+
+architecture rtl of LAB0 is
+begin
+    LEDG <= SW;  -- copie directe
+end rtl;

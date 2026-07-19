@@ -1,0 +1,73 @@
+Reading image: Data/cop.jpg
+Image size: 5760x3840
+Loading YOLOv4-tiny model...
+Detecting pedestrians...
+
+========================================
+Found 9 pedestrian(s)
+========================================
+Person 1:
+  Confidence: 98%
+  Position: (3552, 1168)
+  Size: 702x2093
+  Edge verification: STRONG (confirmed)
+
+Person 2:
+  Confidence: 97%
+  Position: (456, 1204)
+  Size: 781x1969
+  Edge verification: STRONG (confirmed)
+
+Person 3:
+  Confidence: 97%
+  Position: (4221, 1372)
+  Size: 598x1766
+  Edge verification: STRONG (confirmed)
+
+Person 4:
+  Confidence: 95%
+  Position: (3195, 1318)
+  Size: 441x1642
+  Edge verification: STRONG (confirmed)
+
+Person 5:
+  Confidence: 92%
+  Position: (1454, 1216)
+  Size: 793x1780
+  Edge verification: STRONG (confirmed)
+
+Person 6:
+  Confidence: 86%
+  Position: (2758, 1260)
+  Size: 457x1691
+  Edge verification: STRONG (confirmed)
+
+Person 7:
+  Confidence: 86%
+  Position: (2284, 1161)
+  Size: 581x1879
+  Edge verification: STRONG (confirmed)
+
+Person 8:
+  Confidence: 78%
+  Position: (4865, 1368)
+  Size: 574x1651
+  Edge verification: STRONG (confirmed)
+
+Person 9:
+  Confidence: 74%
+  Position: (5395, 1119)
+  Size: 364x2022
+  Edge verification: WEAK
+
+Output saved to: results/output_cop_test.jpg
+
+Displaying result. Press any key to exit...
+
+Done!
+QThreadStorage: entry 1 destroyed before end of thread 0x1fb18938f70
+QThreadStorage: entry 0 destroyed before end of thread 0x1fb18938f70
+
+real	0m7.854s
+user	0m0.015s
+sys	0m0.015s
